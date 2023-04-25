@@ -1,0 +1,109 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 264px;
+    height: 100%;
+    background-color: var(--color-sidebar-main);
+}
+
+.sidebar-head {
+    position: relative;
+    height: 96px;
+}
+
+.sidebar-logo {
+    position: absolute;
+    width: 143px;
+    height: 24px;
+    top: var(--spacing-6);
+    left: var(--spacing-6);
+}
+
+.sidebar-body {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+    border-radius: 4px;
+    padding: 0 var(--spacing-3);
+    height: 40px;
+    width: 232px;
+}
+
+.sidebar-link-icon {
+    max-width: 16.5px;
+    height: 16.5px;
+}
+
+.sidebar-link-text {
+    flex-grow: 1;
+    display: block;
+    border-radius: 5px;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sidebar-link-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    padding: 0 12px;
+    border-radius: 100px;
+    background-color: var(--color-sidebar-secondary);
+    color: var(--color-text-secondary);
+}
+
+.sidebar-link-active {
+    background-color: var(--color-sidebar-btn-active);
+}
+
+.sidebar-link:hover {
+    background-color: var(--color-sidebar-btn-hover);
+}
+
+.sidebar-link-active .sidebar-link-badge {
+    background-color: var(--color-sidebar-btn-badge-active);
+}
+
+.sidebar-link:hover .sidebar-link-badge {
+    background-color: var(--color-sidebar-btn-badge-hover);
+}
+
+.sidebar-divider {
+    width: 231px;
+    height: 34px;
+    position: relative;
+}
+
+.sidebar-divider::before {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 231px;
+    border-bottom: 1px solid var(--color-divider);
+    position: absolute;
+    top: 50%;
+}
+
+.sidebar-foot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--spacing-6);
+}
