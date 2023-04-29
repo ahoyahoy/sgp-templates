@@ -318,8 +318,13 @@ a {
 }
 
 .more-options-btn {
+  opacity: 0;
   fill: var(--color-text-primary);
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, opacity 0.2s;
+}
+
+.session-box:hover .more-options-btn {
+  opacity: 1;
 }
 
 .more-options-btn:hover {
@@ -350,11 +355,16 @@ a {
   flex-direction: column;
   flex-grow: 1;
   gap: var(--spacing-0);
+  
 }
 
 .skeleton-row {
   border-radius: 40px;
   background-color: var(--color-skeleton-bg);
+}
+
+.session-box.skeleton {
+  pointer-events: none;
 }
 
 .skeleton .date {
@@ -386,4 +396,14 @@ a {
   margin-right: 60px;
   background-color: var(--color-skeleton-bg);
   border-radius: var(--border-radius-3);
+}
+
+.hover-test > div:first-child {
+  display: none
+}
+.hover-test:hover > div:first-child {
+  display: flex
+}
+.hover-test:hover > div:last-child {
+  display: none
 }
