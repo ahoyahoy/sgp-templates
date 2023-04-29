@@ -1,15 +1,17 @@
 :root {
-    --size-title-h1: 24px;
-    --size-title-h2: 20px;
-    --size-title-h3: 18px;
-    --size-title-h4: 16px;
-    --size-title-h5: 14px;
-    --size-title-h6: 12px;
+    --size-h1: 24px;
+    --size-h2: 20px;
+    --size-h3: 18px;
+    --size-h4: 16px;
+    --size-h5: 14px;
+    --size-h6: 12px;
 
     --size-text-small: 12px;
     --size-text-medium: 14px;
 
-    --font-weight-400: 400;
-    --font-weight-500: 500;
-    --font-weight-700: 700;
+    --font-weight-normal: 400;
+    --font-weight-semibold: 500;
+    --font-weight-bold: 700;
+
+    --font: 400 16px/1.5;
 }

@@ -23,11 +23,11 @@ a {
   flex-direction: row;
   height: 100vh;
   font-size: var(--size-text-medium);
-  
 }
 
 .app_container.desktop {
   min-width: 1024px;
+  min-height: 500px;
 }
 
 /* SESSION BODY */
@@ -44,8 +44,8 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  height: 96px;
-  padding: 0 var(--spacing-6);
+  flex: 0 0 96px;
+  padding: 0 var(--spacing-5);
   color: var(--color-text-primary);
 }
 
@@ -54,37 +54,33 @@ a {
 .session-search {
   display: flex;
   align-items: center;
-  gap: var(--spacing-5);
+  gap: var(--spacing-4);
 }
 
 .session-search-title {
-  font-size: var(--size-title-h1);
-  font-weight: var(--font-weight-500);
+  font-size: var(--size-h1);
+  font-weight: var(--font-weight-semibold);
 }
 
-
-.session-search-lable {
+.session-search-field {
   position: relative;
 }
 
-.session-search-lable:before {
-  content: "";
+.search-icon {
   position: absolute;
-  left: 13px;
-  top: 50%;
-  transform: translate(0, -50%);
-  bottom: 0;
-  width: 11.6px;
-  height: 11.6px;
-  background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='48' viewBox='0 96 960 960' width='48'%3E%3Cpath d='M796 935 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l264 262-44 44ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  top: 10px;
+  left: 10px;
+  width: 16px;
+  height: 16px;
+  fill: var(--color-grey-lighten-2);
 }
 
 .session-search-input {
   height: 36px;
-  width: 266px;
+  width: 299px;
   font-size: var(--size-text-medium);
-  padding: 0 10px 0 38px;
-  border-radius: 4px;
+  padding: 0 var(--spacing-2) 0 38px;
+  border-radius: var(--border-radius-3);
   border: 1px solid var(--color-search-bar);
 }
 
@@ -99,34 +95,49 @@ a {
   align-items: center;
   gap: var(--spacing-2);
   font-size: var(--size-text-medium);
+  font-weight: var(--font-weight-bold);
   height: 36px;
   padding: 0 var(--spacing-2);
-  border-radius: 4px;
+  border-radius: var(--border-radius-3);
   border: none;
   background-color: var(--color-btn-background);
   color: var(--color-text-white);
   cursor: pointer;
+  transition: background-color 0.2s ease;
+  transition: border 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .session-create svg {
   fill: var(--color-text-white);
+  transition: fill 0.2s ease;
+  width: 16px;
+  height: 16px;
 }
 
+.session-create:hover {
+  border: 1px solid var(--color-btn-border-hover);
+  background-color: var(--color-btn-background-hover);
+  color: var(--color-btn-text-hover);
+}
+.session-create:hover svg {
+  fill: var(--color-btn-text-hover);
+}
 
 /* SESSION TABS */
 
 .session-tabs {
   position: relative;
-  font-weight: var(--font-weight-500);
-  height: 41px;
+  font-weight: var(--font-weight-semibold);
+  flex: 0 0 41px;
   border-bottom: 1px solid var(--color-divider);
 }
 
 .session-tabs-links {
   position: absolute;
   display: flex;
-  gap: var(--spacing-6);
-  left: var(--spacing-6);
+  gap: var(--spacing-5);
+  left: var(--spacing-5);
   height: 41px;
 }
 
@@ -140,10 +151,14 @@ a {
   position: relative;
   height: 100%;
   border-bottom: 2px solid transparent;
-  border-radius: 2px;
+  border-radius: var(--border-radius-1);
   color: #444;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
+}
+
+.session-tabs-link a::after {
+  transition: background-color 0.2s ease;
 }
 
 .session-tabs-link:hover a::after,
@@ -153,7 +168,7 @@ a {
   bottom: -2px;
   width: 100%;
   height: 2px;
-  border-radius: 2px;
+  border-radius: var(--border-radius-1);
   background-color: var(--color-tabs-hover);
 }
 
@@ -162,21 +177,13 @@ a {
   color: var(--color-tabs-hover);
 }
 
-
-
 /* SESSIONS */
 
 .session-events {
   flex-grow: 1;
   overflow-y: auto;
-  padding: var(--spacing-5) var(--spacing-6);
+  padding: var(--spacing-4) var(--spacing-5);
 }
-
-.sessions {
-  display: flex;
-  flex-direction: column;
-}
-
 
 .session-box {
   display: flex;
@@ -184,23 +191,27 @@ a {
   border-bottom: 1px solid var(--color-divider);
   padding: 0 var(--spacing-3);
   height: 96px;
-  gap: calc(var(--spacing-2) * 8);
+  gap: var(--spacing-6);
+  transition: background-color 0.2s ease;
 }
 
-.session-box-active {
-  background-color: var(--color-session-box-active);
+.session-box.active {
+  background-color: var(--color-list-view-row-active);
 }
 
 .session-box:hover {
-  background-color: var(--color-session-box-hover);
+  background-color: var(--color-list-view-row-hover);
 }
 
 .session-details {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--spacing-0);
   flex-grow: 1;
   min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .session-date {
@@ -213,7 +224,7 @@ a {
 }
 
 .session-name {
-  font-weight: var(--font-weight-500);
+  font-weight: var(--font-weight-semibold);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -222,7 +233,7 @@ a {
 
 .session-attendees {
   display: flex;
-  gap: 12px;
+  gap: var(--spacing-2);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -232,7 +243,7 @@ a {
 
 .session-attendee {
   display: flex;
-  gap: 4px;
+  gap: var(--spacing-0);
   align-items: center;
 }
 
@@ -259,7 +270,7 @@ a {
 
 .session-media-btns {
   display: flex;
-  gap: 12px;
+  gap: var(--spacing-2);
 }
 
 .media-btn {
@@ -267,14 +278,14 @@ a {
   height: 24px;
   background-color: #FBFBFE;
   border: 1px solid #CECFF0;
-  border-radius: 3px;
+  border-radius: var(--border-radius-2);
   cursor: pointer;
 }
 
 .session-buttons {
   display: flex;
   align-items: center;
-  gap: var(--spacing-5);
+  gap: var(--spacing-4);
 }
 
 .session-btn {
@@ -283,19 +294,37 @@ a {
   justify-content: center;
   width: 36px;
   height: 35px;
-  border-radius: 4px;
+  border-radius: var(--border-radius-3);
   cursor: pointer;
 }
 
 .call-btn {
   fill: #fff;
   background: var(--color-btn-background);
+  transition: background-color 0.2s ease;
+  transition: border 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+.call-btn:hover {
+  border: 1px solid var(--color-btn-border-hover);
+  background-color: var(--color-btn-background-hover);
+  color: var(--color-btn-text-hover);
+}
+
+.call-btn:hover svg {
+  fill: var(--color-btn-text-hover);
+  transition: fill 0.2s ease;
 }
 
 .more-options-btn {
   fill: var(--color-text-primary);
+  transition: background-color 0.2s ease;
 }
 
+.more-options-btn:hover {
+  background-color: var(--color-purple-lighten-4);
+}
 
 .session-btn-disabled {
   background-color: var(--color-btn-disabled);
@@ -303,15 +332,58 @@ a {
   fill: #DADADA;
 }
 
-.session-box-expired {
+.session-box.expired {
   color: var(--color-text-disabled);
   fill: var(--color-text-disabled);
 }
 
-.session-box-expired .session-date {
+.session-box.expired .session-date {
   color: var(--color-text-disabled);
 }
 
-.session-box-expired .session-attendees {
+.session-box.expired .session-attendees {
   color: var(--color-text-disabled);
+}
+
+.skeleton-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: var(--spacing-0);
+}
+
+.skeleton-row {
+  border-radius: 40px;
+  background-color: var(--color-skeleton-bg);
+}
+
+.skeleton .date {
+  width: 128px;
+  height: 12px;
+  margin: 2px 0;
+}
+
+.skeleton .name {
+  width: 400px;
+  height: 14px;
+  margin: 3px 0;
+}
+
+.skeleton .attendees {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.skeleton .attendee {
+  width: 94px;
+  height: 14px;
+  margin: 3px 0;
+}
+
+.skeleton-button {
+  height: 36px;
+  width: 36px;
+  margin-right: 60px;
+  background-color: var(--color-skeleton-bg);
+  border-radius: var(--border-radius-3);
 }

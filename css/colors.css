@@ -40,8 +40,6 @@
   --color-orange-lighten-1: #F9DABE;
   --color-orange-lighten-2: #FDF4EC;
 
-
-
   /* Sidebar */
   --color-sidebar-main: var(--color-purple-lighten-5);
   --color-sidebar-secondary: var(--color-purple-lighten-4);
@@ -55,14 +53,18 @@
   --color-tabs-active: var(--color-purple-base);
 
   /* Session box */
-  --color-session-box-hover: var(--color-purple-lighten-5);
-  --color-session-box-active: var(--color-purple-lighten-5);
+  --color-list-view-row-hover: var(--color-purple-lighten-5);
+  --color-list-view-row-active: var(--color-purple-lighten-5);
 
   /* Buttons */
   --color-btn-background: var(--color-purple-base);
+  --color-btn-background-hover: var(--color-white-base);
+  --color-btn-text-hover: var(--color-purple-base);
+  --color-btn-border-hover: var(--color-purple-base);
   --color-btn-disabled: var(--color-grey-lighten-4);
 
   /* Other colors */
+  --color-skeleton-bg: var(--color-purple-lighten-4);
   --color-search-bar: var(--color-grey-lighten-3);
   --color-divider: var(--color-purple-lighten-4);
 
