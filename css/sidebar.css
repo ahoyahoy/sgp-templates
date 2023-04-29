@@ -7,16 +7,15 @@
 }
 
 .sidebar-head {
-    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: var(--spacing-5);
     flex: 0 0 96px;
 }
 
 .sidebar-logo {
-    position: absolute;
     width: 143px;
     height: 24px;
-    top: 32px;
-    left: 32px;
 }
 
 .sidebar-body {
@@ -101,7 +100,7 @@
 .sidebar-foot {
     display: flex;
     flex-direction: column;
-    align-items: center;
     flex: 0 0 40px;
+    padding: 0 var(--spacing-3);
     margin-bottom: var(--spacing-5);
 }

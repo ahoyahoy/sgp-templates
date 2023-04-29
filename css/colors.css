@@ -58,9 +58,8 @@
 
   /* Buttons */
   --color-btn-background: var(--color-purple-base);
-  --color-btn-background-hover: var(--color-white-base);
+  --color-btn-background-hover: var(--color-purple-lighten-4);
   --color-btn-text-hover: var(--color-purple-base);
-  --color-btn-border-hover: var(--color-purple-base);
   --color-btn-disabled: var(--color-grey-lighten-4);
 
   /* Other colors */

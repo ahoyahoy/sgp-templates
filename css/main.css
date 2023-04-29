@@ -116,7 +116,6 @@ a {
 }
 
 .session-create:hover {
-  border: 1px solid var(--color-btn-border-hover);
   background-color: var(--color-btn-background-hover);
   color: var(--color-btn-text-hover);
 }
@@ -307,7 +306,6 @@ a {
 }
 
 .call-btn:hover {
-  border: 1px solid var(--color-btn-border-hover);
   background-color: var(--color-btn-background-hover);
   color: var(--color-btn-text-hover);
 }
@@ -328,7 +326,7 @@ a {
 }
 
 .more-options-btn:hover {
-  background-color: var(--color-purple-lighten-4);
+  background-color: var(--color-btn-background-hover);
 }
 
 .session-btn-disabled {
