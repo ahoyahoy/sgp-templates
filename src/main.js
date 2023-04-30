@@ -1,15 +1,25 @@
+import './style.css'
+
+import {createApp} from 'vue'
+import {createRouter, createWebHistory} from 'vue-router'
+
+import App from './App.vue'
+import Index from './pages/index-page.vue'
+import Session from './pages/session-page.vue'
+
+const app = createApp(App)
 
 const routes = [
-    { path: '/', component: index },
-    { path: '/session', component: session },
+    {path: '/', component: Index},
+    {path: '/sessions', component: Session},
 ]
 
-import index from './components/index.vue'
-import session from './components/session.vue'
-export default routes;
+const router = createRouter({
+    history: createWebHistory(),
+    routes,
+})
 
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
 
-createApp(App).mount('#app')
+app.use(router)
+
+app.mount('#app')
