@@ -1,0 +1,15 @@
+:root {
+    --size-h1: 24px;
+    --size-h2: 20px;
+    --size-h3: 18px;
+    --size-h4: 16px;
+    --size-h5: 14px;
+    --size-h6: 12px;
+
+    --size-text-small: 12px;
+    --size-text-medium: 14px;
+
+    --font-weight-normal: 400;
+    --font-weight-semibold: 500;
+    --font-weight-bold: 700;
+}
