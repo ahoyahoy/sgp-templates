@@ -117,10 +117,6 @@ a {
 
 .session-create:hover {
   background-color: var(--color-btn-background-hover);
-  color: var(--color-btn-text-hover);
-}
-.session-create:hover svg {
-  fill: var(--color-btn-text-hover);
 }
 
 /* SESSION TABS */
@@ -307,7 +303,6 @@ a {
 
 .call-btn:hover {
   background-color: var(--color-btn-background-hover);
-  color: var(--color-btn-text-hover);
 }
 
 .call-btn:hover svg {
@@ -326,7 +321,7 @@ a {
 }
 
 .more-options-btn:hover {
-  background-color: var(--color-btn-background-hover);
+  background-color: var(--color-purple-lighten-4);
 }
 
 .session-btn-disabled {
