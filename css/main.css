@@ -19,7 +19,7 @@ a {
 }
 
 .app_container {
-  display: flex;
+  /* display: flex; */
   flex-direction: row;
   height: 100vh;
   font-size: var(--size-text-medium);
