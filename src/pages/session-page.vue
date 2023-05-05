@@ -1,5 +1,9 @@
 <script setup>
 import DataList from '../components/advanced/data-list.vue'
+import DotsIcon from '../components/icons/dots-icon.vue'
+import Mailicon from '../components/icons/mail-icon.vue'
+import PhoneIcon from '../components/icons/phone-icon.vue'
+import SearchIcon from '../components/icons/search-icon.vue'
 import AppHeader from '../components/layout/app-header.vue'
 import BaseButton from '../components/primitives/base-button.vue'
 import IconButton from '../components/primitives/icon-button.vue'
@@ -19,6 +23,16 @@ const sessions = [
         date: 'Mon, 21 Jul at 08:00',
         title: 'Broken bizHub 1762 in Berlin',
         waiting: true,
+    },
+    {
+        date: 'Mon, 21 Jul at 08:00',
+        title: 'Broken bizHub 1762 in Berlin',
+        loadingAll: true,
+    },
+    {
+        date: 'Mon, 21 Jul at 08:00',
+        title: 'Broken bizHub 1762 in Berlin',
+        loadingNames: true,
     },
     {
         date: 'Mon, 21 Jul at 08:00',
@@ -53,19 +67,13 @@ const sessions = [
                 <template #left>
                     <TextInput placeholder="Search in Session">
                         <template #icon>
-                            <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
-                                <path
-                                    d="M796 935 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l264 262-44 44ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z" />
-                            </svg>
+                            <SearchIcon />
                         </template>
                     </TextInput>
                 </template>
                 <template #right>
                     <BaseButton>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="15" viewBox="0 96 960 960" width="15">
-                            <path
-                                d="M140 896q-24 0-42-18t-18-42V316q0-24 18-42t42-18h680q24 0 42 18t18 42v520q0 24-18 42t-42 18H140Zm340-302L140 371v465h680V371L480 594Zm0-60 336-218H145l335 218ZM140 371v-55 520-465Z" />
-                        </svg>
+                        <Mailicon />
                         Create Session
                     </BaseButton>
                 </template>
@@ -78,7 +86,13 @@ const sessions = [
                     <div class="details">
                         <div class="date">{{ item.date }}</div>
                         <div class="name">{{ item.title }}</div>
-                        <div class="attendees">{{ item.names }}</div>
+                        <template v-if="item.names?.length">
+                            <div class="attendees">
+                                <template v-for="name,i in item.names" :key="i">
+                                    <div class="attendee">{{ name }}</div>
+                                </template>
+                            </div>
+                        </template>
                     </div>
                 </template>
                 <template #right="{ item }">
@@ -93,18 +107,10 @@ const sessions = [
                         </div>
                         <div class="buttons">
                             <IconButton :style="{ visibility: item.disabled ? 'hidden' : 'visible', }">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 96 960 960" width="20">
-                                    <path
-                                        d="M795 936q-122 0-242.5-60T336 720q-96-96-156-216.5T120 261q0-19.286 12.857-32.143T165 216h140q13.611 0 24.306 9.5Q340 235 343 251l27 126q2 14-.5 25.5T359 422L259 523q56 93 125.5 162T542 802l95-98q10-11 23-15.5t26-1.5l119 26q15.312 3.375 25.156 15.188Q840 740 840 756v135q0 19.286-12.857 32.143T795 936ZM229 468l81-82-23-110H180q0 39 12 85.5T229 468Zm369 363q41 19 89 31t93 14V769l-103-21-79 83ZM229 468Zm369 363Z">
-                                    </path>
-                                </svg>
+                                <PhoneIcon />
                             </IconButton>
                             <MoreinfoButton class="more-options">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 96 960 960" width="20">
-                                    <path
-                                        d="M184.783 635Q161 635 143.5 617.7T126 576.106Q126 551 143.373 534t41.769-17q23.458 0 41.658 16.894 18.2 16.894 18.2 41.5T226.783 617.5q-18.217 17.5-42 17.5Zm295.823 0Q456 635 438.5 617.7T421 576.106Q421 551 438.3 534t41.594-17Q505 517 522 533.894t17 41.5Q539 600 522.106 617.5t-41.5 17.5Zm294.288 0q-24.823 0-42.359-17.3Q715 600.4 715 576.106 715 551 732.677 534t42.5-17Q800 517 817.5 533.894t17.5 41.5Q835 600 817.358 617.5 799.717 635 774.894 635Z">
-                                    </path>
-                                </svg>
+                                <DotsIcon />
                             </MoreinfoButton>
                         </div>
                     </div>
