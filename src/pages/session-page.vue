@@ -18,11 +18,13 @@ const sessions = [
         title: 'Check bizHub 3526 printer in Prague',
         names: ['jmeno', 'jmeno'],
         active: true,
+        media: 3,
     },
     {
         date: 'Mon, 21 Jul at 08:00',
         title: 'Broken bizHub 1762 in Berlin',
         waiting: true,
+        media: 2,
     },
     {
         date: 'Mon, 21 Jul at 08:00',
@@ -39,6 +41,7 @@ const sessions = [
         title: 'Broken bizHub 1762 in Berlin',
         names: ['jmeno', 'jmeno'],
         disabled: true,
+        countdown: '1 day to start',
     },
     {
         date: 'Mon, 21 Jul at 08:00',
@@ -98,12 +101,22 @@ const sessions = [
                 <template #right="{ item }">
                     <div class="btn-group">
                         <div class="media">
-                            <div class="media-btns">
-                                <button class="media-btn video"></button>
-                                <button class="media-btn image"></button>
-                                <button class="media-btn audio"></button>
-                            </div>
-                            <p class="countdown no-show">1 day to start</p>
+                            <template v-if="item.media" >
+                                <div class="media-btns">
+                                    <button
+                                        v-for="i in item.media"
+                                        :key="i"
+                                        class="media-btn video"
+                                    >
+                                    </button>
+                                </div>
+                            </template>
+                            <p
+                                v-if="item.countdown"
+                                class="countdown"
+                            >
+                                {{ item.countdown }}
+                            </p>
                         </div>
                         <div class="buttons">
                             <IconButton :style="{ visibility: item.disabled ? 'hidden' : 'visible', }">
