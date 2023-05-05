@@ -1,15 +1,11 @@
 <script setup>
-import BaseButton from '../primitives/base-button.vue'
-import TextInput from '../primitives/text-input.vue'
-
 defineProps(['title'])
-
 </script>
 
 <template>
     <div class="header">
         <div class="left">
-            <h1 class="session-search-title">{{ title }}</h1>
+            <h1 class="title">{{ title }}</h1>
             <slot name="left"></slot>
 
         </div>
@@ -29,9 +25,16 @@ defineProps(['title'])
     padding: 0 var(--spacing-5);
     color: var(--color-text-primary);
 }
-.left, .right {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-4);
+
+.left,
+.right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+}
+
+.title {
+    font-size: var(--size-h1);
+    font-weight: var(--font-weight-semibold);
 }
 </style>

@@ -1,11 +1,13 @@
 <script setup>
-import {useSlots} from 'vue'
+import { useSlots } from 'vue'
 
 const slotIconExists = useSlots().icon !== undefined
+
+defineProps(['placeholder'])
 </script>
 
 <template>
-  <div class="container" :class="{'with-icon': slotIconExists}">
+  <div class="container" :class="{ 'with-icon': slotIconExists }">
     <slot name="icon"></slot>
     <input class="session-search-input" type="text" :placeholder="placeholder">
   </div>
@@ -17,7 +19,7 @@ const slotIconExists = useSlots().icon !== undefined
   position: relative;
 }
 
-.container >>> svg {
+.container>>>svg {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -25,6 +27,7 @@ const slotIconExists = useSlots().icon !== undefined
   height: 16px;
   fill: var(--color-grey-lighten-2);
 }
+
 input {
   height: 36px;
   width: 299px;

@@ -3,19 +3,19 @@ defineProps(['tabs', 'activeTab'])
 </script>
 
 <template>
-    <div class="tabs">
-        <ul class="session-tabs-links">
+  <div class="tabs">
+    <ul class="links">
 
-            <template v-for="tab,i in tabs" :key="i">
-                <li class="session-tabs-link" :class="{active: activeTab == i}">
-                    <a href="#">{{ tab }}</a></li>
-            </template>
-        </ul>
-    </div>
+      <template v-for="tab, i in tabs" :key="i">
+        <li class="link" :class="{ active: activeTab == i }">
+          <a href="#">{{ tab }}</a>
+        </li>
+      </template>
+    </ul>
+  </div>
 </template>
 
 <style scoped>
-
 .tabs {
   position: relative;
   font-weight: var(--font-weight-semibold);
@@ -23,7 +23,7 @@ defineProps(['tabs', 'activeTab'])
   border-bottom: 1px solid var(--color-divider);
 }
 
-.session-tabs-links {
+.links {
   position: absolute;
   display: flex;
   gap: var(--spacing-5);
@@ -31,11 +31,11 @@ defineProps(['tabs', 'activeTab'])
   height: 41px;
 }
 
-.tabs-link {
+.link {
   list-style: none;
 }
 
-.tabs-link a {
+.link a {
   display: flex;
   align-items: center;
   position: relative;
@@ -47,12 +47,12 @@ defineProps(['tabs', 'activeTab'])
   transition: color 0.2s ease;
 }
 
-.tabs-link a::after {
+.link a::after {
   transition: background-color 0.2s ease;
 }
 
-.tabs-link:hover a::after,
-.tabs-link.active a::after {
+.link:hover a::after,
+.link.active a::after {
   content: "";
   position: absolute;
   bottom: -2px;
@@ -62,9 +62,8 @@ defineProps(['tabs', 'activeTab'])
   background-color: var(--color-tabs-hover);
 }
 
-.tabs-link a:hover,
-.tabs-link.active a {
+.link a:hover,
+.link.active a {
   color: var(--color-tabs-hover);
 }
-
 </style>

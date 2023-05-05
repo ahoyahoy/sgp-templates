@@ -4,8 +4,8 @@ defineProps(['data'])
 
 <template>
     <div class="data-list">
-        <template v-for="item,i in data" :key="i">
-            <div class="item" :class="{disabled: item.disabled}">
+        <template v-for="item, i in data" :key="i">
+            <div class="item" :class="{ disabled: item.disabled, waiting: item.waiting, active: item.active }">
                 <div class="left">
                     <slot name="left" :item="item"></slot>
                 </div>
@@ -20,28 +20,43 @@ defineProps(['data'])
 
 <style scoped>
 .data-list {
-    color: black;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: var(--spacing-4) var(--spacing-5);
 }
 
 .item {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     flex: 0 0 96px;
-    padding: 20px;
+    border-bottom: 1px solid var(--color-divider);
+    padding: 0 var(--spacing-3);
+    height: 96px;
+    gap: var(--spacing-6);
+    transition: background-color 0.2s ease;
     color: var(--color-text-primary);
-    border-bottom: 1px solid var(--foo);
+}
+
+.item:hover {
+    background-color: var(--color-list-view-row-hover);
 }
 
 .item.disabled {
-    color: red;
+    color: var(--color-text-disabled);
+    fill: currentColor;
 }
 
-.left, .right {
+.item.active {
+    background-color: var(--color-list-view-row-active);
+}
+
+.left,
+.right {
     display: flex;
 }
 
 .left {
     flex-direction: column;
+    flex: 1;
 }
 </style>
