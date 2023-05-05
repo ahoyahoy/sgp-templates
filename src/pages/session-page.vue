@@ -1,17 +1,4 @@
 <script setup>
-import DataList from '../components/advanced/data-list.vue'
-import DotsIcon from '../components/icons/dots-icon.vue'
-import Mailicon from '../components/icons/mail-icon.vue'
-import PhoneIcon from '../components/icons/phone-icon.vue'
-import SearchIcon from '../components/icons/search-icon.vue'
-import AppHeader from '../components/layout/app-header.vue'
-import BaseButton from '../components/primitives/base-button.vue'
-import IconButton from '../components/primitives/icon-button.vue'
-import MoreinfoButton from '../components/primitives/more-info-button.vue'
-import TabNav from '../components/primitives/tab-nav.vue'
-import TextInput from '../components/primitives/text-input.vue'
-import SidebarNav from '../components/sidebar-nav.vue'
-
 const sessions = [
     {
         date: 'Mon, 21 Jul at 08:00',
