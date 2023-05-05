@@ -1,0 +1,40 @@
+<script setup>
+</script>
+
+
+<template>
+    <div class="nav">
+        <h1>AireLink</h1>
+        <nav>
+            <router-link to="/sessions">Sessions</router-link>
+        </nav>
+    </div>
+</template>
+
+<script>
+
+</script>
+
+<style scoped>
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: var(--size-text-medium);
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-3);
+}
+
+h1 {
+    color: var(--color-purple-base);
+    font-size: var(--size-h1);
+}
+</style>
