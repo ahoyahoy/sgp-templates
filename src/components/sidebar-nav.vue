@@ -1,27 +1,32 @@
+<script setup>
+import LogoImg from '../../img/logo-lite.svg'
+import PhoneIcon from './icons/phone-icon.vue'
+</script>
+
 <template>
   <div class="sidebar">
     <div class="head">
-      <img class="logo" src="img/logo-lite.svg" alt="logo">
+      <LogoImg class="logo" alt="logo" />
     </div>
     <div class="body">
       <nav class="links">
         <a href="#" class="link active ">
-          <img class="icon" src="img/icon.png" alt="">
+          <PhoneIcon class="icon" />
           <span class="text">Sessions</span>
           <span class="badge">5</span>
         </a>
         <a href="#" class="link">
-          <img class="icon" src="img/icon.png" alt="">
+          <PhoneIcon class="icon" />
           <span class="text">Media Library</span>
           <span class="badge">4</span>
         </a>
         <a href="#" class="link">
-          <img class="icon" src="img/icon.png" alt="">
+          <PhoneIcon class="icon" />
           <span class="text">Contacts</span>
           <span class="badge">8</span>
         </a>
         <a href="#" class="link">
-          <img class="icon" src="img/icon.png" alt="">
+          <PhoneIcon class="icon" />
           <span class="text">Dashboard</span>
           <span class="badge no-show">5</span>
         </a>
@@ -40,7 +45,7 @@
     </div>
     <div class="foot">
       <a href="#" class="link">
-        <img class="icon" src="img/icon.png" alt="">
+        <PhoneIcon class="icon" />
         <span class="text">Log Out</span>
       </a>
     </div>
