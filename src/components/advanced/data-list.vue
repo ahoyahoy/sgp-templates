@@ -5,7 +5,8 @@ defineProps(['data'])
 <template>
     <div class="data-list">
         <template v-for="item, i in data" :key="i">
-            <div class="item" :class="{ disabled: item.disabled, waiting: item.waiting, active: item.active }">
+            <div v-if="!item.loadingAll && !item.loadingTest" class="item"
+                :class="{ disabled: item.disabled, waiting: item.waiting, active: item.active }">
                 <div class="left">
                     <slot name="left" :item="item"></slot>
                 </div>
@@ -13,8 +14,13 @@ defineProps(['data'])
                     <slot name="right" :item="item"></slot>
                 </div>
             </div>
+            <div v-if="item.loadingAll">
+                <loadingAll />
+            </div>
+            <div v-if="item.loadingTest">
+                <loadingTest />
+            </div>
         </template>
-
     </div>
 </template>
 

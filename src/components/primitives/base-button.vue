@@ -1,9 +1,7 @@
-
-
 <template>
-    <button class="btn">
-        <slot></slot>
-    </button>
+  <button class="btn">
+    <slot></slot>
+  </button>
 </template>
 
 
@@ -26,7 +24,7 @@
   transition: color 0.2s ease;
 }
 
-.btn >>> svg {
+.btn>>>svg {
   fill: currentColor;
   transition: fill 0.2s ease;
   width: 16px;

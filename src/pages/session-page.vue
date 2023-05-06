@@ -1,22 +1,28 @@
 <script setup>
+import PersonIcon from '../components/icons/person-icon.vue'
+
 const sessions = [
     {
         date: 'Mon, 21 Jul at 08:00',
         title: 'Check bizHub 3526 printer in Prague',
-        names: ['jmeno', 'jmeno'],
+        names: [
+            { name: 'Peter Davis', icon: 'PersonIcon' },
+            { name: 'You', icon: 'PersonIcon' },
+        ],
         active: true,
         media: 3,
     },
     {
         date: 'Mon, 21 Jul at 08:00',
         title: 'Broken bizHub 1762 in Berlin',
+        names: ['tomas.muller@company.com', 'John Anderson'],
         waiting: true,
-        media: 2,
+        countdown: '1 day to start',
     },
     {
         date: 'Mon, 21 Jul at 08:00',
         title: 'Broken bizHub 1762 in Berlin',
-        loadingAll: true,
+        names: ['Peter Davis', 'You'],
     },
     {
         date: 'Mon, 21 Jul at 08:00',
@@ -26,24 +32,32 @@ const sessions = [
     {
         date: 'Mon, 21 Jul at 08:00',
         title: 'Broken bizHub 1762 in Berlin',
-        names: ['jmeno', 'jmeno'],
+        names: ['Peter Davis', 'You'],
         disabled: true,
-        countdown: '1 day to start',
+        media: 3,
     },
     {
         date: 'Mon, 21 Jul at 08:00',
         title: 'Broken bizHub 1762 in Berlin',
+        names: ['tomas.muller@company.com', 'John Anderson'],
         disabled: true,
+        media: 2,
     },
     {
         date: 'Mon, 21 Jul at 08:00',
         title: 'Broken bizHub 1762 in Berlin',
+        names: ['Peter Davis', 'You'],
         disabled: true,
+        media: 1,
+    },
+    {
+        loadingAll: true,
     },
     {
         date: 'Mon, 21 Jul at 08:00',
         title: 'Broken bizHub 1762 in Berlin',
-        disabled: true,
+        names: ['Peter Davis', 'You'],
+        loadingTest: true,
     },
 ]
 </script>
@@ -63,7 +77,7 @@ const sessions = [
                 </template>
                 <template #right>
                     <BaseButton>
-                        <Mailicon />
+                        <MailIcon />
                         Create Session
                     </BaseButton>
                 </template>
@@ -76,11 +90,20 @@ const sessions = [
                     <div class="details">
                         <div class="date">{{ item.date }}</div>
                         <div class="name">{{ item.title }}</div>
-                        <template v-if="item.names?.length">
+                        <template v-if="item.names">
                             <div class="attendees">
-                                <template v-for="name,i in item.names" :key="i">
-                                    <div class="attendee">{{ name }}</div>
+                                <template v-for="name, i in item.names" :key="i">
+                                    <div class="person">
+                                        <component :is="name.icon" />
+                                        <div class="attendee">{{ name.name }}</div>
+                                    </div>
                                 </template>
+                            </div>
+                        </template>
+                        <template v-if="item.loadingNames">
+                            <div class="loading-attendees">
+                                <div class="loading-attendee"></div>
+                                <div class="loading-attendee"></div>
                             </div>
                         </template>
                     </div>
@@ -88,20 +111,13 @@ const sessions = [
                 <template #right="{ item }">
                     <div class="btn-group">
                         <div class="media">
-                            <template v-if="item.media" >
+                            <template v-if="item.media">
                                 <div class="media-btns">
-                                    <button
-                                        v-for="i in item.media"
-                                        :key="i"
-                                        class="media-btn video"
-                                    >
+                                    <button v-for="i in item.media" :key="i" class="media-btn video">
                                     </button>
                                 </div>
                             </template>
-                            <p
-                                v-if="item.countdown"
-                                class="countdown"
-                            >
+                            <p v-if="item.countdown" class="countdown">
                                 {{ item.countdown }}
                             </p>
                         </div>
@@ -149,25 +165,28 @@ const sessions = [
     min-width: 0;
 }
 
-.session-details {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-0);
-    flex-grow: 1;
-    min-width: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
 .more-options {
     opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--border-radius-3);
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: var(--color-text-primary);
+    transition: background-color 0.2s ease, opacity 0.2s;
+}
+
+.more-options:hover {
+    background-color: var(--color-purple-lighten-4);
 }
 
 .item:hover .more-options {
     opacity: 1;
 }
-
 
 .details {
     display: flex;
@@ -221,24 +240,28 @@ const sessions = [
     align-items: center;
 }
 
-.like {
-    fill: green;
+.loading-attendees {
+    display: flex;
+    gap: var(--spacing-2);
 }
 
-.dislike {
-    fill: red;
+.loading-attendee {
+    width: 94px;
+    height: 14px;
+    margin: 3px 0;
+    border-radius: 40px;
+    background-color: var(--color-skeleton-bg);
+}
 
-    transform: matrix(-1, 0, 0, 1, 0, 0);
+.person {
+    display: flex;
+    gap: var(--spacing-0);
+    align-items: center;
 }
 
 .btn-group {
     display: flex;
     gap: var(--spacing-6);
-    align-items: center;
-}
-
-.info {
-    display: flex;
     align-items: center;
 }
 
@@ -271,11 +294,5 @@ const sessions = [
     display: flex;
     align-items: center;
     gap: var(--spacing-4);
-}
-
-.item.waiting .btn.primary {
-    background-color: var(--color-btn-disabled);
-    pointer-events: none;
-    color: #DADADA;
 }
 </style>

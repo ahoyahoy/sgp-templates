@@ -32,4 +32,10 @@
 .btn:hover {
     background-color: var(--color-btn-background-hover);
 }
+
+.item.waiting .btn.primary {
+    background-color: var(--color-btn-disabled);
+    pointer-events: none;
+    color: #DADADA;
+}
 </style>
