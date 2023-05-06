@@ -26,5 +26,7 @@ declare module '@vue/runtime-core' {
     SidebarNav: typeof import('./src/components/sidebar-nav.vue')['default']
     TabNav: typeof import('./src/components/primitives/tab-nav.vue')['default']
     TextInput: typeof import('./src/components/primitives/text-input.vue')['default']
+    ThumbDownIcon: typeof import('./src/components/icons/thumb-down-icon.vue')['default']
+    ThumbUpIcon: typeof import('./src/components/icons/thumb-up-icon.vue')['default']
   }
 }

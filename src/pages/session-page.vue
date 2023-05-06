@@ -4,8 +4,8 @@ const sessions = [
         date: 'Mon, 21 Jul at 08:00',
         title: 'Check bizHub 3526 printer in Prague',
         names: [
-            {name: 'Peter Davis', icon: 'person'},
-            {name: 'You', icon: 'person'},
+            { name: 'Peter Davis', icon: 'person' },
+            { name: 'You', icon: 'person' },
         ],
         active: true,
         media: 3,
@@ -13,14 +13,20 @@ const sessions = [
     {
         date: 'Mon, 21 Jul at 08:00',
         title: 'Broken bizHub 1762 in Berlin',
-        names: ['tomas.muller@company.com', 'John Anderson'],
+        names: [
+            { name: 'tomas.muller@company.com', icon: 'thumbDown' },
+            { name: 'John Anderson', icon: 'thumbUp' },
+        ],
         waiting: true,
         countdown: '1 day to start',
     },
     {
         date: 'Mon, 21 Jul at 08:00',
         title: 'Broken bizHub 1762 in Berlin',
-        names: ['Peter Davis', 'You'],
+        names: [
+            { name: 'Peter Davis', icon: 'person' },
+            { name: 'You', icon: 'person' },
+        ],
     },
     {
         date: 'Mon, 21 Jul at 08:00',
@@ -30,21 +36,30 @@ const sessions = [
     {
         date: 'Mon, 21 Jul at 08:00',
         title: 'Broken bizHub 1762 in Berlin',
-        names: ['Peter Davis', 'You'],
+        names: [
+            { name: 'Peter Davis', icon: 'person' },
+            { name: 'You', icon: 'person' },
+        ],
         disabled: true,
         media: 3,
     },
     {
         date: 'Mon, 21 Jul at 08:00',
         title: 'Broken bizHub 1762 in Berlin',
-        names: ['tomas.muller@company.com', 'John Anderson'],
+        names: [
+            { name: 'tomas.muller@company.com', icon: 'thumbDown' },
+            { name: 'John Anderson', icon: 'thumbUp' },
+        ],
         disabled: true,
         media: 2,
     },
     {
         date: 'Mon, 21 Jul at 08:00',
         title: 'Broken bizHub 1762 in Berlin',
-        names: ['Peter Davis', 'You'],
+        names: [
+            { name: 'Peter Davis', icon: 'person' },
+            { name: 'You', icon: 'person' },
+        ],
         disabled: true,
         media: 1,
     },
@@ -54,7 +69,10 @@ const sessions = [
     {
         date: 'Mon, 21 Jul at 08:00',
         title: 'Broken bizHub 1762 in Berlin',
-        names: ['Peter Davis', 'You'],
+        names: [
+            { name: 'Peter Davis', icon: 'person' },
+            { name: 'You', icon: 'person' },
+        ],
         loadingTest: true,
     },
 ]
@@ -92,7 +110,9 @@ const sessions = [
                             <div class="attendees">
                                 <template v-for="name, i in item.names" :key="i">
                                     <div class="person">
-                                        <PersonIcon v-if="name.icon === 'person'"/>
+                                        <PersonIcon v-if="name.icon === 'person'" />
+                                        <ThumbDownIcon v-if="name.icon === 'thumbDown'" />
+                                        <ThumbUpIcon v-if="name.icon === 'thumbUp'" />
                                         <div class="attendee">{{ name.name }}</div>
                                     </div>
                                 </template>
