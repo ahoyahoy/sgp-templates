@@ -1,13 +1,11 @@
 <script setup>
-import PersonIcon from '../components/icons/person-icon.vue'
-
 const sessions = [
     {
         date: 'Mon, 21 Jul at 08:00',
         title: 'Check bizHub 3526 printer in Prague',
         names: [
-            { name: 'Peter Davis', icon: 'PersonIcon' },
-            { name: 'You', icon: 'PersonIcon' },
+            {name: 'Peter Davis', icon: 'person'},
+            {name: 'You', icon: 'person'},
         ],
         active: true,
         media: 3,
@@ -94,7 +92,7 @@ const sessions = [
                             <div class="attendees">
                                 <template v-for="name, i in item.names" :key="i">
                                     <div class="person">
-                                        <component :is="name.icon" />
+                                        <PersonIcon v-if="name.icon === 'person'"/>
                                         <div class="attendee">{{ name.name }}</div>
                                     </div>
                                 </template>

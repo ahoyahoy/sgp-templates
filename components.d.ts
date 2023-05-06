@@ -24,8 +24,6 @@ declare module '@vue/runtime-core' {
     RouterView: typeof import('vue-router')['RouterView']
     SearchIcon: typeof import('./src/components/icons/search-icon.vue')['default']
     SidebarNav: typeof import('./src/components/sidebar-nav.vue')['default']
-    SkeletonLayout: typeof import('./src/components/primitives/skeleton-layout.vue')['default']
-    SkeletonTest: typeof import('./src/components/primitives/skeleton-test.vue')['default']
     TabNav: typeof import('./src/components/primitives/tab-nav.vue')['default']
     TextInput: typeof import('./src/components/primitives/text-input.vue')['default']
   }
