@@ -1,36 +1,96 @@
 <template>
-    <div class="container">
-        <ModalHeader title="Create session">
-            <template #left>
-            </template>
-            <template #right>
-                <CloseIcon class="close" />
-            </template>
-        </ModalHeader>
-        <div class="content">
-            <div class="details">
-                <FormField id="new" label="Session name" />
-                <div class="date">
-                    <SelectBox class="date-detail" id="day" :options="['Today', '7.5.2023', '8.5.2023']"
-                        label="Start date" />
-                    <SelectBox class="date-detail" id="time" :options="['8:00', '9:00', '10:00']" label="Start time" />
+    <div class="helper-containers">
+        <div class="helper-container">
+            <div class="modal-detail">
+                <ModalHeader title="Create session">
+                    <template #left>
+                    </template>
+                    <template #right>
+                        <IconButton>
+                            <CloseIcon />
+                        </IconButton>
+                    </template>
+                </ModalHeader>
+                <div class="content">
+                    <div class="details">
+                        <FormField label="Session name">
+                            <TextInput placeholder="Search" />
+                        </FormField>
+                        <BoxRow>
+                            <FormField label="Session name">
+                                <SelectBox :options="['Today', '7.5.2023', '8.5.2023']" label="Start date" />
+                            </FormField>
+                            <FormField label="Session name">
+                                <SelectBox class="date-detail" :options="['8:00', '9:00', '10:00']" label="Start time" />
+                            </FormField>
+                        </BoxRow>
+                    </div>
+                    <div class="invite">
+                        <FormField id="new" label="Invite a client">
+                            <TextInput placeholder="Type client’s name, email address or phone number" />
+                        </FormField>
+                    </div>
+                    <div class="options">
+                        <h2>Other options</h2>
+                        <CheckboxInput :options="['Invite another assistant', 'Start muted']" />
+                    </div>
                 </div>
-            </div>
-            <div class="invite">
-                <FormField id="new" label="Invite a client" />
-            </div>
-            <div class="options">
-                <h2>Other options</h2>
-                <CheckboxInput :options="['Invite another assistant', 'Start muted']" />
+                <BoxRow class="footer">
+                    <BaseButton type="outline">
+                        Cancel
+                    </BaseButton>
+                    <BaseButton>
+                        Create
+                    </BaseButton>
+                </BoxRow>
             </div>
         </div>
-        <div class="buttons">
-            <OutlineButton class="btn">
-                Cancel
-            </OutlineButton>
-            <BaseButton class="btn">
-                Create
-            </BaseButton>
+
+
+        <div class="helper-container">
+            <div class="modal-detail">
+                <ModalHeader title="Create session">
+                    <template #left>
+                    </template>
+                    <template #right>
+                        <IconButton>
+                            <CloseIcon />
+                        </IconButton>
+                    </template>
+                </ModalHeader>
+                <div class="content">
+                    <div class="details">
+                        <FormField label="Session name">
+                            <TextInput placeholder="Search" />
+                        </FormField>
+                        <BoxRow>
+                            <FormField label="Session name">
+                                <SelectBox :options="['Today', '7.5.2023', '8.5.2023']" label="Start date" />
+                            </FormField>
+                            <FormField label="Session name">
+                                <SelectBox class="date-detail" :options="['8:00', '9:00', '10:00']" label="Start time" />
+                            </FormField>
+                        </BoxRow>
+                    </div>
+                    <div class="invite">
+                        <FormField id="new" label="Invite a client">
+                            <TextInput placeholder="Type client’s name, email address or phone number" />
+                        </FormField>
+                    </div>
+                    <div class="options">
+                        <h2>Other options</h2>
+                        <CheckboxInput :options="['Invite another assistant', 'Start muted']" />
+                    </div>
+                </div>
+                <BoxRow class="footer">
+                    <BaseButton type="outline">
+                        Cancel
+                    </BaseButton>
+                    <BaseButton>
+                        Create
+                    </BaseButton>
+                </BoxRow>
+            </div>
         </div>
     </div>
 </template>
@@ -42,14 +102,31 @@
     font-size: var(--size-text-medium);
 }
 
-.container {
+.helper-containers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #F5F5F5;
+    gap: 45px;
+
+}
+.helper-container {
+    width: 465px;
+    height: 762px;
+    flex: 0 0 465px;
     display: flex;
     flex-direction: column;
-    width: 465px;
+}
+
+.modal-detail {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
     border-left: 1px solid var(--color-grey-lighten-4);
-    padding: 0 var(--spacing-4);
-    height: 762px;
     min-height: 450px;
+    background: white;
 }
 
 .close {
@@ -65,12 +142,9 @@
 .content {
     flex: 1;
     overflow-y: auto;
+    padding: 0 var(--spacing-4);
 }
 
-.date {
-    display: flex;
-    gap: var(--spacing-3);
-}
 
 .invite {
     padding: var(--spacing-5) 0;
@@ -82,27 +156,19 @@
     gap: var(--spacing-3);
 }
 
-.date-detail {
-    flex-basis: 50%;
-}
-
 h2 {
     font-size: var(--size-text-small);
     font-weight: var(--font-weight-semibold);
     text-transform: uppercase;
 }
 
-.buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.footer {
     gap: var(--spacing-3);
     flex: 0 0 84px;
     height: 84px;
+    align-items: center;
     border-top: 1px solid var(--color-divider);
+    padding: 0 var(--spacing-4);
 }
 
-.btn {
-    flex-basis: 50%;
-}
 </style>

@@ -1,20 +1,28 @@
 <script>
 export default {
-  props: {
-    block: {
-      type: Boolean,
-      default: false
+    props: {
+        block: {
+            type: Boolean,
+            default: false,
+        },
+        disable: {
+            type: Boolean,
+            default: false,
+        },
+        kind: {
+            type: String,
+            default: 'primary',
+        },
+        type: {
+            type: String,
+            default: 'default',
+        },
     },
-    disable: {
-      type: Boolean,
-      default: false
-    }
-  }
 }
 </script>
 
 <template>
-  <button :class="{ 'btn': true, 'btn-block': block, 'btn-disable': disable }">
+  <button :class="['btn', `kind-${kind}`, `type-${type}`,  {'btn-block': block, 'btn-disabled': disable }]">
     <slot></slot>
   </button>
 </template>
@@ -31,12 +39,43 @@ export default {
   padding: 0 var(--spacing-2);
   border-radius: var(--border-radius-3);
   border: none;
-  background-color: var(--color-btn-background);
-  color: var(--color-text-white);
   cursor: pointer;
   transition: background-color 0.2s ease;
   transition: border 0.2s ease;
   transition: color 0.2s ease;
+}
+
+.type-default.kind-primary {
+  background-color: var(--color-btn-background);
+  color: var(--color-text-white);
+}
+
+.type-default.kind-secondary {
+  background-color: pink;
+  color: blue;
+}
+
+.type-outline.kind-primary {
+  border: 1px solid var(--color-btn-outline);
+  background-color: var(--color-white-base);
+  color: var(--color-text-secondary);
+}
+
+.type-ghost.kind-primary {
+  background-color: transparent;
+  color: var(--color-text-secondary);
+}
+
+
+.type-default.kind-primary:hover {
+  background-color: var(--color-btn-background-hover);
+}
+
+.type-default.type-outline:hover {
+}
+
+.type-ghost.kind-primary:hover {
+  background-color: var(--color-purple-lighten-4);
 }
 
 .btn>>>svg {
@@ -46,15 +85,11 @@ export default {
   height: 16px;
 }
 
-.btn:hover {
-  background-color: var(--color-btn-background-hover);
-}
-
 .btn-block {
   width: 100%;
 }
 
-.btn-disable {
+.btn-disabled {
   background-color: var(--color-btn-disabled);
   pointer-events: none;
   color: var(--color-text-disabled);

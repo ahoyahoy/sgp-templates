@@ -21,6 +21,7 @@ defineProps(['title'])
     align-items: center;
     flex: 0 0 73px;
     height: 73px;
+    padding: 0 var(--spacing-4);
     color: var(--color-text-primary);
 }
 

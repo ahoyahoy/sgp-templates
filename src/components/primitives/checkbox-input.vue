@@ -28,6 +28,7 @@ label {
     display: flex;
     align-items: center;
     gap: var(--spacing-2);
+    user-select: none;
 }
 
 input[type="checkbox"] {

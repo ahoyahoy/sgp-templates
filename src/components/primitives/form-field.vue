@@ -1,22 +1,11 @@
-<script>
-export default {
-    props: {
-        id: {
-            type: String,
-            required: true
-        },
-        label: {
-            type: String,
-            default: ''
-        },
-    }
-}
+<script setup>
+defineProps(['label'])
 </script>
 
 <template>
     <div class="form-field">
-        <label :for="id">{{ label }}</label>
-        <TextInput :id="id" />
+        <label>{{ label }}</label>
+        <slot></slot>
     </div>
 </template>
 
@@ -27,7 +16,14 @@ export default {
     gap: 4px;
 }
 
+.form-field >>> label,
+.form-field >>> select,
+.form-field >>> input {
+    width: 100%;
+}
+
 label {
     font-weight: var(--font-weight-semibold);
 }
+
 </style>

@@ -1,5 +1,5 @@
 <script setup>
-import { useSlots } from 'vue'
+import {useSlots} from 'vue'
 
 const slotIconExists = useSlots().icon !== undefined
 const slotRightIconExists = useSlots()['right-icon'] !== undefined
@@ -9,11 +9,11 @@ defineProps(['placeholder'])
 
 <template>
   <div class="text-input" :class="{ 'with-icon': slotIconExists, 'with-right-icon': slotRightIconExists }">
-    <div class="left">
+    <div class="left" v-if="slotIconExists">
       <slot name="icon"></slot>
     </div>
     <input type="text" :placeholder="placeholder">
-    <div class="right">
+    <div class="right" v-if="slotRightIconExists">
       <slot name="right-icon"></slot>
     </div>
   </div>

@@ -1,9 +1,16 @@
-
+<script setup>
+defineProps({
+    type: {
+        type: String,
+        default: 'ghost',
+    },
+})
+</script>
 
 <template >
-    <button class="btn primary">
+    <BaseButton class="btn" :type="type">
         <slot></slot>
-    </button>
+    </BaseButton>
 </template>
 
 
@@ -14,12 +21,8 @@
     justify-content: center;
     width: 36px;
     height: 36px;
-    border-radius: var(--border-radius-3);
-    cursor: pointer;
-    border: none;
-    background: var(--color-btn-background);
-    color: var(--color-white-base);
-    transition: background-color 0.2s ease;
+    flex: 0 0 36px;
+    padding: 0;
 }
 
 .btn>>>svg {
@@ -29,13 +32,4 @@
     height: 20px;
 }
 
-.btn:hover {
-    background-color: var(--color-btn-background-hover);
-}
-
-.item.waiting .btn.primary {
-    background-color: var(--color-btn-disabled);
-    pointer-events: none;
-    color: var(--color-text-disabled);
-}
 </style>
