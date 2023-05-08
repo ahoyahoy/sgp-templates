@@ -64,5 +64,9 @@ input {
 
 input::placeholder {
   color: var(--color-input-border);
+  transition: color 0.2s ease;
+}
+input:focus::placeholder {
+  color: var(--color-text-primary);
 }
 </style>
