@@ -61,11 +61,13 @@
     --color-btn-background-hover: var(--color-purple-darken-1);
     --color-btn-outline: var(--color-purple-base);
     --color-btn-disabled: var(--color-grey-lighten-4);
+    --color-btn-info: var(--color-grey-lighten-2);
   
     /* Other colors */
     --color-initials-bg: var(--color-purple-lighten-4);
     --color-skeleton-bg: var(--color-purple-lighten-4);
     --color-input-border: var(--color-grey-lighten-3);
+    --color-input-box-bg: var(--color-grey-lighten-5);
     --color-divider: var(--color-purple-lighten-4);
   
     /* Text colors */
@@ -104,6 +106,7 @@
     --border-radius-1: 2px;
     --border-radius-2: 3px;
     --border-radius-3: 4px;
+    --border-radius-4: 5px;
   }
 
   * {

@@ -16,14 +16,13 @@ defineProps(['label'])
     gap: 4px;
 }
 
-.form-field >>> label,
-.form-field >>> select,
-.form-field >>> input {
+.form-field>>>label,
+.form-field>>>select,
+.form-field>>>input[type="text"] {
     width: 100%;
 }
 
 label {
     font-weight: var(--font-weight-semibold);
 }
-
 </style>

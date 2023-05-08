@@ -1,28 +1,28 @@
 <script>
 export default {
-    props: {
-        block: {
-            type: Boolean,
-            default: false,
-        },
-        disable: {
-            type: Boolean,
-            default: false,
-        },
-        kind: {
-            type: String,
-            default: 'primary',
-        },
-        type: {
-            type: String,
-            default: 'default',
-        },
+  props: {
+    block: {
+      type: Boolean,
+      default: false,
     },
+    disable: {
+      type: Boolean,
+      default: false,
+    },
+    kind: {
+      type: String,
+      default: 'primary',
+    },
+    type: {
+      type: String,
+      default: 'default',
+    },
+  },
 }
 </script>
 
 <template>
-  <button :class="['btn', `kind-${kind}`, `type-${type}`,  {'btn-block': block, 'btn-disabled': disable }]">
+  <button :class="['btn', `kind-${kind}`, `type-${type}`, { 'btn-block': block, 'btn-disabled': disable }]">
     <slot></slot>
   </button>
 </template>
@@ -66,6 +66,11 @@ export default {
   color: var(--color-text-secondary);
 }
 
+.type-ghost.kind-primary>>>svg {
+  width: 24px;
+  height: 24px;
+}
+
 .type-ghost.kind-mono {
   background-color: transparent;
   color: var(--color-text-primary);
@@ -75,8 +80,7 @@ export default {
   background-color: var(--color-btn-background-hover);
 }
 
-.type-default.type-outline:hover {
-}
+.type-default.type-outline:hover {}
 
 .type-ghost.kind-primary:hover {
   background-color: var(--color-purple-lighten-4);
