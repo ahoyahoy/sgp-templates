@@ -194,4 +194,12 @@ import PersonIcon from '../icons/person-icon.vue'
 .hover-test:hover>div:last-child {
     display: none
 }
+
+.no-show {
+    display: none !important;
+}
+
+.hidden {
+    visibility: hidden;
+}
 </style>

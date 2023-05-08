@@ -1,14 +1,29 @@
+<script>
+export default {
+  props: {
+    block: {
+      type: Boolean,
+      default: false
+    },
+    disable: {
+      type: Boolean,
+      default: false
+    }
+  }
+}
+</script>
+
 <template>
-  <button class="btn">
+  <button :class="{ 'btn': true, 'btn-block': block, 'btn-disable': disable }">
     <slot></slot>
   </button>
 </template>
-
 
 <style scoped>
 .btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--spacing-2);
   font-size: var(--size-text-medium);
   font-weight: var(--font-weight-bold);
@@ -33,5 +48,15 @@
 
 .btn:hover {
   background-color: var(--color-btn-background-hover);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-disable {
+  background-color: var(--color-btn-disabled);
+  pointer-events: none;
+  color: var(--color-text-disabled);
 }
 </style>

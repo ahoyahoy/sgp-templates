@@ -36,6 +36,6 @@
 .item.waiting .btn.primary {
     background-color: var(--color-btn-disabled);
     pointer-events: none;
-    color: #DADADA;
+    color: var(--color-text-disabled);
 }
 </style>

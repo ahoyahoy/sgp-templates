@@ -7,6 +7,7 @@
         <h1>AireLink</h1>
         <nav>
             <router-link to="/sessions">Sessions</router-link>
+            <router-link to="/create-session">Create session</router-link>
         </nav>
     </div>
 </template>
@@ -24,7 +25,8 @@
     font-size: var(--size-text-medium);
 }
 
-.nav {
+.nav,
+nav {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-2);
