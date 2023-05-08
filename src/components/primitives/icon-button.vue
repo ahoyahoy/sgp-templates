@@ -2,13 +2,17 @@
 defineProps({
     type: {
         type: String,
-        default: 'ghost',
+        default: 'default',
+    },
+    kind: {
+        type: String,
+        default: 'primary',
     },
 })
 </script>
 
 <template >
-    <BaseButton class="btn" :type="type">
+    <BaseButton class="btn" :type="type" :kind="kind">
         <slot></slot>
     </BaseButton>
 </template>

@@ -6,7 +6,7 @@
                     <template #left>
                     </template>
                     <template #right>
-                        <IconButton>
+                        <IconButton kind="mono" type="ghost">
                             <CloseIcon />
                         </IconButton>
                     </template>
@@ -53,7 +53,7 @@
                     <template #left>
                     </template>
                     <template #right>
-                        <IconButton>
+                        <IconButton kind="mono" type="ghost">
                             <CloseIcon />
                         </IconButton>
                     </template>

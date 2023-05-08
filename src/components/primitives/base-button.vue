@@ -66,6 +66,10 @@ export default {
   color: var(--color-text-secondary);
 }
 
+.type-ghost.kind-mono {
+  background-color: transparent;
+  color: var(--color-text-primary);
+}
 
 .type-default.kind-primary:hover {
   background-color: var(--color-btn-background-hover);
@@ -76,6 +80,10 @@ export default {
 
 .type-ghost.kind-primary:hover {
   background-color: var(--color-purple-lighten-4);
+}
+
+.type-ghost.kind-mono:hover {
+  background-color: var(--color-grey-lighten-4);
 }
 
 .btn>>>svg {

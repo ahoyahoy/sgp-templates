@@ -1,21 +1,19 @@
+<script setup>
+defineProps(['options'])
+
+const rndId = 'id-' + Math.random().toString(36).substring(7)
+</script>
+
+
 <template>
     <div class="checkbox-container">
-        <label v-for="option, i in options" :key="i" :for="'checkbox-' + i">
-            <input :id="'checkbox-' + i" type="checkbox" :value="option">
+        <label v-for="option, i in options" :key="i" :for="`${rndId}-${i}`">
+            <input :id="`${rndId}-${i}`" type="checkbox" :value="option">
             {{ option }}
         </label>
     </div>
 </template>
 
-<script>
-export default {
-    props: {
-        options: {
-            type: Array,
-        },
-    },
-}
-</script>
 
 <style scoped>
 .checkbox-container {

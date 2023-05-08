@@ -140,10 +140,10 @@ const sessions = [
                             </p>
                         </div>
                         <div class="buttons">
-                            <IconButton :style="{ visibility: item.disabled ? 'hidden' : 'visible', }" type="default">
+                            <IconButton :style="{ visibility: item.disabled ? 'hidden' : 'visible', }">
                                 <PhoneIcon />
                             </IconButton>
-                            <IconButton class="more-options">
+                            <IconButton class="more-options" type="ghost">
                                 <DotsIcon />
                             </IconButton>
                         </div>
