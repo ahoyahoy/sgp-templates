@@ -76,6 +76,7 @@
     --color-text-secondary: var(--color-purple-base);
     --color-text-white: var(--color-white-base);
     --color-text-disabled: var(--color-grey-lighten-2);
+    --color-text-success: var(--color-green-base);
   
     --size-h1: 24px;
     --size-h2: 20px;

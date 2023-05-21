@@ -138,6 +138,11 @@
                     </div>
                     <div class="invite">
                         <FormField label="Invite a client">
+                            <template #comment>
+                                <BaseText kind="secondary-bold">
+                                    New invitation
+                                </BaseText>
+                            </template>
                             <div class="contact">
                                 <div class="email">
                                     <div class="contact-title">
@@ -153,7 +158,7 @@
                                         <TextInput placeholder="tomas.anderson@gmail.com" />
                                     </FormField>
                                     <div class="info-box">
-                                        <span class="info-icon">i</span>
+                                        <InfoIcon />
                                         <p>The new contact will be saved in your contacts.</p>
                                     </div>
                                 </div>
@@ -169,10 +174,264 @@
                     <BaseButton type="outline">
                         Cancel
                     </BaseButton>
-                    <BaseButton disable>
+                    <BaseButton type="none" disable>
                         Create
                     </BaseButton>
                 </BoxRow>
+            </div>
+        </div>
+
+
+        <div class="helper-container">
+            <div class="modal-detail">
+                <ModalHeader title="Create session">
+                    <template #left>
+                    </template>
+                    <template #right>
+                        <IconButton kind="mono" type="ghost">
+                            <CloseIcon />
+                        </IconButton>
+                    </template>
+                </ModalHeader>
+                <div class="content">
+                    <div class="details">
+                        <FormField label="Session name">
+                            <TextInput placeholder="My new session" />
+                        </FormField>
+                        <BoxRow>
+                            <FormField label="Session name">
+                                <SelectBox :options="['Today', '7.5.2023', '8.5.2023']" label="Start date" />
+                            </FormField>
+                            <FormField label="Session name">
+                                <SelectBox class="date-detail" :options="['8:00', '9:00', '10:00']" label="Start time" />
+                            </FormField>
+                        </BoxRow>
+                    </div>
+                    <div class="invite">
+                        <FormField label="Invite a client">
+                            <div class="contact">
+                                <div class="email">
+                                    <TextBox>
+                                        <template #left-icon>
+                                            <InitialsIcon>T</InitialsIcon>
+                                        </template>
+                                        <template #main-text>
+                                            <BaseText kind="primary-bold">
+                                                Tomas Anderson
+                                            </BaseText>
+                                        </template>
+                                        <template #right-icon>
+                                            <IconButton kind="mono" type="ghost">
+                                                <CloseIcon />
+                                            </IconButton>
+                                        </template>
+                                    </TextBox>
+                                    <TextBox>
+                                        <template #left-icon>
+                                            <div class="center">
+                                                <MailIcon />
+                                            </div>
+                                        </template>
+                                        <template #main-text>
+                                            <BaseText>
+                                                tomas.anderson@gmail.com
+                                            </BaseText>
+                                        </template>
+                                        <template #right-icon>
+                                            <IconButton kind="purple" type="ghost">
+                                                <NotificationIcon />
+                                            </IconButton>
+                                        </template>
+                                    </TextBox>
+                                    <TextBox>
+                                        <template #left-icon>
+                                            <div class="center">
+                                                <MobileIcon />
+                                            </div>
+                                        </template>
+                                        <template #main-text>
+                                            <BaseText>
+                                                +420 603 244 386
+                                            </BaseText>
+                                        </template>
+                                        <template #right-icon>
+                                            <IconButton kind="red" type="ghost">
+                                                <NotificationoffIcon />
+                                            </IconButton>
+                                        </template>
+                                    </TextBox>
+                                </div>
+                            </div>
+                        </FormField>
+                    </div>
+                    <div class="options">
+                        <h2>Other options</h2>
+                        <CheckboxInput :options="['Invite another assistant', 'Start muted']" />
+                    </div>
+                </div>
+                <BoxRow class="footer">
+                    <BaseButton type="outline">
+                        Cancel
+                    </BaseButton>
+                    <BaseButton>
+                        Create
+                    </BaseButton>
+                </BoxRow>
+            </div>
+        </div>
+
+
+        <div class="helper-container">
+            <div class="modal-detail">
+                <div class="new-session-head">
+                    <div class="new-session-title">
+                        <TextBox>
+                            <template #main-text>
+                                <BaseText kind="primary-light-1">
+                                    Mon, 21 Jul at 08:00
+                                </BaseText>
+                            </template>
+                            <template #right-icon>
+                                <IconButton kind="mono" type="ghost">
+                                    <DotsIcon />
+                                </IconButton>
+                                <IconButton kind="mono" type="ghost">
+                                    <CloseIcon />
+                                </IconButton>
+                            </template>
+                        </TextBox>
+                        <div>
+                            <BaseText kind="h2">
+                                My new session
+                            </BaseText>
+                            <BaseText kind="primary-light-2">
+                                158-871-171-165
+                            </BaseText>
+                        </div>
+                    </div>
+                    <BaseButton block>
+                        Connect
+                    </BaseButton>
+                </div>
+                <TabNav :tabs="['Members', 'Media Library', 'Feedback']" :activeTab="0" />
+                <div class="content">
+                    <div class="new-session">
+                        <div class="client">
+                            <h2>Client</h2>
+                            <div class="contact">
+                                <div class="email">
+                                    <TextBox>
+                                        <template #left-icon>
+                                            <InitialsIcon>T</InitialsIcon>
+                                        </template>
+                                        <template #main-text>
+                                            <BaseText kind="primary-bold">
+                                                Tomas Anderson
+                                            </BaseText>
+                                        </template>
+                                        <template #secondary-text>
+                                            <BaseText kind="small-green">
+                                                Notifications sent to email and phone
+                                            </BaseText>
+                                        </template>
+                                        <template #right-icon>
+                                            <IconButton kind="mono" type="ghost">
+                                                <DotsIcon />
+                                            </IconButton>
+                                        </template>
+                                    </TextBox>
+                                    <div class="divider"></div>
+                                    <TextBox>
+                                        <template #left-icon>
+                                            <div class="center">
+                                                <LinkIcon />
+                                            </div>
+                                        </template>
+                                        <template #main-text>
+                                            <BaseText>
+                                                Show connection link
+                                            </BaseText>
+                                        </template>
+                                        <template #right-icon>
+                                            <IconButton kind="mono" type="ghost">
+                                                <ArrowIcon />
+                                            </IconButton>
+                                        </template>
+                                    </TextBox>
+                                    <TextBox>
+                                        <template #left-icon>
+                                            <div class="center">
+                                                <QrIcon />
+                                            </div>
+                                        </template>
+                                        <template #main-text>
+                                            <BaseText>
+                                                Show connection QR code
+                                            </BaseText>
+                                        </template>
+                                        <template #right-icon>
+                                            <IconButton kind="mono" type="ghost">
+                                                <ArrowIcon />
+                                            </IconButton>
+                                        </template>
+                                    </TextBox>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="assistant">
+                            <h2>Assistant</h2>
+                            <div class="contact">
+                                <div class="email">
+                                    <TextBox>
+                                        <template #left-icon>
+                                            <InitialsIcon>J</InitialsIcon>
+                                        </template>
+                                        <template #main-text>
+                                            <BaseText kind="primary-bold">
+                                                John Anderson (You)
+                                            </BaseText>
+                                        </template>
+                                    </TextBox>
+                                    <div class="divider"></div>
+                                    <TextBox>
+                                        <template #left-icon>
+                                            <div class="center">
+                                                <LinkIcon />
+                                            </div>
+                                        </template>
+                                        <template #main-text>
+                                            <BaseText>
+                                                Show connection link
+                                            </BaseText>
+                                        </template>
+                                        <template #right-icon>
+                                            <IconButton kind="mono" type="ghost">
+                                                <ArrowIcon />
+                                            </IconButton>
+                                        </template>
+                                    </TextBox>
+                                    <TextBox>
+                                        <template #left-icon>
+                                            <div class="center">
+                                                <QrIcon />
+                                            </div>
+                                        </template>
+                                        <template #main-text>
+                                            <BaseText>
+                                                Show connection QR code
+                                            </BaseText>
+                                        </template>
+                                        <template #right-icon>
+                                            <IconButton kind="mono" type="ghost">
+                                                <ArrowIcon />
+                                            </IconButton>
+                                        </template>
+                                    </TextBox>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -188,10 +447,12 @@
 .helper-containers {
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     height: 100vh;
+    overflow: scroll;
     background-color: #F5F5F5;
     gap: 45px;
+    padding: 0 2em;
 
 }
 
@@ -245,6 +506,7 @@ h2 {
     font-size: var(--size-text-small);
     font-weight: var(--font-weight-semibold);
     text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .contact {
@@ -286,16 +548,68 @@ h2 {
     color: var(--color-btn-info);
 }
 
-.info-icon {
-    font-size: 10px;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    border: 1px solid var(--color-btn-info);
+.info-box p {
+    font-size: var(--size-text-small);
+}
+
+.center {
+    width: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-btn-info);
+}
+
+
+.icon-center {
+    margin: 0 9px;
+}
+
+.icon-rignt-center {
+    margin-right: 6px;
+}
+
+.divider {
+    width: 381px;
+    position: relative;
+}
+
+.divider::before {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 381px;
+    border-bottom: 1px solid var(--color-divider);
+    position: absolute;
+    top: 50%;
+}
+
+.client,
+.assistant {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.new-session-head {
+    height: 206px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-5);
+    padding: 0 var(--spacing-4);
+    padding-top: var(--spacing-3);
+}
+
+.new-session-title {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+}
+
+.new-session {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-5);
+    padding-top: var(--spacing-4);
 }
 
 .footer {

@@ -76,6 +76,16 @@ export default {
   color: var(--color-text-primary);
 }
 
+.type-ghost.kind-red {
+  background-color: transparent;
+  color: var(--color-red-base);
+}
+
+.type-ghost.kind-purple {
+  background-color: transparent;
+  color: var(--color-purple-base);
+}
+
 .type-default.kind-primary:hover {
   background-color: var(--color-btn-background-hover);
 }
@@ -86,7 +96,9 @@ export default {
   background-color: var(--color-purple-lighten-4);
 }
 
-.type-ghost.kind-mono:hover {
+.type-ghost.kind-mono:hover,
+.type-ghost.kind-red:hover,
+.type-ghost.kind-purple:hover {
   background-color: var(--color-grey-lighten-4);
 }
 
