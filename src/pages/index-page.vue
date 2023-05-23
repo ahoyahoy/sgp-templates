@@ -8,6 +8,7 @@
         <nav>
             <router-link to="/sessions">Sessions</router-link>
             <router-link to="/create-session">Create session</router-link>
+            <router-link to="/knowledge-base">Knowledge base</router-link>
         </nav>
     </div>
 </template>

@@ -4,11 +4,11 @@ import {useSlots} from 'vue'
 const slotIconExists = useSlots().icon !== undefined
 const slotRightIconExists = useSlots()['right-icon'] !== undefined
 
-defineProps(['placeholder'])
+defineProps(['placeholder', 'kind'])
 </script>
 
 <template>
-  <div class="text-input" :class="{ 'with-icon': slotIconExists, 'with-right-icon': slotRightIconExists }">
+  <div class="text-input" :class="[`kind-${kind}`, { 'with-icon': slotIconExists, 'with-right-icon': slotRightIconExists }]">
     <div class="left" v-if="slotIconExists">
       <slot name="icon"></slot>
     </div>
@@ -68,5 +68,15 @@ input::placeholder {
 }
 input:focus::placeholder {
   color: var(--color-text-primary);
+}
+
+.kind-search input {
+  border: none;
+  border-bottom: 1px solid var(--color-border-search-input);
+  border-radius: 0;
+  width: 100%;
+}
+.kind-search .left >>> svg {
+  fill: var(--color-purple-base);
 }
 </style>

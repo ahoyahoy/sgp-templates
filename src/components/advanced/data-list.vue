@@ -1,11 +1,11 @@
 <script setup>
-defineProps(['data'])
+defineProps(['data', 'kind'])
 </script>
 
 <template>
-    <div class="data-list">
+    <div :class="['data-list', `kind-${kind}`]">
         <template v-for="item, i in data" :key="i">
-            <div v-if="!item.loadingAll && !item.loadingTest" class="item"
+            <div v-if="!item.loadingAll && !item.loadingTest && !item.searchLoading" class="item"
                 :class="{ disabled: item.disabled, waiting: item.waiting, active: item.active }">
                 <div class="left">
                     <slot name="left" :item="item"></slot>
@@ -16,6 +16,9 @@ defineProps(['data'])
             </div>
             <div v-if="item.loadingAll">
                 <loadingAll />
+            </div>
+            <div v-if="item.searchLoading">
+                <SearchLoading />
             </div>
             <div v-if="item.loadingTest">
                 <loadingTest />
@@ -65,5 +68,34 @@ defineProps(['data'])
     flex-direction: column;
     flex: 1;
     min-width: 0;
+}
+
+.kind-search.data-list {
+    padding: 0;
+}
+.kind-search .right {
+    flex-direction: column;
+    gap: var(--spacing-0);
+}
+.kind-search .left {
+    flex: none;
+}
+.kind-search .left >>> svg {
+    fill: var(--color-grey-lighten-2);
+}
+.kind-search .item {
+    padding: 0 var(--spacing-2);
+    gap: var(--spacing-3);
+    border: none;
+    height: 128px;
+    border-radius: var(--border-radius-3);
+}
+
+.kind-search .item.active {
+    background-color: var(--color-list-search-row-active);
+}
+
+.kind-search .item:hover {
+    background-color: var(--color-list-search-row-hover);
 }
 </style>

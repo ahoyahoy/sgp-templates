@@ -54,4 +54,15 @@ export default {
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-hight-3);
 }
+
+.kind-search-result {
+    display: flex;
+    align-items: center;
+    font-size: var(--size-text-small);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-hight-1);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    height: 64px;
+}
 </style>
