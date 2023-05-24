@@ -1,31 +1,48 @@
 <script setup>
 const search = [
     {
+        icon: 'school',
         title: 'How to fix the internet connection for printers bizHub 3526',
         topic: 'Topic',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
+        icon: 'school',
         title: 'How to fix the internet connection for printers bizHub 3526',
         topic: 'Topic',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
         active: true,
     },
     {
+        icon: 'school',
         title: 'How to fix the internet connection for printers bizHub 3526',
         topic: 'Topic',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
+        icon: 'school',
         title: 'How to fix the internet connection for printers bizHub 3526',
         topic: 'Topic',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
     },
     {
+        icon: 'schedule',
         title: 'How to fix the internet connection for printers bizHub 3526',
     },
     {
+        icon: 'schedule',
         title: 'How to fix the internet connection for printers bizHub 3526',
+    },
+    {
+        icon: 'schedule',
+        title: 'How to fix the internet connection for printers bizHub 3526',
+    },
+    {
+        icon: 'schedule',
+        title: 'How to fix the internet connection for printers bizHub 3526',
+    },
+    {
+        searchLoading: true,
     },
     {
         searchLoading: true,
@@ -39,21 +56,25 @@ const search = [
                 <template #icon>
                     <SearchIcon />
                 </template>
+                <template #right-icon>
+                    <CloseIcon />
+                </template>
             </TextInput>
             <BaseText kind="search-result">
                 4 results
             </BaseText>
            <DataList :data="search" kind="search">
                <template #left="{ item }">
-                   <SchoolIcon class="more-options" type="ghost"  :style="{ visibility: item.disabled ? 'hidden' : 'visible', }" />
+                   <SchoolIcon v-if="item.icon === 'school'" class="more-options" type="ghost"  :style="{ visibility: item.disabled ? 'hidden' : 'visible', }"/>
+                   <ScheduleIcon v-if="item.icon === 'schedule'" class="more-options" type="ghost"  :style="{ visibility: item.disabled ? 'hidden' : 'visible', }"/>
                </template>
                <template
                 #right="{ item }">
-                   <div class="title">{{ item.title }}</div>
-                   <div class="search-content">
-                       <div class="topic">{{ item.topic }}</div>
-                       <div class="text">{{ item.text }}</div>
-                   </div>
+                    <div class="title">{{ item.title }}</div>
+                    <div v-if="item.topic || item.text" class="search-content">
+                        <div class="topic">{{ item.topic }}</div>
+                        <div class="text">{{ item.text }}</div>
+                    </div>
                </template>
            </DataList>
        </div>

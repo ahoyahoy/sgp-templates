@@ -79,4 +79,13 @@ input:focus::placeholder {
 .kind-search .left >>> svg {
   fill: var(--color-purple-base);
 }
+.kind-search .right {
+    top: 5px;
+    right: 7px;
+    width: 24px;
+    height: 24px;
+}
+.kind-search .right >>> svg {
+    fill: var(--color-grey-base);
+}
 </style>

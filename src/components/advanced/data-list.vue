@@ -84,10 +84,11 @@ defineProps(['data', 'kind'])
     fill: var(--color-grey-lighten-2);
 }
 .kind-search .item {
-    padding: 0 var(--spacing-2);
+    align-items: stretch;
+    padding: var(--spacing-1) var(--spacing-2);
     gap: var(--spacing-3);
     border: none;
-    height: 128px;
+    height: auto;
     border-radius: var(--border-radius-3);
 }
 

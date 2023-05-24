@@ -15,10 +15,10 @@
 <style scoped>
 .skeleton {
     display: flex;
-    align-items: center;
-    height: 96px;
+    align-items: stretch;
     gap: var(--spacing-3);
-    padding: 0 var(--spacing-2);
+    padding: var(--spacing-2);
+    padding-right: 0;
     pointer-events: none;
     transition: background-color 0.2s ease;
 }

@@ -41,6 +41,7 @@ declare module '@vue/runtime-core' {
     SearchIcon: typeof import('./src/components/icons/search-icon.vue')['default']
     SearchLoading: typeof import('./src/components/loading/search-loading.vue')['default']
     SelectBox: typeof import('./src/components/primitives/select-box.vue')['default']
+    ScheduleIcon: typeof import('./src/components/icons/schedule-icon.vue')['default']
     SchoolIcon: typeof import('./src/components/icons/school-icon.vue')['default']
     SidebarNav: typeof import('./src/components/sidebar-nav.vue')['default']
     TabNav: typeof import('./src/components/primitives/tab-nav.vue')['default']
