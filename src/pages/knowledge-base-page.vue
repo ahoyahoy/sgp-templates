@@ -1,125 +1,96 @@
-<script setup>
-const search = [
-    {
-        icon: 'school',
-        title: 'How to fix the internet connection for printers bizHub 3526',
-        topic: 'Topic',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-    },
-    {
-        icon: 'school',
-        title: 'How to fix the internet connection for printers bizHub 3526',
-        topic: 'Topic',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-        active: true,
-    },
-    {
-        icon: 'school',
-        title: 'How to fix the internet connection for printers bizHub 3526',
-        topic: 'Topic',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-    },
-    {
-        icon: 'school',
-        title: 'How to fix the internet connection for printers bizHub 3526',
-        topic: 'Topic',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-    },
-    {
-        icon: 'schedule',
-        title: 'How to fix the internet connection for printers bizHub 3526',
-    },
-    {
-        icon: 'schedule',
-        title: 'How to fix the internet connection for printers bizHub 3526',
-    },
-    {
-        icon: 'schedule',
-        title: 'How to fix the internet connection for printers bizHub 3526',
-    },
-    {
-        icon: 'schedule',
-        title: 'How to fix the internet connection for printers bizHub 3526',
-    },
-    {
-        searchLoading: true,
-    },
-    {
-        searchLoading: true,
-    },
-]
-</script>
- <template>
-    <div class="helper-container">
-        <div class="search-box">
-            <TextInput placeholder="Search in Knowledge base" kind="search">
-                <template #icon>
-                    <SearchIcon />
-                </template>
-                <template #right-icon>
-                    <CloseIcon />
-                </template>
-            </TextInput>
-            <BaseText kind="search-result">
-                4 results
+
+<template>
+    <div class="app_container desktop">
+        <SidebarNav />
+
+        <div class="search-menu">
+            <BaseText kind="h1">
+                Knowledge base
             </BaseText>
-           <DataList :data="search" kind="search">
-               <template #left="{ item }">
-                   <SchoolIcon v-if="item.icon === 'school'" class="more-options" type="ghost"  :style="{ visibility: item.disabled ? 'hidden' : 'visible', }"/>
-                   <ScheduleIcon v-if="item.icon === 'schedule'" class="more-options" type="ghost"  :style="{ visibility: item.disabled ? 'hidden' : 'visible', }"/>
-               </template>
-               <template
-                #right="{ item }">
-                    <div class="title">{{ item.title }}</div>
-                    <div v-if="item.topic || item.text" class="search-content">
-                        <div class="topic">{{ item.topic }}</div>
-                        <div class="text">{{ item.text }}</div>
-                    </div>
-               </template>
-           </DataList>
-       </div>
+            <div class="menu">
+                <TextInput placeholder="Search in Knowledge base" kind="sized">
+                    <template #icon>
+                        <SearchIcon />
+                    </template>
+                </TextInput>
+                <div class="buttons-box">
+                    <BaseButton type="ghost" kind="mono-left">
+                        <PhoneIcon />
+                        Sessions
+                    </BaseButton>
+                    <BaseButton type="ghost" kind="mono-left">
+                        <MailIcon />
+                        Sessions
+                    </BaseButton>
+                </div>
+            </div>
+            <div class="divider"></div>
+        </div>
+
     </div>
- </template>
+</template>
 
 <style scoped>
-    * {
-        box-sizing: border-box;
-        font-family: 'Roboto', sans-serif;
-        font-size: var(--size-text-medium);
-    }
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: var(--size-text-medium);
+}
 
-    .helper-container {
-        display: flex;
-        justify-content: center;
-        padding: 3em 0;
-        overflow: scroll;
-        background-color: #F5F5F5;
-    }
+.app_container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    font-size: var(--size-text-medium);
+}
 
-    .search-box {
-        width: 811px;
-        background: var(--color-white-base);
-        border-radius: var(--border-radius-5);
-        padding: var(--spacing-5);
-    }
+.app_container.desktop {
+    min-width: 1024px;
+    min-height: 500px;
+}
 
-    .search-content {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-1);
-    }
+.search-menu {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 317px;
+    height: 100%;
+}
 
-    .title {
-        font-size: var(--size-h4);
-        line-height: var(--line-hight-2);
-        font-weight: var(--font-weight-semibold);
-    }
+.kind-h1 {
+    display: flex;
+    align-items: center;
+    padding: 0 var(--spacing-5);
+    flex: 0 0 96px;
+    height: 96px;
+}
 
-    .topic,
-    .text {
-        font-size: var(--size-text-medium);
-        color: var(--color-text-primary-2);
-        line-height: var(--line-hight-2);
-    }
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+    padding: 0 var(--spacing-5);
+}
+.buttons-box {
+    display: flex;
+    flex-direction: column
+}
+
+.divider {
+  width: 270px;
+  height: 34px;
+  position: relative;
+  margin: 0 auto;
+}
+.divider::before {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 270px;
+  border-bottom: 1px solid var(--color-divider);
+  position: absolute;
+  top: 50%;
+}
 
 </style>

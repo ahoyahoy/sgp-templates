@@ -70,22 +70,26 @@ input:focus::placeholder {
   color: var(--color-text-primary);
 }
 
-.kind-search input {
+.kind-underline input {
   border: none;
   border-bottom: 1px solid var(--color-border-search-input);
   border-radius: 0;
   width: 100%;
 }
-.kind-search .left >>> svg {
+.kind-underline .left >>> svg {
   fill: var(--color-purple-base);
 }
-.kind-search .right {
+.kind-underline .right {
     top: 5px;
     right: 7px;
     width: 24px;
     height: 24px;
 }
-.kind-search .right >>> svg {
+.kind-underline .right >>> svg {
     fill: var(--color-grey-base);
+}
+
+.kind-sized input {
+  width: 253px;
 }
 </style>

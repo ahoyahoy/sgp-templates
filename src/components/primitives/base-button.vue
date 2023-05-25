@@ -75,6 +75,12 @@ export default {
   background-color: transparent;
   color: var(--color-text-primary);
 }
+.type-ghost.kind-mono-left {
+  justify-content: left;
+  background-color: transparent;
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-normal);
+}
 
 .type-ghost.kind-red {
   background-color: transparent;
@@ -97,6 +103,7 @@ export default {
 }
 
 .type-ghost.kind-mono:hover,
+.type-ghost.kind-mono-left:hover,
 .type-ghost.kind-red:hover,
 .type-ghost.kind-purple:hover {
   background-color: var(--color-grey-lighten-4);

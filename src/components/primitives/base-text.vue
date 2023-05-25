@@ -49,6 +49,11 @@ export default {
     line-height: var(--line-hight-1);
 }
 
+.kind-h1 {
+    font-size: var(--size-h1);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-hight-3);
+}
 .kind-h2 {
     font-size: var(--size-h2);
     font-weight: var(--font-weight-semibold);
