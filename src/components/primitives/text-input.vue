@@ -4,11 +4,11 @@ import {useSlots} from 'vue'
 const slotIconExists = useSlots().icon !== undefined
 const slotRightIconExists = useSlots()['right-icon'] !== undefined
 
-defineProps(['placeholder', 'kind'])
+defineProps(['placeholder', 'kind', 'type'])
 </script>
 
 <template>
-  <div class="text-input" :class="[`kind-${kind}`, { 'with-icon': slotIconExists, 'with-right-icon': slotRightIconExists }]">
+  <div class="text-input" :class="[`kind-${kind}`, `type-${type}`, { 'with-icon': slotIconExists, 'with-right-icon': slotRightIconExists }]">
     <div class="left" v-if="slotIconExists">
       <slot name="icon"></slot>
     </div>
@@ -76,17 +76,26 @@ input:focus::placeholder {
   border-radius: 0;
   width: 100%;
 }
-.kind-underline .left >>> svg {
+.kind-underline .left >>> svg,
+.type-ghost.left >>> svg {
   fill: var(--color-purple-base);
 }
-.kind-underline .right {
-    top: 5px;
-    right: 7px;
-    width: 24px;
-    height: 24px;
+.kind-underline .right,
+.type-ghost .right {
+  top: 5px;
+  right: 7px;
+  width: 24px;
+  height: 24px;
 }
-.kind-underline .right >>> svg {
-    fill: var(--color-grey-base);
+.kind-underline .right >>> svg,
+.type-ghost .right >>> svg {
+  fill: var(--color-grey-base);
+}
+
+.type-ghost input {
+  border: none;
+  border-radius: var(--border-radius-3);
+  width: 100%;
 }
 
 .kind-sized input {

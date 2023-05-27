@@ -60,7 +60,7 @@ const search = [
                     <CloseIcon />
                 </template>
             </TextInput>
-            <BaseText kind="search-result">
+            <BaseText class="search-result" kind="subtitle">
                 4 results
             </BaseText>
            <DataList :data="search" kind="search">
@@ -101,6 +101,12 @@ const search = [
         background: var(--color-white-base);
         border-radius: var(--border-radius-5);
         padding: var(--spacing-5);
+    }
+
+    .search-result {
+        display: flex;
+        align-items: center;
+        height: 64px;
     }
 
     .search-content {

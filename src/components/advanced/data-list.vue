@@ -70,20 +70,26 @@ defineProps(['data', 'kind'])
     min-width: 0;
 }
 
-.kind-search.data-list {
+.kind-result.data-list,
+.kind-search.data-list,
+.kind-topic.data-list {
     padding: 0;
 }
 .kind-search .right {
     flex-direction: column;
     gap: var(--spacing-0);
 }
-.kind-search .left {
+.kind-search .left,
+.kind-result .left,
+.kind-topic .left {
     flex: none;
 }
 .kind-search .left >>> svg {
     fill: var(--color-grey-lighten-2);
 }
-.kind-search .item {
+.kind-search .item,
+.kind-topic .item, 
+.kind-result .item {
     align-items: stretch;
     padding: var(--spacing-1) var(--spacing-2);
     gap: var(--spacing-3);
@@ -92,11 +98,36 @@ defineProps(['data', 'kind'])
     border-radius: var(--border-radius-3);
 }
 
-.kind-search .item.active {
+.kind-search .item.active,
+.kind-topic .item.active  {
     background-color: var(--color-list-search-row-active);
 }
 
-.kind-search .item:hover {
+.kind-search .item:hover,
+.kind-topic .item:hover {
     background-color: var(--color-list-search-row-hover);
+}
+
+
+.kind-topic .left >>> svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--color-grey-lighten-2);
+}
+.kind-topic .item {
+    align-items: center;
+    cursor: pointer;
+    padding: var(--spacing-2) var(--spacing-1);
+    gap: var(--spacing-0);
+}
+.kind-result .item {
+    border: 1px solid var(--color-purple-lighten-4);
+    background-color: var(--color-purple-lighten-5);
+    color: var(--color-text-secondary);
+}
+.kind-result .left >>> svg {
+    fill: currentColor;
+    width: 16px;
+    height: 16px;
 }
 </style>

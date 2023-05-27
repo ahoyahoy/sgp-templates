@@ -19,6 +19,7 @@ declare module '@vue/runtime-core' {
     BoxRow: typeof import('./src/components/primitives/box-row.vue')['default']
     CloseIcon: typeof import('./src/components/icons/close-icon.vue')['default']
     DataList: typeof import('./src/components/advanced/data-list.vue')['default']
+    DoneIcon: typeof import('./src/components/icons/done-icon.vue')['default']
     DotsIcon: typeof import('./src/components/icons/dots-icon.vue')['default']
     FormField: typeof import('./src/components/primitives/form-field.vue')['default']
     CheckboxInput: typeof import('./src/components/primitives/checkbox-input.vue')['default']

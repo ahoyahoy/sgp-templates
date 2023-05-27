@@ -66,19 +66,32 @@ export default {
   color: var(--color-text-secondary);
 }
 
+
 .type-ghost.kind-primary>>>svg {
   width: 24px;
   height: 24px;
+}
+.type-ghost.kind-secondary>>>svg {
+  fill: var(--color-purple-base);
 }
 
 .type-ghost.kind-mono {
   background-color: transparent;
   color: var(--color-text-primary);
 }
+
 .type-ghost.kind-mono-left {
   justify-content: left;
   background-color: transparent;
   color: var(--color-text-primary);
+  font-weight: var(--font-weight-normal);
+}
+
+.type-ghost.kind-primary-light-2 {
+  width: 100%;
+  justify-content: left;
+  background-color: transparent;
+  color: var(--color-text-primary-2);
   font-weight: var(--font-weight-normal);
 }
 
@@ -105,8 +118,9 @@ export default {
 .type-ghost.kind-mono:hover,
 .type-ghost.kind-mono-left:hover,
 .type-ghost.kind-red:hover,
-.type-ghost.kind-purple:hover {
-  background-color: var(--color-grey-lighten-4);
+.type-ghost.kind-purple:hover,
+.type-ghost.kind-primary-light-2:hover {
+  background-color: var(--color-purple-lighten-4);
 }
 
 .btn>>>svg {

@@ -93,6 +93,7 @@
 
     --size-text-small: 12px;
     --size-text-medium: 14px;
+    --size-text-large: 32px;
 
     --font-weight-normal: 400;
     --font-weight-semibold: 500;
@@ -101,6 +102,7 @@
     --line-hight-1: 16px;
     --line-hight-2: 20px;
     --line-hight-3: 36px;
+    --line-hight-4: 44px;
 
     --spacing-0: 4px;
     --spacing-1: 8px;

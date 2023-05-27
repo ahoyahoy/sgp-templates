@@ -31,7 +31,9 @@
                         </FormField>
                     </div>
                     <div class="options">
-                        <h2>Other options</h2>
+                        <BaseText kind="subtitle">
+                            Other options
+                        </BaseText>
                         <CheckboxInput :options="['Invite another assistant', 'Start muted']" />
                     </div>
                 </div>
@@ -95,7 +97,9 @@
                         </FormField>
                     </div>
                     <div class="options">
-                        <h2>Other options</h2>
+                        <BaseText kind="subtitle">
+                            Other options
+                        </BaseText>
                         <CheckboxInput :options="['Invite another assistant', 'Start muted']" />
                     </div>
                 </div>
@@ -146,7 +150,9 @@
                             <div class="contact">
                                 <div class="email">
                                     <div class="contact-title">
-                                        <h2>New contact</h2>
+                                        <BaseText kind="subtitle">
+                                            New contact
+                                        </BaseText>
                                         <IconButton kind="mono" type="ghost">
                                             <CloseIcon />
                                         </IconButton>
@@ -166,7 +172,9 @@
                         </FormField>
                     </div>
                     <div class="options">
-                        <h2>Other options</h2>
+                        <BaseText kind="subtitle">
+                            Other options
+                        </BaseText>
                         <CheckboxInput :options="['Invite another assistant', 'Start muted']" />
                     </div>
                 </div>
@@ -265,7 +273,9 @@
                         </FormField>
                     </div>
                     <div class="options">
-                        <h2>Other options</h2>
+                        <BaseText kind="subtitle">
+                            Other options
+                        </BaseText>
                         <CheckboxInput :options="['Invite another assistant', 'Start muted']" />
                     </div>
                 </div>
@@ -313,11 +323,13 @@
                         Connect
                     </BaseButton>
                 </div>
-                <TabNav :tabs="['Members', 'Media Library', 'Feedback']" :activeTab="0" />
+                <TabNav kind="secondary" :tabs="['Members', 'Media Library', 'Feedback']" :activeTab="0" />
                 <div class="content">
                     <div class="new-session">
                         <div class="client">
-                            <h2>Client</h2>
+                            <BaseText kind="subtitle">
+                                Client
+                            </BaseText>
                             <div class="contact">
                                 <div class="email">
                                     <TextBox>
@@ -379,7 +391,9 @@
                             </div>
                         </div>
                         <div class="assistant">
-                            <h2>Assistant</h2>
+                            <BaseText kind="subtitle">
+                                Assistant
+                            </BaseText>
                             <div class="contact">
                                 <div class="email">
                                     <TextBox>
@@ -500,15 +514,6 @@
     flex-direction: column;
     gap: var(--spacing-3);
 }
-
-h2 {
-    flex: 1;
-    font-size: var(--size-text-small);
-    font-weight: var(--font-weight-semibold);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-}
-
 .contact {
     display: flex;
     flex-direction: column;
