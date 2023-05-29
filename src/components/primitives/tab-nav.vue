@@ -20,6 +20,7 @@ defineProps(['tabs', 'activeTab'])
   position: relative;
   font-weight: var(--font-weight-semibold);
   flex: 0 0 41px;
+  height: 41px;
   border-bottom: 1px solid var(--color-divider);
 }
 

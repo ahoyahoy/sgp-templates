@@ -4,8 +4,8 @@ const sessions = [
         date: 'Mon, 21 Jul at 08:00',
         title: 'Check bizHub 3526 printer in Prague',
         names: [
-            { name: 'Peter Davis', icon: 'person' },
-            { name: 'You', icon: 'person' },
+            {name: 'Peter Davis', icon: 'person'},
+            {name: 'You', icon: 'person'},
         ],
         active: true,
         media: 3,
@@ -14,8 +14,8 @@ const sessions = [
         date: 'Mon, 21 Jul at 08:00',
         title: 'Broken bizHub 1762 in Berlin',
         names: [
-            { name: 'tomas.muller@company.com', icon: 'thumbDown' },
-            { name: 'John Anderson', icon: 'thumbUp' },
+            {name: 'tomas.muller@company.com', icon: 'thumbDown'},
+            {name: 'John Anderson', icon: 'thumbUp'},
         ],
         waiting: true,
         countdown: '1 day to start',
@@ -24,8 +24,8 @@ const sessions = [
         date: 'Mon, 21 Jul at 08:00',
         title: 'Broken bizHub 1762 in Berlin',
         names: [
-            { name: 'Peter Davis', icon: 'person' },
-            { name: 'You', icon: 'person' },
+            {name: 'Peter Davis', icon: 'person'},
+            {name: 'You', icon: 'person'},
         ],
     },
     {
@@ -37,8 +37,8 @@ const sessions = [
         date: 'Mon, 21 Jul at 08:00',
         title: 'Broken bizHub 1762 in Berlin',
         names: [
-            { name: 'Peter Davis', icon: 'person' },
-            { name: 'You', icon: 'person' },
+            {name: 'Peter Davis', icon: 'person'},
+            {name: 'You', icon: 'person'},
         ],
         disabled: true,
         media: 3,
@@ -47,8 +47,8 @@ const sessions = [
         date: 'Mon, 21 Jul at 08:00',
         title: 'Broken bizHub 1762 in Berlin',
         names: [
-            { name: 'tomas.muller@company.com', icon: 'thumbDown' },
-            { name: 'John Anderson', icon: 'thumbUp' },
+            {name: 'tomas.muller@company.com', icon: 'thumbDown'},
+            {name: 'John Anderson', icon: 'thumbUp'},
         ],
         disabled: true,
         media: 2,
@@ -57,8 +57,8 @@ const sessions = [
         date: 'Mon, 21 Jul at 08:00',
         title: 'Broken bizHub 1762 in Berlin',
         names: [
-            { name: 'Peter Davis', icon: 'person' },
-            { name: 'You', icon: 'person' },
+            {name: 'Peter Davis', icon: 'person'},
+            {name: 'You', icon: 'person'},
         ],
         disabled: true,
         media: 1,
@@ -70,8 +70,8 @@ const sessions = [
         date: 'Mon, 21 Jul at 08:00',
         title: 'Broken bizHub 1762 in Berlin',
         names: [
-            { name: 'Peter Davis', icon: 'person' },
-            { name: 'You', icon: 'person' },
+            {name: 'Peter Davis', icon: 'person'},
+            {name: 'You', icon: 'person'},
         ],
         loadingTest: true,
     },
@@ -143,9 +143,9 @@ const sessions = [
                             <IconButton :style="{ visibility: item.disabled ? 'hidden' : 'visible', }">
                                 <PhoneIcon />
                             </IconButton>
-                            <MoreinfoButton class="more-options">
+                            <IconButton class="more-options" type="ghost">
                                 <DotsIcon />
-                            </MoreinfoButton>
+                            </IconButton>
                         </div>
                     </div>
                 </template>
@@ -185,17 +185,6 @@ const sessions = [
 
 .more-options {
     opacity: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: var(--border-radius-3);
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-    color: var(--color-text-primary);
-    transition: background-color 0.2s ease, opacity 0.2s;
 }
 
 .more-options:hover {
