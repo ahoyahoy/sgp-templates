@@ -1,13 +1,12 @@
 <script setup>
-defineProps(['tabs', 'activeTab', 'kind'])
+defineProps(['tabs', 'activeTab', 'kind', 'type'])
 </script>
 
 <template>
-  <div class="tabs">
+  <div :class="['tabs', `kind-${kind}`, `type-${type}`,]">
     <ul class="links">
-
       <template v-for="tab, i in tabs" :key="i">
-        <li :class="['link', `kind-${kind}`, { active: activeTab === i, inactive: activeTab !== i }]">
+        <li :class="['link', { active: activeTab === i, inactive: activeTab !== i }]">
           <a href="#">{{ tab }}</a>
         </li>
       </template>
@@ -68,11 +67,15 @@ defineProps(['tabs', 'activeTab', 'kind'])
   color: var(--color-tabs-hover);
 }
 
-.kind-secondary.inactive a {
+.kind-secondary .inactive a {
   color: var(--color-text-primary-2);
   font-weight: var(--font-weight-normal);
 }
-.kind-secondary.inactive:hover a {
+.kind-secondary .inactive:hover a {
   color: var(--color-tabs-hover);
+}
+
+.type-position-3 .links {
+  left: var(--spacing-3);
 }
 </style>

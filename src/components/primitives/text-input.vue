@@ -97,8 +97,4 @@ input:focus::placeholder {
   border-radius: var(--border-radius-3);
   width: 100%;
 }
-
-.kind-sized input {
-  width: 253px;
-}
 </style>

@@ -44,6 +44,7 @@ defineProps(['data', 'kind'])
     gap: var(--spacing-6);
     transition: background-color 0.2s ease;
     color: var(--color-text-primary);
+    user-select: none;
 }
 
 .item:hover {

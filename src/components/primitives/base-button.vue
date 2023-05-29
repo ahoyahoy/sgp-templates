@@ -60,6 +60,19 @@ export default {
   background-color: var(--color-white-base);
   color: var(--color-text-secondary);
 }
+.type-outline.kind-input {
+  justify-content: left;
+  font-size: var(--size-text-medium);
+  border-radius: var(--border-radius-3);
+  border: 1px solid var(--color-input-border);
+  color: var(--color-grey-lighten-3);
+  background-color: var(--color-white-base);
+  font-weight: var(--font-weight-normal);
+  cursor: text;
+}
+.type-outline.kind-input >>> svg {
+  fill: var(--color-grey-lighten-2);
+}
 
 .type-ghost.kind-primary {
   background-color: transparent;
@@ -93,6 +106,7 @@ export default {
   background-color: transparent;
   color: var(--color-text-primary-2);
   font-weight: var(--font-weight-normal);
+  gap: var(--spacing-3);
 }
 
 .type-ghost.kind-red {
