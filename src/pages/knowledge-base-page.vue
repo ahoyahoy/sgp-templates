@@ -1,19 +1,4 @@
 <script setup>
-const topics = [
-    {
-        title: 'How to fix the internet connection  for printers bizHub 3526',
-        icon: 'close',
-    },
-    {
-        title: 'How to fix the internet connection  for printers bizHub 3526',
-        icon: 'open',
-    },
-    {
-        title: 'How to fix the internet connection  for printers bizHub 3526',
-        icon: 'close',
-    },
-]
-
 const search = [
     {
         title: 'How to fix the internet connection for printers bizHub 3526',
