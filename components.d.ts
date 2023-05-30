@@ -5,8 +5,6 @@
 // Read more: https://github.com/vuejs/core/pull/3399
 import '@vue/runtime-core'
 
-export {}
-
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AddIcon: typeof import('./src/components/icons/add-icon.vue')['default']
@@ -15,10 +13,13 @@ declare module '@vue/runtime-core' {
     ArrowIcon: typeof import('./src/components/icons/arrow-icon.vue')['default']
     BaseButton: typeof import('./src/components/primitives/base-button.vue')['default']
     BaseText: typeof import('./src/components/primitives/base-text.vue')['default']
+    BasicIcon: typeof import('./src/components/icons/basic-icon.vue')['default']
     BoxRow: typeof import('./src/components/primitives/box-row.vue')['default']
     CloseIcon: typeof import('./src/components/icons/close-icon.vue')['default']
     DataList: typeof import('./src/components/advanced/data-list.vue')['default']
+    DoneIcon: typeof import('./src/components/icons/done-icon.vue')['default']
     DotsIcon: typeof import('./src/components/icons/dots-icon.vue')['default']
+    FileTree: typeof import('./src/components/primitives/file-tree.vue')['default']
     FormField: typeof import('./src/components/primitives/form-field.vue')['default']
     CheckboxInput: typeof import('./src/components/primitives/checkbox-input.vue')['default']
     IconButton: typeof import('./src/components/primitives/icon-button.vue')['default']
@@ -35,11 +36,15 @@ declare module '@vue/runtime-core' {
     PersonIcon: typeof import('./src/components/icons/person-icon.vue')['default']
     Phone: typeof import('./src/components/icons/phone.vue')['default']
     PhoneIcon: typeof import('./src/components/icons/phone-icon.vue')['default']
+    ProIcon: typeof import('./src/components/icons/pro-icon.vue')['default']
     QrIcon: typeof import('./src/components/icons/qr-icon.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SearchIcon: typeof import('./src/components/icons/search-icon.vue')['default']
+    SearchLoading: typeof import('./src/components/loading/search-loading.vue')['default']
     SelectBox: typeof import('./src/components/primitives/select-box.vue')['default']
+    ScheduleIcon: typeof import('./src/components/icons/schedule-icon.vue')['default']
+    SchoolIcon: typeof import('./src/components/icons/school-icon.vue')['default']
     SidebarNav: typeof import('./src/components/sidebar-nav.vue')['default']
     TabNav: typeof import('./src/components/primitives/tab-nav.vue')['default']
     TextBox: typeof import('./src/components/primitives/text-box.vue')['default']

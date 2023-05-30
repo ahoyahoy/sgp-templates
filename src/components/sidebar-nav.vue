@@ -1,12 +1,16 @@
 <script setup>
 import LogoImg from '../../img/logo-lite.svg'
-import PhoneIcon from './icons/phone-icon.vue'
+
+let showBasicIcon = true
+let showProIcon = false
 </script>
 
 <template>
   <div class="sidebar">
     <div class="head">
       <LogoImg class="logo" alt="logo" />
+      <BasicIcon v-if="showBasicIcon" />
+      <ProIcon v-if="showProIcon" />
     </div>
     <div class="body">
       <nav class="links">
@@ -28,6 +32,11 @@ import PhoneIcon from './icons/phone-icon.vue'
         <a href="#" class="link">
           <PhoneIcon class="icon" />
           <span class="text">Dashboard</span>
+          <span class="badge no-show">5</span>
+        </a>
+        <a href="#" class="link">
+          <PhoneIcon class="icon" />
+          <span class="text">Knowledge base</span>
           <span class="badge no-show">5</span>
         </a>
         <div class="divider"></div>
@@ -65,7 +74,8 @@ import PhoneIcon from './icons/phone-icon.vue'
 .head {
   display: flex;
   align-items: center;
-  padding-left: var(--spacing-5);
+  justify-content: space-between;
+  padding: 0 var(--spacing-5);
   flex: 0 0 96px;
 }
 
@@ -119,6 +129,10 @@ import PhoneIcon from './icons/phone-icon.vue'
   background-color: var(--color-sidebar-secondary);
   color: var(--color-text-secondary);
   transition: background-color 0.2s ease;
+}
+
+.badge.no-show {
+  display: none;
 }
 
 .active {

@@ -27,7 +27,7 @@ export default {
 }
 
 .kind-primary-light-2 {
-    color: var(--color-text-disabled);
+    color: var(--color-text-primary-2);
     line-height: var(--line-hight-2);
 }
 
@@ -49,9 +49,27 @@ export default {
     line-height: var(--line-hight-1);
 }
 
+.kind-h1 {
+    font-size: var(--size-h1);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-hight-3);
+}
 .kind-h2 {
     font-size: var(--size-h2);
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-hight-3);
+}
+.kind-subtitle {
+    flex: 1;
+    font-size: var(--size-text-small);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-hight-1);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+.kind-primary-large {
+    font-size: var(--size-text-large);
+    line-height: var(--line-hight-4);
+    font-weight: var(--font-weight-bold);
 }
 </style>

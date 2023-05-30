@@ -32,6 +32,9 @@ defineProps(['title'])
     align-items: center;
     gap: var(--spacing-4);
 }
+.right {
+    gap: var(--spacing-3);
+}
 
 .title {
     font-size: var(--size-h1);
