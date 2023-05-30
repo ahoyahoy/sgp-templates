@@ -1,11 +1,7 @@
 import './style.css'
 
 import {createApp} from 'vue'
-
-import {
-    createRouter,
-    createWebHistory,
-} from 'vue-router'
+import {createRouter, createWebHistory} from 'vue-router'
 
 import App from './App.vue'
 import CreateSession from './pages/create-session-page.vue'
@@ -17,11 +13,11 @@ import Session from './pages/session-page.vue'
 const app = createApp(App)
 
 const routes = [
-    { path: '/', component: Index },
-    { path: '/sessions', component: Session },
-    { path: '/create-session', component: CreateSession },
-    { path: '/knowledge-base-search', component: KnowledgeBaseSearch },
-    { path: '/knowledge-base', component: KnowledgeBase },
+    {path: '/', component: Index},
+    {path: '/sessions', component: Session},
+    {path: '/create-session', component: CreateSession},
+    {path: '/knowledge-base-search', component: KnowledgeBaseSearch},
+    {path: '/knowledge-base', component: KnowledgeBase},
 ]
 
 const router = createRouter({

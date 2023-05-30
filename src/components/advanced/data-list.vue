@@ -89,7 +89,7 @@ defineProps(['data', 'kind'])
     fill: var(--color-grey-lighten-2);
 }
 .kind-search .item,
-.kind-topic .item, 
+.kind-topic .item,
 .kind-result .item {
     align-items: stretch;
     padding: var(--spacing-1) var(--spacing-2);

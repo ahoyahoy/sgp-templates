@@ -5,8 +5,6 @@
 // Read more: https://github.com/vuejs/core/pull/3399
 import '@vue/runtime-core'
 
-export {}
-
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AddIcon: typeof import('./src/components/icons/add-icon.vue')['default']
@@ -31,7 +29,6 @@ declare module '@vue/runtime-core' {
     LoadingAll: typeof import('./src/components/loading/loading-all.vue')['default']
     LoadingTest: typeof import('./src/components/loading/loading-test.vue')['default']
     MailIcon: typeof import('./src/components/icons/mail-icon.vue')['default']
-    MenuTest: typeof import('./src/components/primitives/menu-test.vue')['default']
     MobileIcon: typeof import('./src/components/icons/mobile-icon.vue')['default']
     ModalHeader: typeof import('./src/components/layout/modal-header.vue')['default']
     NotificationIcon: typeof import('./src/components/icons/notification-icon.vue')['default']

@@ -1,23 +1,23 @@
 <script>
 export default {
-  props: {
-    block: {
-      type: Boolean,
-      default: false,
+    props: {
+        block: {
+            type: Boolean,
+            default: false,
+        },
+        disable: {
+            type: Boolean,
+            default: false,
+        },
+        kind: {
+            type: String,
+            default: 'primary',
+        },
+        type: {
+            type: String,
+            default: 'default',
+        },
     },
-    disable: {
-      type: Boolean,
-      default: false,
-    },
-    kind: {
-      type: String,
-      default: 'primary',
-    },
-    type: {
-      type: String,
-      default: 'default',
-    },
-  },
 }
 </script>
 
@@ -31,7 +31,6 @@ export default {
 .btn {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: var(--spacing-2);
   font-size: var(--size-text-medium);
   font-weight: var(--font-weight-bold);
@@ -39,6 +38,8 @@ export default {
   padding: 0 var(--spacing-2);
   border-radius: var(--border-radius-3);
   border: none;
+  background-color: var(--color-btn-background);
+  color: var(--color-text-white);
   cursor: pointer;
   transition: background-color 0.2s ease;
   transition: border 0.2s ease;
@@ -122,8 +123,6 @@ export default {
 .type-default.kind-primary:hover {
   background-color: var(--color-btn-background-hover);
 }
-
-.type-default.type-outline:hover {}
 
 .type-ghost.kind-primary:hover {
   background-color: var(--color-purple-lighten-4);
