@@ -31,6 +31,7 @@ export default {
 .btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--spacing-2);
   font-size: var(--size-text-medium);
   font-weight: var(--font-weight-bold);

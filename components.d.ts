@@ -5,11 +5,12 @@
 // Read more: https://github.com/vuejs/core/pull/3399
 import '@vue/runtime-core'
 
+export {}
+
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AddIcon: typeof import('./src/components/icons/add-icon.vue')['default']
     AppHeader: typeof import('./src/components/layout/app-header.vue')['default']
-    'Arrow.Icon': typeof import('./src/components/icons/arrow.-icon.vue')['default']
     ArrowIcon: typeof import('./src/components/icons/arrow-icon.vue')['default']
     BaseButton: typeof import('./src/components/primitives/base-button.vue')['default']
     BaseText: typeof import('./src/components/primitives/base-text.vue')['default']
@@ -34,7 +35,6 @@ declare module '@vue/runtime-core' {
     NotificationIcon: typeof import('./src/components/icons/notification-icon.vue')['default']
     NotificationoffIcon: typeof import('./src/components/icons/notificationoff-icon.vue')['default']
     PersonIcon: typeof import('./src/components/icons/person-icon.vue')['default']
-    Phone: typeof import('./src/components/icons/phone.vue')['default']
     PhoneIcon: typeof import('./src/components/icons/phone-icon.vue')['default']
     ProIcon: typeof import('./src/components/icons/pro-icon.vue')['default']
     QrIcon: typeof import('./src/components/icons/qr-icon.vue')['default']

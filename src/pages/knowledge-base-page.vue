@@ -25,9 +25,10 @@ const result = [
 const tree = [
     {
         title: 'How to fix the internet connection  for printers bizHub 3526',
-        icon: 'close',
+        icon: 'open',
         children: [
             {
+                title: '#1 Additional information',
             },
         ],
     },
@@ -38,22 +39,15 @@ const tree = [
             {
                 title: '#1 Additional information',
                 active: true,
-                icon: 'close',
-                children: [
-                    {
-                    },
-                ],
             },
             {
                 title: '#2 Additional information',
-            },
-        ],
-    },
-    {
-        title: 'How to fix the internet connection  for printers bizHub 3526',
-        icon: 'close',
-        children: [
-            {
+                icon: 'open',
+                children: [
+                    {
+                        title: '#1 Additional information',
+                    },
+                ],
             },
         ],
     },
