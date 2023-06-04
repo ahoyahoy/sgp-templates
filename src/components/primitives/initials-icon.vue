@@ -8,6 +8,7 @@
 .initials {
     width: 32px;
     height: 32px;
+    min-width: 32px;
     border-radius: 50%;
     background-color: var(--color-initials-bg);
     display: flex;

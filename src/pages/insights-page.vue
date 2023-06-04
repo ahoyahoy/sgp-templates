@@ -281,7 +281,7 @@ select[data-v-510834af] {
     display: flex;
     flex-direction: column;
     gap: 64px;
-    width: 1112px;
+    max-width: 1112px;
     margin: 0 auto;
 }
 
@@ -383,60 +383,69 @@ select[data-v-510834af] {
 
 .clients,
 .unresolved {
-    width: 540px;
+    max-width: 50%;
+    width: 100%;
 }
 
 .clients .title,
 .unresolved .title {
-    height: 70px;
+    height: 60px;
     display: flex;
     align-items: center;
     gap: var(--spacing-0);
 }
 
 .clients-table {
-  display: table;
   width: 100%;
   border-collapse: collapse;
 }
 
 .clients-header,
 .client {
-  display: table-row;
+  display: flex;
 }
 
 .clients-header {
+    align-items: center;
+    padding: 0 var(--spacing-3);
     border-bottom: 1px solid var(--color-grey-lighten-3);
 }
 
 .clients-header p {
-    display: table-cell;
-    padding: var(--spacing-2) var(--spacing-3);
+    /* padding: var(--spacing-2) var(--spacing-3); */
     padding-top: 0;
+    width: 33.33%;
 }
 
 .arrow {
     color: var(--color-purple-base);
+    min-width: 16px;
 }
 
 .clients-header p:nth-child(3) {
     text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .client-button {
-    margin: auto;
-    height: 17px;
+    width: 33.33%;
 }
 .client-button p {
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 0;
 }
 
 .client > div {
-    display: table-cell;
+    width: 33.33%;
     padding: 0 var(--spacing-3);
     height: 59px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .client {
@@ -446,6 +455,7 @@ select[data-v-510834af] {
 .client .name {
     display: flex;
     align-items: center;
+    justify-content: start;
     gap: var(--spacing-2);
 }
 
@@ -466,8 +476,9 @@ select[data-v-510834af] {
 
 .unresolved-header {
     display: flex;
+    align-items: center;
     padding: 0 var(--spacing-3);
-    height: 29px;
+    height: 38px;
     border-bottom: 1px solid var(--color-grey-lighten-3);
 }
 .unresolved-header p:last-child {
@@ -485,9 +496,13 @@ select[data-v-510834af] {
 
 .item-header {
     display: flex;
+    gap: var(--spacing-0);
 }
 .item-header .item-title {
     flex: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .progress {
     height: 4px;
