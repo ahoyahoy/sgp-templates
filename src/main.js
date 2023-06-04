@@ -6,6 +6,7 @@ import {createRouter, createWebHistory} from 'vue-router'
 import App from './App.vue'
 import CreateSession from './pages/create-session-page.vue'
 import Index from './pages/index-page.vue'
+import Insights from './pages/insights-page.vue'
 import KnowledgeBase from './pages/knowledge-base-page.vue'
 import KnowledgeBaseSearch from './pages/knowledge-base-search-page.vue'
 import Session from './pages/session-page.vue'
@@ -18,6 +19,7 @@ const routes = [
     {path: '/create-session', component: CreateSession},
     {path: '/knowledge-base-search', component: KnowledgeBaseSearch},
     {path: '/knowledge-base', component: KnowledgeBase},
+    {path: '/insights', component: Insights},
 ]
 
 const router = createRouter({
