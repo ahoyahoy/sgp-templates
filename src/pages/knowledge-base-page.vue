@@ -65,11 +65,13 @@ const tree = [
             <BaseText class="menu-title" kind="h1">
                 Knowledge base
             </BaseText>
-            <div class="menu">
+            <div class="search-btn">
                 <BaseButton type="outline" kind="input">
                     <SearchIcon />
                     Search in Knowledge base
                 </BaseButton>
+            </div>
+            <div class="menu">
                 <div class="buttons-box">
                     <BaseButton type="ghost" kind="mono-left">
                         <PhoneIcon />
@@ -80,26 +82,26 @@ const tree = [
                         Manuals
                     </BaseButton>
                 </div>
-            </div>
-            <div class="divider"></div>
-            <div class="topics">
-                <TextBox>
-                    <template #main-text>
-                        <BaseText class="topic-title" kind="subtitle">
-                            3 topics
-                        </BaseText>
-                    </template>
-                    <template #right-icon>
-                        <IconButton kind="purple" type="ghost">
-                            <AddIcon />
-                        </IconButton>
-                    </template>
-                </TextBox>
-                <div>
-                    <FileTree :data="tree" :level="0" />
+                <div class="divider"></div>
+                <div class="topics">
+                    <TextBox>
+                        <template #main-text>
+                            <BaseText class="topic-title" kind="subtitle">
+                                3 topics
+                            </BaseText>
+                        </template>
+                        <template #right-icon>
+                            <IconButton kind="purple" type="ghost">
+                                <AddIcon />
+                            </IconButton>
+                        </template>
+                    </TextBox>
+                    <div>
+                        <FileTree :data="tree" :level="0" />
+                    </div>
                 </div>
             </div>
-        </div>
+            </div>
 
         <div class="page-body">
             <AppHeader>
@@ -202,10 +204,21 @@ const tree = [
     height: 96px;
 }
 
+.search-btn {
+    padding: 0 var(--spacing-3);
+    height: 56px;
+    flex: 0 0 56px;
+}
+
+.search-btn button {
+    width: 100%;
+}
+
 .menu {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-3);
+    flex: 1;
+    overflow-y: auto;
     padding: 0 var(--spacing-3);
 }
 
@@ -217,6 +230,7 @@ const tree = [
 .divider {
     width: 297px;
     height: 34px;
+    flex: 0 0 34px;
     position: relative;
     margin: 0 auto;
 }
@@ -235,7 +249,6 @@ const tree = [
     display: flex;
     flex-direction: column;
     gap: var(--spacing-3);
-    padding: 0 var(--spacing-3);
 }
 
 .topic-title {
@@ -271,6 +284,7 @@ const tree = [
 .page-content {
     display: flex;
     justify-content: center;
+    flex: 1;
     overflow-y: auto;
     padding: 0 var(--spacing-5);
 }
