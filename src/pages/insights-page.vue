@@ -168,10 +168,8 @@ const unresolved = [
                                         Client ({{ clients.length }})
                                     </BaseText>
                                     <BaseButton class="client-button" type="ghost" kind="mono-left">
-                                        <BaseText kind="subtitle">
-                                            Number of calls
-                                            <ArrowIcon class="arrow" />
-                                        </BaseText>
+                                        <span>Number of calls</span>
+                                        <ArrowIcon class="arrow" />
                                     </BaseButton>
                                     <BaseText kind="subtitle">
                                         Number of resolved
@@ -275,6 +273,7 @@ select[data-v-510834af] {
 .body {
     padding: 0 var(--spacing-5);
     overflow: auto;
+    flex: 1;
 }
 
 .body .container {
@@ -285,24 +284,21 @@ select[data-v-510834af] {
     margin: 0 auto;
 }
 
-
 .summary-box {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
   gap: var(--spacing-3) var(--spacing-5);
 }
 
 .summary {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: var(--spacing-1);
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius-5);
-    padding: 0 var(--spacing-3);
-    height: 96px;
-    flex: 0 0 254px;;
-    width: 254px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-1);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-5);
+  padding: 0 var(--spacing-3);
+  height: 96px;
 }
 
 .summary .title {
@@ -431,12 +427,18 @@ select[data-v-510834af] {
 
 .client-button {
     width: 33.33%;
+    gap: 0;
 }
-.client-button p {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
+.client-button span {
+    font-size: var(--size-text-small);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-hight-1);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .client > div {
@@ -521,5 +523,11 @@ select[data-v-510834af] {
     flex-direction: column;
     gap: var(--spacing-4);
     padding-bottom: var(--spacing-6);
+}
+
+@media only screen and (max-width:1050px) {
+    .feedback-data{
+    transform: translateX(15%);
+}
 }
 </style>
