@@ -139,18 +139,16 @@ defineProps(['data', 'level'])
 }
 
 .add {
-    background-color: var(--color-btn-background);
-    color: var(--color-white-base);
-}
-.add:hover {
-    background-color: var(--color-btn-background-hover);
+    background-color: var(--color-white-base);
+    color: var(--color-purple-base);
 }
 
 .more svg {
     transform: rotate(90deg);
 }
 
-.more:hover {
+.more:hover,
+.add:hover  {
     background-color: var(--color-purple-lighten-3);
 }
 </style>
