@@ -206,7 +206,8 @@ const unresolved = [
                                         <div>{{ item.times }} times</div>
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar" role="progressbar" :style="{ width: item.percent + '%' }" :aria-valuenow="item.percent" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar" role="progressbar"
+                                        :style="{ width: item.percent + '%' }" :aria-valuenow="item.percent" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>

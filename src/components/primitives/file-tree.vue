@@ -8,15 +8,25 @@ defineProps(['data', 'level'])
         :key="i"
         class="tree"
     >
-        <div class="title" :class="{'without-children':!item.children, active: item.active, 'without-title':!item.title }">
+        <div class="item" :class="{'without-children':!item.children, active: item.active}">
             <div class="left">
-                <button v-if="item.children">
-                    <ArrowIcon v-if="item.icon === 'close'" />
-                    <ArrowIcon v-if="item.icon === 'open'" class="open" />
-                </button>
+                <div class="open-btn">
+                    <button v-if="item.children">
+                        <ArrowIcon v-if="item.icon === 'close'" />
+                        <ArrowIcon v-if="item.icon === 'open'" class="open" />
+                    </button>
+                </div>
+                <div class="text">
+                    {{ item.title }}
+                </div>
             </div>
             <div class="right">
-                {{ item.title }}
+                <button class="more">
+                    <DotsIcon />
+                </button>
+                <button class="add">
+                    <AddIcon />
+                </button>
             </div>
         </div>
         <div
@@ -42,7 +52,14 @@ defineProps(['data', 'level'])
 .without-children .left {
     padding-left: 18px;
 }
-.title {
+
+.left {
+    display: flex;
+    gap: var(--spacing-0);
+    flex: 1;
+    overflow: hidden;
+}
+.item {
     display: flex;
     align-items: center;
     flex: 0 0 40px;
@@ -55,7 +72,8 @@ defineProps(['data', 'level'])
     border-radius: var(--border-radius-3);
 }
 
-.left button {
+.open-btn button,
+.right button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,43 +82,75 @@ defineProps(['data', 'level'])
     height: 18px;
     cursor: pointer;
     border: none;
+    border-radius: var(--border-radius-3);
+}
+.open-btn button,
+.more {
     background: transparent;
 }
-.left button:hover {
+
+
+.open-btn button:hover {
     background-color: var(--color-purple-lighten-3);
-    border-radius: 4px;
+    border-radius: var(--border-radius-3);
 }
-.left button:hover svg {
+.open-btn button:hover svg {
     fill: var(--color-grey-base);
 }
 
-.left svg {
+.open-btn svg {
     width: 16px;
     height: 16px;
     fill: var(--color-grey-lighten-2);
 }
 
-.right {
+.text {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
     line-height: 20px;
-    width: 231px;
 }
 
-.title:hover {
+.item:hover {
     background-color: var(--color-list-search-row-hover);
 }
 
-.title.active {
+.item.active {
     background-color: var(--color-list-search-row-active);
 }
-.left svg.open {
+
+.right {
+    display: none;
+}
+
+.item:first-child:hover .right,
+.children:first-child:hover .right {
+    display: flex;
+}
+.open-btn svg.open {
     transform: rotate(180deg);
     fill: var(--color-grey-base);
 }
 
-.without-title {
-    display: none;
+.right svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+.add {
+    background-color: var(--color-btn-background);
+    color: var(--color-white-base);
+}
+.add:hover {
+    background-color: var(--color-btn-background-hover);
+}
+
+.more svg {
+    transform: rotate(90deg);
+}
+
+.more:hover {
+    background-color: var(--color-purple-lighten-3);
 }
 </style>
