@@ -245,6 +245,8 @@ const topic = [
 }
 .image {
     border-radius: var(--border-radius-5);
+    width: 99px;
+    height: 78px;
 }
 
 .load {
