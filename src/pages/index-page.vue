@@ -11,6 +11,7 @@
             <router-link to="/knowledge-base">Knowledge base</router-link>
             <router-link to="/knowledge-base-search">Knowledge base search</router-link>
             <router-link to="/insights">Insights</router-link>
+            <router-link to="/create-topic">Create topic</router-link>
         </nav>
     </div>
 </template>

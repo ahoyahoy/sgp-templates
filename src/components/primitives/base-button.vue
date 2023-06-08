@@ -141,6 +141,8 @@ export default {
 .btn>>>svg {
   fill: currentColor;
   transition: fill 0.2s ease;
+  min-width: 16px;
+  min-height: 16px;
   width: 16px;
   height: 16px;
 }
