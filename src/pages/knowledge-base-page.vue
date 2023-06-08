@@ -191,6 +191,7 @@ const tree = [
     display: flex;
     flex-direction: column;
     flex: 0 0 317px;
+    width: 317px;
     height: 100%;
     border-right: 1px solid var(--color-grey-lighten-4);
     /* display: none; */
@@ -228,7 +229,7 @@ const tree = [
 }
 
 .divider {
-    width: 297px;
+    width: 284px;
     height: 34px;
     flex: 0 0 34px;
     position: relative;
@@ -239,7 +240,7 @@ const tree = [
     content: "";
     display: block;
     height: 1px;
-    width: 297px;
+    width: 284px;
     border-bottom: 1px solid var(--color-divider);
     position: absolute;
     top: 50%;

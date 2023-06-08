@@ -10,6 +10,7 @@
             <router-link to="/create-session">Create session</router-link>
             <router-link to="/knowledge-base">Knowledge base</router-link>
             <router-link to="/knowledge-base-search">Knowledge base search</router-link>
+            <router-link to="/insights">Insights</router-link>
         </nav>
     </div>
 </template>

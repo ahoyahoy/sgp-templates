@@ -19,6 +19,7 @@ declare module '@vue/runtime-core' {
     CloseIcon: typeof import('./src/components/icons/close-icon.vue')['default']
     DataList: typeof import('./src/components/advanced/data-list.vue')['default']
     DoneIcon: typeof import('./src/components/icons/done-icon.vue')['default']
+    DotIcon: typeof import('./src/components/icons/dot-icon.vue')['default']
     DotsIcon: typeof import('./src/components/icons/dots-icon.vue')['default']
     FileTree: typeof import('./src/components/primitives/file-tree.vue')['default']
     FormField: typeof import('./src/components/primitives/form-field.vue')['default']
