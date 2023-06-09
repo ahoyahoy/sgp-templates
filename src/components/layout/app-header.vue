@@ -36,6 +36,10 @@ defineProps(['title'])
     gap: var(--spacing-3);
 }
 
+.right > :first-child {
+    flex: 1;
+}
+
 .title {
     font-size: var(--size-h1);
     font-weight: var(--font-weight-semibold);

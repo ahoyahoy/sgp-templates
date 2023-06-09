@@ -12,33 +12,32 @@ const topic = [
         title: 'Broken bizHub 1762 in Berlin',
         date: 'Mon, 21 Jul at 16:00',
         imgs: [
-            {img: '../../img/01.png'},
-            {img: '../../img/02.png'},
-            {img: '../../img/01.png'},
-            {img: '../../img/02.png'},
-            {img: '../../img/02.png'},
+            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/01.png'},
+            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/02.png'},
+            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/01.png'},
+            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/02.png'},
+            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/02.png'},
+            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/02.png'},
+            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/02.png'},
         ],
     },
     {
         title: 'Check bizHub 3526 printer in Prague',
         date: 'Sun, 20 Jul at 08:00',
         imgs: [
-            {img: '../../img/01.png'},
-            {img: '../../img/02.png'},
-            {img: '../../img/01.png'},
-            {img: '../../img/02.png'},
-            {img: '../../img/02.png'},
+            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/01.png'},
+            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/02.png'},
         ],
     },
     {
         title: 'Broken bizHub 1762 in Berlin',
         date: 'Mon, 21 Jul at 16:00',
         imgs: [
-            {img: '../../img/01.png'},
-            {img: '../../img/02.png'},
-            {img: '../../img/01.png'},
-            {img: '../../img/02.png'},
-            {img: '../../img/02.png'},
+            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/01.png'},
+            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/02.png'},
+            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/01.png'},
+            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/02.png'},
+            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/02.png'},
         ],
     },
 ]
@@ -195,7 +194,7 @@ const topic = [
     flex-direction: column;
     gap: var(--spacing-3);
     width: 559px;
-    flex: 0 0 349px;
+    flex: 0 0 559px;
     height: 349px;
     background-color: var(--color-white-base);
     border: 1px solid var(--color-purple-lighten-3);
@@ -241,12 +240,13 @@ const topic = [
 
 .imgs-box {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--spacing-0);
 }
 .image {
     border-radius: var(--border-radius-5);
-    width: 99px;
-    height: 78px;
+    width: 98px;
+    height: auto;
 }
 
 .load {
