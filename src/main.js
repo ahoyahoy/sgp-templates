@@ -10,6 +10,7 @@ import Insights from './pages/insights-page.vue'
 import KnowledgeBase from './pages/knowledge-base-page.vue'
 import KnowledgeBaseSearch from './pages/knowledge-base-search-page.vue'
 import Session from './pages/session-page.vue'
+import Teams from './pages/teams-page.vue'
 
 const app = createApp(App)
 
@@ -20,6 +21,7 @@ const routes = [
     {path: '/knowledge-base-search', component: KnowledgeBaseSearch},
     {path: '/knowledge-base', component: KnowledgeBase},
     {path: '/insights', component: Insights},
+    {path: '/teams', component: Teams},
 ]
 
 const router = createRouter({

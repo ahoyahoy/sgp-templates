@@ -18,6 +18,7 @@ declare module '@vue/runtime-core' {
     BoxRow: typeof import('./src/components/primitives/box-row.vue')['default']
     CloseIcon: typeof import('./src/components/icons/close-icon.vue')['default']
     DataList: typeof import('./src/components/advanced/data-list.vue')['default']
+    DeleteIcon: typeof import('./src/components/icons/delete-icon.vue')['default']
     DoneIcon: typeof import('./src/components/icons/done-icon.vue')['default']
     DotIcon: typeof import('./src/components/icons/dot-icon.vue')['default']
     DotsIcon: typeof import('./src/components/icons/dots-icon.vue')['default']

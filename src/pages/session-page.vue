@@ -184,6 +184,7 @@ const sessions = [
 }
 
 .more-options {
+    color: var(--color-text-secondary);
     opacity: 0;
 }
 

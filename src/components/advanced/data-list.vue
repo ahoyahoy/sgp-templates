@@ -32,6 +32,7 @@ defineProps(['data', 'kind'])
     flex-grow: 1;
     overflow-y: auto;
     padding: var(--spacing-4) var(--spacing-5);
+    min-width: 350px;
 }
 
 .item {
@@ -130,5 +131,14 @@ defineProps(['data', 'kind'])
     fill: currentColor;
     width: 16px;
     height: 16px;
+}
+
+.kind-teams .item {
+    height: 60px;
+    flex: 0 0 60px;
+}
+.data-list.kind-teams {
+    padding: 0;
+    padding-left: 32px;
 }
 </style>

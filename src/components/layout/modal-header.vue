@@ -29,7 +29,7 @@ defineProps(['title'])
 .right {
     display: flex;
     align-items: center;
-    gap: var(--spacing-4);
+    gap: var(--spacing-2);
 }
 
 .left {

@@ -11,6 +11,7 @@
             </div>
         </div>
         <div class="right">
+            <slot name="info"></slot>
             <slot name="right-icon"></slot>
         </div>
 
@@ -21,6 +22,7 @@
 .text-box {
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 .left {
@@ -37,5 +39,6 @@
 
 .right {
     display: flex;
+    gap: var(--spacing-3);
 }
 </style>
