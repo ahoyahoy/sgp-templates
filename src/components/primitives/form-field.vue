@@ -8,7 +8,10 @@ defineProps(['label'])
             <label>{{ label }}</label>
             <slot name="comment"></slot>
         </div>
-        <slot></slot>
+        <div class="right">
+            <slot></slot>
+
+        </div>
     </div>
 </template>
 
@@ -32,6 +35,15 @@ defineProps(['label'])
 
 label {
     font-weight: var(--font-weight-semibold);
+    flex: 1;
+}
+
+.right {
+    display: flex;
+    gap: var(--spacing-3);
+}
+
+.right > :first-child {
     flex: 1;
 }
 </style>

@@ -79,7 +79,6 @@ export default {
 
 .type-ghost.kind-primary {
   background-color: transparent;
-  color: var(--color-text-secondary);
 }
 
 

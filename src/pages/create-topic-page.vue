@@ -1,4 +1,7 @@
 <script setup>
+import img1 from '../../img/01.png'
+import img2 from '../../img/02.png'
+
 defineProps(['result', 'topic'])
 
 const result = [
@@ -12,32 +15,32 @@ const topic = [
         title: 'Broken bizHub 1762 in Berlin',
         date: 'Mon, 21 Jul at 16:00',
         imgs: [
-            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/01.png'},
-            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/02.png'},
-            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/01.png'},
-            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/02.png'},
-            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/02.png'},
-            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/02.png'},
-            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/02.png'},
+            {img: img1},
+            {img: img2},
+            {img: img1},
+            {img: img2},
+            {img: img2},
+            {img: img2},
+            {img: img2},
         ],
     },
     {
         title: 'Check bizHub 3526 printer in Prague',
         date: 'Sun, 20 Jul at 08:00',
         imgs: [
-            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/01.png'},
-            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/02.png'},
+            {img: img1},
+            {img: img2},
         ],
     },
     {
         title: 'Broken bizHub 1762 in Berlin',
         date: 'Mon, 21 Jul at 16:00',
         imgs: [
-            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/01.png'},
-            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/02.png'},
-            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/01.png'},
-            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/02.png'},
-            {img: 'https://raw.githubusercontent.com/ahoyahoy/sgp-templates/f/create-topic/img/02.png'},
+            {img: img1},
+            {img: img2},
+            {img: img1},
+            {img: img2},
+            {img: img2},
         ],
     },
 ]
