@@ -26,6 +26,7 @@ declare module '@vue/runtime-core' {
     FormField: typeof import('./src/components/primitives/form-field.vue')['default']
     CheckboxInput: typeof import('./src/components/primitives/checkbox-input.vue')['default']
     IconButton: typeof import('./src/components/primitives/icon-button.vue')['default']
+    ImgIcon: typeof import('./src/components/icons/img-icon.vue')['default']
     InfoIcon: typeof import('./src/components/icons/info-icon.vue')['default']
     InitialsIcon: typeof import('./src/components/primitives/initials-icon.vue')['default']
     LinkIcon: typeof import('./src/components/icons/link-icon.vue')['default']

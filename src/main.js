@@ -5,6 +5,7 @@ import {createRouter, createWebHistory} from 'vue-router'
 
 import App from './App.vue'
 import CreateSession from './pages/create-session-page.vue'
+import CreateTopic from './pages/create-topic-page.vue'
 import Index from './pages/index-page.vue'
 import Insights from './pages/insights-page.vue'
 import KnowledgeBase from './pages/knowledge-base-page.vue'
@@ -22,6 +23,7 @@ const routes = [
     {path: '/knowledge-base', component: KnowledgeBase},
     {path: '/insights', component: Insights},
     {path: '/teams', component: Teams},
+    {path: '/create-topic', component: CreateTopic},
 ]
 
 const router = createRouter({

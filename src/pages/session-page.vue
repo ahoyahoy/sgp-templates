@@ -80,7 +80,7 @@ const sessions = [
 
 <template>
     <div class="app_container desktop">
-        <SidebarNav />
+        <SidebarNav :pro="true" />
 
         <div class="sessioin-content">
             <AppHeader title="Session">

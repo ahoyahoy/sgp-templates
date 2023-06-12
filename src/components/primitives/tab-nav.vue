@@ -11,6 +11,9 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
         </li>
       </template>
     </ul>
+    <div class="btn">
+      <slot name="right"></slot>
+    </div>
   </div>
 </template>
 
@@ -77,5 +80,14 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
 
 .type-position-3 .links {
   left: var(--spacing-3);
+}
+
+.btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-5);
+  right: var(--spacing-3);
+  height: 41px;
 }
 </style>

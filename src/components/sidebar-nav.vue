@@ -1,16 +1,20 @@
 <script setup>
 import LogoImg from '../../img/logo-lite.svg'
 
-let showBasicIcon = true
-let showProIcon = false
+defineProps(['pro'])
+
 </script>
 
 <template>
   <div class="sidebar">
     <div class="head">
       <LogoImg class="logo" alt="logo" />
-      <BasicIcon v-if="showBasicIcon" />
-      <ProIcon v-if="showProIcon" />
+      <template v-if="pro">
+        <ProIcon />
+      </template>
+      <template v-else>
+        <BasicIcon />
+      </template>
     </div>
     <div class="body">
       <nav class="links">
