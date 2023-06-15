@@ -13,6 +13,7 @@
             <router-link to="/insights">Insights</router-link>
             <router-link to="/teams">Teams</router-link>
             <router-link to="/create-topic">Create topic</router-link>
+            <router-link to="/subscription-overview">Subscription overview</router-link>
         </nav>
     </div>
 </template>

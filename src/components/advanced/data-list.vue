@@ -66,6 +66,11 @@ defineProps(['data', 'kind'])
     display: flex;
 }
 
+.right > :first-child {
+    flex: 1;
+}
+
+
 .left {
     flex-direction: column;
     flex: 1;
@@ -140,5 +145,10 @@ defineProps(['data', 'kind'])
 .data-list.kind-teams {
     padding: 0;
     padding-left: 32px;
+}
+
+.kind-smaller .item {
+    height: 60px;
+    flex: 0 0 60px;
 }
 </style>

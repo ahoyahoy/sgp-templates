@@ -37,6 +37,7 @@ declare module '@vue/runtime-core' {
     ModalHeader: typeof import('./src/components/layout/modal-header.vue')['default']
     NotificationIcon: typeof import('./src/components/icons/notification-icon.vue')['default']
     NotificationoffIcon: typeof import('./src/components/icons/notificationoff-icon.vue')['default']
+    PeopleIcon: typeof import('./src/components/icons/people-icon.vue')['default']
     PersonIcon: typeof import('./src/components/icons/person-icon.vue')['default']
     PhoneIcon: typeof import('./src/components/icons/phone-icon.vue')['default']
     ProIcon: typeof import('./src/components/icons/pro-icon.vue')['default']
