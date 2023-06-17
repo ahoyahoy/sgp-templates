@@ -119,6 +119,12 @@ export default {
 .type-ghost.kind-purple {
   background-color: transparent;
   color: var(--color-purple-base);
+  white-space: nowrap;
+}
+
+.type-ghost.kind-purple>>>svg {
+  width: 24px;
+  height: 24px;
 }
 
 .type-default.kind-primary:hover {

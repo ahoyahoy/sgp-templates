@@ -101,4 +101,19 @@ input:focus::placeholder {
 .type-full input {
   width: 100%;
 }
+
+.type-multiple-icon .right {
+  display: flex;
+  width: 85px;
+  height: 22px;
+  top: 6px;
+}
+
+.type-phone {
+    flex: 1;
+}
+.type-phone input {
+    border-radius: 0 4px 4px 0;
+    border-left: none;
+}
 </style>

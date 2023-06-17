@@ -32,7 +32,9 @@ declare module '@vue/runtime-core' {
     LinkIcon: typeof import('./src/components/icons/link-icon.vue')['default']
     LoadingAll: typeof import('./src/components/loading/loading-all.vue')['default']
     LoadingTest: typeof import('./src/components/loading/loading-test.vue')['default']
+    MaestroIcon: typeof import('./src/components/icons/maestro-icon.vue')['default']
     MailIcon: typeof import('./src/components/icons/mail-icon.vue')['default']
+    MastercardIcon: typeof import('./src/components/icons/mastercard-icon.vue')['default']
     MobileIcon: typeof import('./src/components/icons/mobile-icon.vue')['default']
     ModalHeader: typeof import('./src/components/layout/modal-header.vue')['default']
     NotificationIcon: typeof import('./src/components/icons/notification-icon.vue')['default']
@@ -54,5 +56,6 @@ declare module '@vue/runtime-core' {
     TextInput: typeof import('./src/components/primitives/text-input.vue')['default']
     ThumbDownIcon: typeof import('./src/components/icons/thumb-down-icon.vue')['default']
     ThumbUpIcon: typeof import('./src/components/icons/thumb-up-icon.vue')['default']
+    VisaIcon: typeof import('./src/components/icons/visa-icon.vue')['default']
   }
 }
