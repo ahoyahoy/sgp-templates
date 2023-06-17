@@ -32,7 +32,7 @@ defineProps(['data', 'kind'])
     flex-grow: 1;
     overflow-y: auto;
     padding: var(--spacing-4) var(--spacing-5);
-    min-width: 350px;
+    min-width: 450px;
 }
 
 .item {
@@ -69,7 +69,6 @@ defineProps(['data', 'kind'])
 .right > :first-child {
     flex: 1;
 }
-
 
 .left {
     flex-direction: column;
@@ -150,5 +149,15 @@ defineProps(['data', 'kind'])
 .kind-smaller .item {
     height: 60px;
     flex: 0 0 60px;
+}
+.kind-height-70 .item {
+    height: 70px;
+    flex: 0 0 70px;
+}
+.data-list.kind-height-70 {
+    flex: 0;
+    overflow-y: unset;
+    padding: 0;
+    padding-left: 32px;
 }
 </style>

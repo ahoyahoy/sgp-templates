@@ -12,6 +12,7 @@ import KnowledgeBase from './pages/knowledge-base-page.vue'
 import KnowledgeBaseSearch from './pages/knowledge-base-search-page.vue'
 import Session from './pages/session-page.vue'
 import SubscriptionOverview from './pages/subscription-overview-page.vue'
+import SubscriptionPayment from './pages/subscription-payment-page.vue'
 import Teams from './pages/teams-page.vue'
 
 const app = createApp(App)
@@ -26,6 +27,7 @@ const routes = [
     {path: '/teams', component: Teams},
     {path: '/create-topic', component: CreateTopic},
     {path: '/subscription-overview', component: SubscriptionOverview},
+    {path: '/subscription-payment', component: SubscriptionPayment},
 ]
 
 const router = createRouter({
