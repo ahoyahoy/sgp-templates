@@ -108,6 +108,9 @@ input:focus::placeholder {
   height: 22px;
   top: 6px;
 }
+.type-multiple-icon.text-input.with-right-icon input {
+    padding-right: 100px;
+}
 
 .type-phone {
     flex: 1;

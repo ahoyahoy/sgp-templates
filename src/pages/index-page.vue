@@ -15,6 +15,7 @@
             <router-link to="/create-topic">Create topic</router-link>
             <router-link to="/subscription-overview">Subscription overview</router-link>
             <router-link to="/subscription-payment">Subscription payment</router-link>
+            <router-link to="/subscription-invoices">Subscription invoices</router-link>
         </nav>
     </div>
 </template>

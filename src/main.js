@@ -11,6 +11,7 @@ import Insights from './pages/insights-page.vue'
 import KnowledgeBase from './pages/knowledge-base-page.vue'
 import KnowledgeBaseSearch from './pages/knowledge-base-search-page.vue'
 import Session from './pages/session-page.vue'
+import SubscriptionInvoices from './pages/subscription-invoices-page.vue'
 import SubscriptionOverview from './pages/subscription-overview-page.vue'
 import SubscriptionPayment from './pages/subscription-payment-page.vue'
 import Teams from './pages/teams-page.vue'
@@ -28,6 +29,7 @@ const routes = [
     {path: '/create-topic', component: CreateTopic},
     {path: '/subscription-overview', component: SubscriptionOverview},
     {path: '/subscription-payment', component: SubscriptionPayment},
+    {path: '/subscription-invoices', component: SubscriptionInvoices},
 ]
 
 const router = createRouter({
