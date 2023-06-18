@@ -36,7 +36,6 @@ export default {
   font-size: var(--size-text-medium);
   font-weight: var(--font-weight-bold);
   height: 36px;
-  flex: 0 0 36px;
   padding: 0 var(--spacing-2);
   border-radius: var(--border-radius-3);
   border: none;
@@ -156,6 +155,11 @@ export default {
   width: 100%;
 }
 
+.type-outline.btn-disabled {
+  border: 1px solid var(--color-grey-lighten-3);
+  pointer-events: none;
+  color: var(--color-grey-lighten-3);
+}
 .btn-disabled {
   background-color: var(--color-btn-disabled);
   pointer-events: none;

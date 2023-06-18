@@ -1,5 +1,9 @@
+<script setup>
+defineProps(['kind'])
+</script>
+
 <template>
-    <div class="initials">
+    <div class="initials" :class="[`kind-${kind}`]">
         <slot></slot>
     </div>
 </template>
@@ -15,5 +19,10 @@
     align-items: center;
     justify-content: center;
     color: var(--color-text-secondary);
+}
+
+.initials.kind-secondary {
+    background-color: var(--color-initials-bg-secondary);
+    color: var(--color-white-base);
 }
 </style>

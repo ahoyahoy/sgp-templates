@@ -50,7 +50,9 @@ const cards = [
                         </template>
                         <template #right="{ item }">
                             <div class="card-item-right">
-                                <div class="primary" v-if="item.primary">Primary</div>
+                                <TextBadge v-if="item.primary">
+                                    Primary
+                                </TextBadge>
                                 <IconButton  v-if="item.expired" class="delete" type="ghost">
                                     <DeleteIcon />
                                 </IconButton>
@@ -243,17 +245,6 @@ const cards = [
     gap: var(--spacing-6);
 }
 
-.primary {
-    background-color: var(--color-purple-lighten-4);
-    color: var(--color-purple-lighten-1);
-    text-transform: uppercase;
-    font-weight: var(--font-weight-bold);
-    font-size: var(--size-text-small);
-    line-height: var(--line-hight-2);
-    letter-spacing: 0.1em;
-    padding: 0 var(--spacing-1);
-    border-radius: var(--spacing-0);
-}
 .more-info,
 .delete {
     color: var(--color-text-primary);

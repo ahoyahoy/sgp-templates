@@ -16,6 +16,7 @@
             <router-link to="/subscription-overview">Subscription overview</router-link>
             <router-link to="/subscription-payment">Subscription payment</router-link>
             <router-link to="/subscription-invoices">Subscription invoices</router-link>
+            <router-link to="/subscription-users">Subscription users</router-link>
         </nav>
     </div>
 </template>

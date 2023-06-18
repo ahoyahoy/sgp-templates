@@ -14,6 +14,7 @@ import Session from './pages/session-page.vue'
 import SubscriptionInvoices from './pages/subscription-invoices-page.vue'
 import SubscriptionOverview from './pages/subscription-overview-page.vue'
 import SubscriptionPayment from './pages/subscription-payment-page.vue'
+import SubscriptionUsers from './pages/subscription-users-page.vue'
 import Teams from './pages/teams-page.vue'
 
 const app = createApp(App)
@@ -30,6 +31,7 @@ const routes = [
     {path: '/subscription-overview', component: SubscriptionOverview},
     {path: '/subscription-payment', component: SubscriptionPayment},
     {path: '/subscription-invoices', component: SubscriptionInvoices},
+    {path: '/subscription-users', component: SubscriptionUsers},
 ]
 
 const router = createRouter({

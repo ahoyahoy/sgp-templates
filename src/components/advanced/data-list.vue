@@ -156,7 +156,7 @@ defineProps(['data', 'kind'])
     padding-left: 32px;
 }
 
-.kind-smaller .item {
+.kind-height-60 .item {
     height: 60px;
     flex: 0 0 60px;
 }

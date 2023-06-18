@@ -55,10 +55,12 @@ declare module '@vue/runtime-core' {
     SchoolIcon: typeof import('./src/components/icons/school-icon.vue')['default']
     SidebarNav: typeof import('./src/components/sidebar-nav.vue')['default']
     TabNav: typeof import('./src/components/primitives/tab-nav.vue')['default']
+    TextBadge: typeof import('./src/components/primitives/text-badge.vue')['default']
     TextBox: typeof import('./src/components/primitives/text-box.vue')['default']
     TextInput: typeof import('./src/components/primitives/text-input.vue')['default']
     ThumbDownIcon: typeof import('./src/components/icons/thumb-down-icon.vue')['default']
     ThumbUpIcon: typeof import('./src/components/icons/thumb-up-icon.vue')['default']
     VisaIcon: typeof import('./src/components/icons/visa-icon.vue')['default']
+    WaitingIcon: typeof import('./src/components/icons/waiting-icon.vue')['default']
   }
 }

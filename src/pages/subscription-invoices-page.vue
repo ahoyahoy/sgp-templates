@@ -77,7 +77,9 @@ const history = [
                                 <div class="history-item-right">
                                     <div class="paid-box">
                                         <div class="sum">{{ item.sum }}</div>
-                                        <div class="paid" v-if="item.paid">Paid</div>
+                                        <TextBadge kind="secondary" v-if="item.paid">
+                                            Paid
+                                        </TextBadge>
                                     </div>
                                     <IconButton class="more-info" type="ghost">
                                         <DotsIcon />
@@ -358,18 +360,6 @@ b {
     line-height: var(--line-hight-2);
 }
 
-.paid {
-    background-color: var(--color-green-lighten-2);
-    color: var(--color-green-base);
-    text-transform: uppercase;
-    font-weight: var(--font-weight-bold);
-    font-size: var(--size-text-small);
-    line-height: var(--line-hight-2);
-    letter-spacing: 0.1em;
-    padding: 0 var(--spacing-1);
-    border-radius: var(--spacing-0);
-    text-align: center;
-}
 .more-info {
     color: var(--color-text-primary);
 }

@@ -48,7 +48,7 @@ const overview = [
             <TabNav :tabs="['Overview', 'Payment methods', 'Invoices', 'Users']" :activeTab="0" />
 
             <div class="body">
-                <DataList kind="smaller" :data="overview">
+                <DataList kind="height-60" :data="overview">
                     <template #left="{ item }">
                         <div class="overview">
                             <div class="title">{{ item.title }}</div>
