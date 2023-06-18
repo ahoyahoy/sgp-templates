@@ -20,7 +20,7 @@ const cards = [
         expired: true,
     },
     {
-        button: true,
+        buttonRow: true,
     },
 ]
 </script>
@@ -60,7 +60,7 @@ const cards = [
                             </div>
                         </template>
                         <template #button="{ item }">
-                            <BaseButton v-if="item.button" kind="purple" type="ghost">
+                            <BaseButton v-if="item.buttonRow" kind="purple" type="ghost">
                                 <AddIcon />
                                 Add a payment method
                             </BaseButton>
