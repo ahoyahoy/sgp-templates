@@ -5,7 +5,7 @@ defineProps(['data', 'kind'])
 <template>
     <div :class="['data-list', `kind-${kind}`]">
         <template v-for="item, i in data" :key="i">
-            <div v-if="!item.loadingAll && !item.loadingTest && !item.searchLoading" class="item"
+            <div v-if="!item.loadingAll && !item.loadingTest && !item.searchLoading && !item.buttonRow" class="item"
                 :class="{ disabled: item.disabled, waiting: item.waiting, active: item.active }">
                 <div class="left">
                     <slot name="left" :item="item"></slot>
@@ -23,6 +23,9 @@ defineProps(['data', 'kind'])
             <div v-if="item.loadingTest">
                 <loadingTest />
             </div>
+            <div v-if="item.buttonRow" class="button">
+                <slot name="button" :item="item"></slot>
+            </div>
         </template>
     </div>
 </template>
@@ -32,7 +35,7 @@ defineProps(['data', 'kind'])
     flex-grow: 1;
     overflow-y: auto;
     padding: var(--spacing-4) var(--spacing-5);
-    min-width: 350px;
+    min-width: 450px;
 }
 
 .item {
@@ -66,10 +69,21 @@ defineProps(['data', 'kind'])
     display: flex;
 }
 
+.right > :first-child {
+    flex: 1;
+}
+
 .left {
     flex-direction: column;
     flex: 1;
     min-width: 0;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    flex: 0 0 70px;
 }
 
 .kind-result.data-list,
@@ -141,4 +155,18 @@ defineProps(['data', 'kind'])
     padding: 0;
     padding-left: 32px;
 }
+
+.kind-height-60 .item {
+    height: 60px;
+    flex: 0 0 60px;
+}
+.kind-height-70 .item {
+    height: 70px;
+    flex: 0 0 70px;
+}
+.data-list.kind-height-70 {
+    padding: 0;
+    padding-left: 32px;
+}
+
 </style>

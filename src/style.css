@@ -69,6 +69,7 @@
     
     /* Other colors */
     --color-initials-bg: var(--color-purple-lighten-4);
+    --color-initials-bg-secondary: var(--color-purple-base);
     --color-skeleton-bg: var(--color-purple-lighten-4);
     --color-input-border: var(--color-grey-lighten-3);
     --color-input-box-bg: var(--color-grey-lighten-5);

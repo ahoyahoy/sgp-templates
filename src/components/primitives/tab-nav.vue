@@ -20,10 +20,13 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
 <style scoped>
 .tabs {
   position: relative;
-  font-weight: var(--font-weight-semibold);
   flex: 0 0 41px;
   height: 41px;
   border-bottom: 1px solid var(--color-divider);
+}
+
+.tabs .link.active {
+  font-weight: var(--font-weight-semibold);
 }
 
 .links {
@@ -51,7 +54,7 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
 }
 
 .link a::after {
-  transition: background-color 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .link:hover a::after,
@@ -68,6 +71,7 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
 .link a:hover,
 .link.active a {
   color: var(--color-tabs-hover);
+  font-weight: var(--font-weight-semibold);
 }
 
 .kind-secondary .inactive a {

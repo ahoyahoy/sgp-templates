@@ -1,9 +1,9 @@
 <script setup>
-defineProps(['label'])
+defineProps(['label', 'type'])
 </script>
 
 <template>
-    <div class="form-field">
+    <div class="form-field" :class="[`type-${type}`]">
         <div class="label-box">
             <label>{{ label }}</label>
             <slot name="comment"></slot>
@@ -36,6 +36,7 @@ defineProps(['label'])
 label {
     font-weight: var(--font-weight-semibold);
     flex: 1;
+    line-height: var(--line-hight-1);
 }
 
 .right {
@@ -45,5 +46,21 @@ label {
 
 .right > :first-child {
     flex: 1;
+}
+
+.type-info .label-box {
+    gap: var(--spacing-0);
+}
+
+.type-phone .right {
+    gap: 0;
+}
+
+.type-phone .right > :first-child {
+    flex: 0;
+    width: 100px;
+}
+.type-info label {
+    flex: 0;
 }
 </style>

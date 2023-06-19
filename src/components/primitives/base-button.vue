@@ -36,7 +36,6 @@ export default {
   font-size: var(--size-text-medium);
   font-weight: var(--font-weight-bold);
   height: 36px;
-  flex: 0 0 36px;
   padding: 0 var(--spacing-2);
   border-radius: var(--border-radius-3);
   border: none;
@@ -119,6 +118,12 @@ export default {
 .type-ghost.kind-purple {
   background-color: transparent;
   color: var(--color-purple-base);
+  white-space: nowrap;
+}
+
+.type-ghost.kind-purple>>>svg {
+  width: 24px;
+  height: 24px;
 }
 
 .type-default.kind-primary:hover {
@@ -150,6 +155,11 @@ export default {
   width: 100%;
 }
 
+.type-outline.btn-disabled {
+  border: 1px solid var(--color-grey-lighten-3);
+  pointer-events: none;
+  color: var(--color-grey-lighten-3);
+}
 .btn-disabled {
   background-color: var(--color-btn-disabled);
   pointer-events: none;
