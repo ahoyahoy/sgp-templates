@@ -2,8 +2,6 @@
 import img1 from '../../img/01.png'
 import img2 from '../../img/02.png'
 
-defineProps(['result', 'topic'])
-
 const result = [
     {
         title: 'How to fix the internet connection for printers bizHub 3526',

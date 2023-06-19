@@ -1,6 +1,4 @@
 <script setup>
-defineProps(['history'])
-
 const history = [
     {
         date: '16. 12. 2020 - 15. 1. 2021',

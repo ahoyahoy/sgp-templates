@@ -1,6 +1,4 @@
 <script setup>
-defineProps(['summary', 'clients'])
-
 const summary = [
     {
         title: 'Number of calls total',

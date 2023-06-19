@@ -1,6 +1,4 @@
 <script setup>
-defineProps(['users'])
-
 const users = [
     {
         initials: 'J',

@@ -1,8 +1,6 @@
 <script setup>
 import PeopleIcon from '../components/icons/people-icon.vue'
 
-defineProps(['overview'])
-
 const overview = [
     {
         title: 'Current plan',

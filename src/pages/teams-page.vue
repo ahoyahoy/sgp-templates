@@ -1,6 +1,4 @@
 <script setup>
-defineProps(['teams', 'members'])
-
 const teams = [
     {
         title: 'Technicians',
