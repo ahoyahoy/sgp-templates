@@ -10,6 +10,7 @@ import Index from './pages/index-page.vue'
 import Insights from './pages/insights-page.vue'
 import KnowledgeBase from './pages/knowledge-base-page.vue'
 import KnowledgeBaseSearch from './pages/knowledge-base-search-page.vue'
+import NewCustomerUpgrade from './pages/new-customer-upgrade-page.vue'
 import Session from './pages/session-page.vue'
 import SubscriptionInvoices from './pages/subscription-invoices-page.vue'
 import SubscriptionOverview from './pages/subscription-overview-page.vue'
@@ -32,6 +33,7 @@ const routes = [
     {path: '/subscription-payment', component: SubscriptionPayment},
     {path: '/subscription-invoices', component: SubscriptionInvoices},
     {path: '/subscription-users', component: SubscriptionUsers},
+    {path: '/new-customer-upgrade', component: NewCustomerUpgrade},
 ]
 
 const router = createRouter({

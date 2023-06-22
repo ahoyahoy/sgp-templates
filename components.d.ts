@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AddIcon: typeof import('./src/components/icons/add-icon.vue')['default']
     AppHeader: typeof import('./src/components/layout/app-header.vue')['default']
+    Arrow2Icon: typeof import('./src/components/icons/arrow2-icon.vue')['default']
     ArrowIcon: typeof import('./src/components/icons/arrow-icon.vue')['default']
     BaseButton: typeof import('./src/components/primitives/base-button.vue')['default']
     BaseText: typeof import('./src/components/primitives/base-text.vue')['default']
