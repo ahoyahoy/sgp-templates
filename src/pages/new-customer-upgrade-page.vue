@@ -172,7 +172,7 @@ font-size: var(--size-text-medium);
 }
 
 .app_container.desktop {
-    min-width: 1024px;
+    min-width: 1144px;
     min-height: 500px;
     justify-content: center;
 }
@@ -182,7 +182,7 @@ font-size: var(--size-text-medium);
     flex-direction: column;
     flex-grow: 1;
     min-width: 0;
-    max-width: 1195px;
+    max-width: 1165px;
 }
 
 .logo {
@@ -193,8 +193,8 @@ font-size: var(--size-text-medium);
 .header {
     display: flex;
     align-items: center;
-    padding: 0 32px;
-    height: 60px;
+    flex: 0 0 60px;
+    padding-left: var(--spacing-2);
 }
 
 .body {
@@ -203,6 +203,7 @@ font-size: var(--size-text-medium);
     justify-content: center;
     flex: 1;
     gap: var(--spacing-5);
+    margin-bottom: 136px;
 }
 .title {
     font-size: var(--size-h1);

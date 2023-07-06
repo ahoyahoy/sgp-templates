@@ -17,7 +17,10 @@
             <router-link to="/subscription-payment">Subscription payment</router-link>
             <router-link to="/subscription-invoices">Subscription invoices</router-link>
             <router-link to="/subscription-users">Subscription users</router-link>
-            <router-link to="/new-customer-upgrade">New customer upgrade</router-link>
+            <router-link to="/new-customer-upgrade">Upgrade - new customer</router-link>
+            <router-link to="/upgrade-number-of-users">Upgrade - number of users</router-link>
+            <router-link to="/upgrade-billing-details">Upgrade - billing details</router-link>
+            <router-link to="/upgrade-payment-methods">Upgrade - payment details</router-link>
         </nav>
     </div>
 </template>

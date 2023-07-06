@@ -30,4 +30,8 @@ defineProps(['kind'])
     background-color: var(--color-green-lighten-2);
     color: var(--color-green-base);
 }
+.badge.kind-tertiary {
+    background-color: var(--color-grey-lighten-4);
+    color: var(--color-grey-lighten-2);
+}
 </style>
