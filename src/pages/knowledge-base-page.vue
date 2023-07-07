@@ -19,6 +19,14 @@ const search = [
 const result = [
     {
         title: 'How to fix the internet connection for printers bizHub 3526',
+        label: 'Session',
+        phoneIcon: true,
+    },
+    {
+        title: 'How to fix the internet connection for printers bizHub 3526',
+        label: 'Topic',
+        hatIcon: true,
+        active: true,
     },
 ]
 
@@ -142,15 +150,28 @@ const tree = [
                             </template>
                         </DataList>
                     </div>
-                    <div>
-                        <DataList :data="result" kind="result">
-                            <template #left>
-                                <PhoneIcon />
-                            </template>
-                            <template #right="{ item }">
-                                <div class="result">{{ item.title }}</div>
-                            </template>
-                        </DataList>
+                    <div class="summary-item" v-for="item, i in summary" :key="i">
+                        <div class="summ-text">{{ item.text }}</div>
+                        <div class="summ-price">{{ item.price }}</div>
+                    </div>
+                    <div class="links">
+                        <div class="link" v-for="item, i in result" :key="i" :class="{ 'active': item.active }">
+                            <div class="link-left">
+                                <div class="label-box">
+                                    <PhoneIcon v-if="item.phoneIcon" />
+                                    <SchoolIcon v-if="item.hatIcon" />
+                                    <span>{{ item.label }}</span>
+                                </div>
+                                <div class="title">{{ item.title }}</div>
+                            </div>
+                            <div class="link-right" v-if="item.active">
+                                <span class="text">Open</span>
+                                <div class="vertical-divider"></div>
+                                <button>
+                                    <CloseIcon class="close-icon" />
+                                </button>
+                            </div>
+                            </div>
                         <BaseButton type="ghost" kind="primary-light-2">
                             <AddIcon />
                             Add link to the Session, Topic or Manual
@@ -256,15 +277,6 @@ const tree = [
     padding-left: var(--spacing-1);
 }
 
-.title {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    height: 20px;
-    overflow: hidden;
-    line-height: 20px;
-    width: 231px;
-}
-
 .open {
     transform: rotate(180deg);
     color: var(--color-grey-base);
@@ -301,6 +313,91 @@ const tree = [
     line-height: var(--line-hight-2);
 }
 
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-1) var(--spacing-2);
+    gap: var(--spacing-3);
+    flex: 0 0 40px;
+    height: 40px;
+    border: 1px solid var(--color-purple-lighten-4);
+    background-color: var(--color-purple-lighten-5);
+    color: var(--color-text-secondary);
+    border-radius: var(--border-radius-3);
+    user-select: none;
+}
+
+.link.active {
+    border: 1px solid var(--color-purple-lighten-3);
+}
+.link-left {
+    display: flex;
+    gap: var(--spacing-3);
+    flex: 1;
+}
+
+.link-left .title {
+    color: var(--color-text-secondary);
+    line-height: var(--line-hight-2);
+}
+.label-box {
+    display: flex;
+    align-items: center;
+    line-height: var(--line-hight-2);
+    gap: var(--spacing-1);
+    color: var(--color-text-primary);
+    width: 74px;
+}
+
+.label-box svg {
+    min-height: 16px;
+    min-width: 16px;
+}
+
+.link-right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+}
+
+.link-right .text {
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-bold);
+}
+
+.vertical-divider {
+    height: var(--line-hight-2);
+    width: 1px;
+    background: var(--color-grey-lighten-3);
+}
+
+.link-right button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    border-radius: var(--border-radius-3);
+    background: transparent;
+}
+
+.link-right button:hover  {
+    background-color: var(--color-purple-lighten-4);
+}
+
+.link-right .close-icon {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    max-width: 16px;
+    color: var(--color-text-secondary);
+}
 .search-box {
     display: flex;
     flex-direction: column;

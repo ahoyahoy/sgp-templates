@@ -91,6 +91,11 @@ defineProps(['data', 'kind'])
 .kind-topic.data-list {
     padding: 0;
 }
+.kind-result.data-list {
+    display: flex;
+    gap: var(--spacing-1);
+    flex-direction: column;
+}
 .kind-search .right {
     flex-direction: column;
     gap: var(--spacing-0);
@@ -137,6 +142,9 @@ defineProps(['data', 'kind'])
     gap: var(--spacing-0);
 }
 .kind-result .item {
+    align-items: center;
+    flex: 0 0 40px;
+    height: 40px;
     border: 1px solid var(--color-purple-lighten-4);
     background-color: var(--color-purple-lighten-5);
     color: var(--color-text-secondary);
