@@ -86,7 +86,7 @@ const payment = [
                             <div class="ratio-container" v-for="item, i in members" :key="i">
                                 <label class="users-item" :for="`${rndId}-${i}`">
                                     <input :id="`${rndId}-${i}`" type="radio" :value="item.option" name="users">
-                                    {{ item.option }}
+                                    <span class="users-option">{{ item.option }}</span>
                                 </label>
                                 <span class="user-price">{{ item.price }}</span>
                             </div>
@@ -181,7 +181,7 @@ const payment = [
                                     <input :id="`${rndId1}-${i}`" type="radio" :value="item.option" name="payment">
                                     <MastercardIcon v-if="item.mastercard" />
                                     <VisaIcon v-if="item.visa" />
-                                    {{ item.title }}
+                                    <span class="item-title">{{ item.title }}</span>
                                     <ArrowIcon v-if="item.icon" :class="{ 'arrow-open': item.open,'arrow-icon': item.icon }" />
                                 </label>
 
@@ -356,10 +356,24 @@ font-size: var(--size-text-medium);
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-hight-2);
 }
+
+.users-option {
+    max-width: 270px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 .payment-item {
     flex: 0 0 24px;
     font-weight: var(--font-weight-normal);
     width: 100%;
+}
+
+.payment-item  .item-title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 400px;
 }
 
 .payment-item .arrow-icon {
@@ -370,6 +384,9 @@ font-size: var(--size-text-medium);
 .user-price {
     color: var(--color-text-primary-2);
     font-weight: var(--font-weight-normal);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .contact-card {
@@ -419,6 +436,8 @@ font-size: var(--size-text-medium);
 
 .edit-icon {
     cursor: pointer;
+    min-width: 24px;
+    min-height: 24px;
 }
 
 .right-container {

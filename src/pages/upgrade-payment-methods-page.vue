@@ -205,7 +205,6 @@ font-size: var(--size-text-medium);
     display: flex;
     align-items: center;
     gap: var(--spacing-1);
-    flex: 1;
     flex-shrink: 0;
     width: 100%;
     flex: 0 0 56px;
@@ -214,6 +213,9 @@ font-size: var(--size-text-medium);
 }
 .payment-item  .title {
     flex: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .payment {
