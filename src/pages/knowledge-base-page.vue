@@ -340,15 +340,22 @@ const tree = [
     display: flex;
     gap: var(--spacing-3);
     flex: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .link-left .title {
     color: var(--color-text-secondary);
     line-height: var(--line-hight-2);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .label-box {
     display: flex;
     align-items: center;
+    flex: 0 0 74px;
     line-height: var(--line-hight-2);
     gap: var(--spacing-1);
     color: var(--color-text-primary);
