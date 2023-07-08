@@ -172,9 +172,9 @@ const tree = [
                                 </button>
                             </div>
                             </div>
-                        <BaseButton type="ghost" kind="primary-light-2">
+                        <BaseButton class="add-link" type="ghost" kind="primary-light-2">
                             <AddIcon />
-                            Add link to the Session, Topic or Manual
+                            <span>Add link to the Session, Topic or Manual</span>
                         </BaseButton>
                     </div>
                     <BaseText kind="primary-light-2">
@@ -355,11 +355,9 @@ const tree = [
 .label-box {
     display: flex;
     align-items: center;
-    flex: 0 0 74px;
     line-height: var(--line-hight-2);
     gap: var(--spacing-1);
     color: var(--color-text-primary);
-    width: 74px;
 }
 
 .label-box svg {
@@ -399,10 +397,10 @@ const tree = [
 }
 
 .link-right .close-icon {
-    width: 16px;
-    height: 16px;
-    min-width: 16px;
-    max-width: 16px;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    max-width: 18px;
     color: var(--color-text-secondary);
 }
 .search-box {
@@ -419,5 +417,16 @@ const tree = [
     display: flex;
     flex-direction: column;
     gap: var(--spacing-2);
+}
+
+.add-link {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.add-link span {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 </style>
