@@ -75,8 +75,10 @@ const payment = [
                         <LogoImg class="logo" alt="logo" />
                     </div>
                     <div class="back">
-                        <Arrow2Icon />
-                        <span>Back to Subscription</span>
+                        <BaseButton type="ghost" kind="primary">
+                            <Arrow2Icon class="arrow" />
+                            <span>Back to Subscription</span>
+                        </BaseButton>
                     </div>
 
                     <div class="users">
@@ -295,7 +297,11 @@ font-size: var(--size-text-medium);
     margin-bottom: var(--spacing-4);
 }
 
-.back svg {
+.back button {
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-normal);
+}
+.type-ghost.kind-primary .arrow {
     width: 16px;
     height: 16px;
 }

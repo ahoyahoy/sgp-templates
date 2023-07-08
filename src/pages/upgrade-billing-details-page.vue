@@ -27,8 +27,10 @@ const summary = [
                         <LogoImg class="logo" alt="logo" />
                     </div>
                     <div class="back">
-                        <Arrow2Icon />
-                        <span>Change number of users</span>
+                        <BaseButton type="ghost" kind="primary">
+                            <Arrow2Icon class="arrow" />
+                            <span>Change number of users</span>
+                        </BaseButton>
                     </div>
 
                     <div class="billing">
@@ -168,7 +170,11 @@ font-size: var(--size-text-medium);
     margin-bottom: var(--spacing-4);
 }
 
-.back svg {
+.back button {
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-normal);
+}
+.type-ghost.kind-primary .arrow {
     width: 16px;
     height: 16px;
 }
