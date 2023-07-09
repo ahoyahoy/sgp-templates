@@ -11,6 +11,7 @@ import Insights from './pages/insights-page.vue'
 import KnowledgeBase from './pages/knowledge-base-page.vue'
 import KnowledgeBaseSearch from './pages/knowledge-base-search-page.vue'
 import NewCustomerUpgrade from './pages/new-customer-upgrade-page.vue'
+import NewGuideOverlay from './pages/new-guide-overlay-page.vue'
 import NewGuide from './pages/new-guide-page.vue'
 import Session from './pages/session-page.vue'
 import SubscriptionInvoices from './pages/subscription-invoices-page.vue'
@@ -42,6 +43,7 @@ const routes = [
     {path: '/upgrade-billing-details', component: UpgradeBillingDetails},
     {path: '/upgrade-payment-methods', component: UpgradePaymentMethods},
     {path: '/new-guide', component: NewGuide},
+    {path: '/new-guide-overlay', component: NewGuideOverlay},
 ]
 
 const router = createRouter({

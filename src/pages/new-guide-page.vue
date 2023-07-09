@@ -50,17 +50,21 @@ const guide = [
                         <div class="item" v-for="item, i in guide" :key="i">
                             <div class="item-content" v-if="item.title" :class="{ 'open': item.open }">
                                 <div class="item-left">
-                                    <DragIcon />
-                                    <div class="item-index">{{ i + 1 }}</div>
-                                    <div>
-                                        <div class="item-title">{{ item.title }}</div>
-                                        <div class="subtitle" v-if="item.subtitle">{{ item.subtitle }}</div>
+                                    <div class="drag-box">
+                                        <DragIcon class="drag-icon" />
+                                    </div>
+                                    <div class="item-title-box">
+                                        <div class="item-index">{{ i + 1 }}</div>
+                                        <div>
+                                            <div class="item-title">{{ item.title }}</div>
+                                            <div class="subtitle" v-if="item.subtitle">{{ item.subtitle }}</div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="item-right">
                                     <div class="icons-left">
                                         <IconButton kind="mono" type="ghost">
-                                            <CopyIcon />
+                                            <CopyIcon class="copy-icon" />
                                         </IconButton>
                                         <IconButton kind="mono" type="ghost">
                                             <DeleteIcon class="delete" />
@@ -105,7 +109,7 @@ const guide = [
                                     </div>
                                 </div>
                             </div>
-                            <div class="item-content" v-if="item.add">
+                            <div class="item-content" v-if="item.add" :class="{ 'add': item.add }">
                                <BaseButton type="outline" kind="primary">
                                    <AddIcon />
                                    Add field
@@ -197,7 +201,7 @@ const guide = [
     flex-shrink: 0;
     width: 100%;
     flex: 0 0 56px;
-    padding: 0 var(--spacing-3);
+    padding-right: var(--spacing-2);
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-hight-2);
 }
@@ -210,6 +214,16 @@ const guide = [
     transform: rotate(180deg);
 }
 
+.add {
+    padding: 0 var(--spacing-3);
+}
+
+.item-title-box {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: var(--spacing-2);
+}
 .item-index {
     color: var(--color-grey-lighten-2);
     font-weight: var(--font-weight-semibold);
@@ -233,10 +247,23 @@ const guide = [
     display: flex;
     flex: 1;
     align-items: center;
-    gap: var(--spacing-2);
+    height: 100%;
 }
 
-
+.drag-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 30px;
+    cursor: grab;
+    height: 100%;
+}
+.drag-icon {
+    color: var(--color-grey-lighten-3);
+}
+.drag-box:hover .drag-icon {
+    color: var(--color-grey-lighten-2);
+}
 .item-right {
     display: flex;
     align-items: center;
@@ -244,6 +271,10 @@ const guide = [
 
 .icons-left {
     display: flex;
+}
+
+.copy-icon {
+    margin: 4px 0 0 4px;
 }
 
 .delete {
@@ -280,7 +311,7 @@ const guide = [
     display: flex;
     flex-direction: column;
     gap: var(--spacing-3);
-    width: 50%;
+    width: 55%;
 }
 
 .open-right {
@@ -289,7 +320,7 @@ const guide = [
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 50%;
+    width: 45%;
     border-radius: var(--border-radius-5);
     border: 1px dashed var(--color-grey-lighten-3);
     background-color: var(--color-white-base);

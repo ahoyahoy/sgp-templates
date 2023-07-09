@@ -22,6 +22,7 @@
             <router-link to="/upgrade-billing-details">Upgrade - billing details</router-link>
             <router-link to="/upgrade-payment-methods">Upgrade - payment details</router-link>
             <router-link to="/new-guide">New guide</router-link>
+            <router-link to="/new-guide-overlay">New guide - overlay</router-link>
         </nav>
     </div>
 </template>
