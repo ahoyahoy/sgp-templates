@@ -83,7 +83,9 @@ const topic = [
                         <div class="box">
                             <TabNav kind="secondary" type="position-3" :tabs="['Image from sessions', 'Image from computer']" :activeTab="0">
                                 <template #right>
-                                    <CloseIcon></CloseIcon>
+                                    <IconButton kind="mono" type="ghost">
+                                        <CloseIcon />
+                                    </IconButton>
                                 </template>
                             </TabNav>
                             <div class="box-content">
@@ -112,7 +114,9 @@ const topic = [
                         <div class="box load">
                             <TabNav kind="secondary" type="position-3" :tabs="['Image from sessions', 'Image from computer']" :activeTab="1">
                                 <template #right>
-                                    <CloseIcon></CloseIcon>
+                                    <IconButton kind="mono" type="ghost">
+                                        <CloseIcon />
+                                    </IconButton>
                                 </template>
                             </TabNav>
                             <div class="box-content">

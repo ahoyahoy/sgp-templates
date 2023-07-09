@@ -20,8 +20,6 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
 <style scoped>
 .tabs {
   position: relative;
-  flex: 0 0 41px;
-  height: 41px;
   border-bottom: 1px solid var(--color-divider);
 }
 
@@ -30,11 +28,10 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
 }
 
 .links {
-  position: absolute;
   display: flex;
   gap: var(--spacing-5);
-  left: var(--spacing-5);
-  height: 41px;
+  padding: 0 var(--spacing-5);
+  line-height: var(--line-hight-4);
 }
 
 .link {
@@ -61,7 +58,7 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
 .link.active a::after {
   content: "";
   position: absolute;
-  bottom: -2px;
+  bottom: -3px;
   width: 100%;
   height: 2px;
   border-radius: var(--border-radius-1);
@@ -83,15 +80,16 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
 }
 
 .type-position-3 .links {
-  left: var(--spacing-3);
+  padding: 0 var(--spacing-3);
 }
 
 .btn {
   position: absolute;
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-5);
-  right: var(--spacing-3);
-  height: 41px;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-5);
+    right: var(--spacing-3);
+    top: 0;
+    height: var(--line-hight-4);
 }
 </style>
