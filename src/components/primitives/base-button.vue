@@ -126,6 +126,17 @@ export default {
   height: 24px;
 }
 
+.type-ghost.kind-basic {
+  font-weight: var(--font-weight-normal);
+  background-color: transparent;
+  color: var(--color-purple-base);
+}
+
+.type-ghost.kind-purple>>>svg {
+  width: 16px;
+  height: 16px;
+}
+
 .type-default.kind-primary:hover {
   background-color: var(--color-btn-background-hover);
 }
@@ -138,6 +149,7 @@ export default {
 .type-ghost.kind-mono-left:hover,
 .type-ghost.kind-red:hover,
 .type-ghost.kind-purple:hover,
+.type-ghost.kind-basic:hover,
 .type-ghost.kind-primary-light-2:hover {
   background-color: var(--color-purple-lighten-4);
 }

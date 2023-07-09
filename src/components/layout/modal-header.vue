@@ -1,9 +1,9 @@
 <script setup>
-defineProps(['title'])
+defineProps(['title', 'kind'])
 </script>
 
 <template>
-    <div class="header">
+    <div class="header" :class="[`kind-${kind}`]">
         <div class="left">
             <h2 class="title">{{ title }}</h2>
         </div>
@@ -40,5 +40,11 @@ defineProps(['title'])
     font-size: var(--size-h2);
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-hight-3);
+}
+
+.header.kind-secondary {
+    flex: 0 0 94px;
+    height: 94px;
+    padding: 0 var(--spacing-5);
 }
 </style>
