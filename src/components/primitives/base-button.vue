@@ -137,23 +137,6 @@ export default {
   height: 16px;
 }
 
-.type-default.kind-primary:hover {
-  background-color: var(--color-btn-background-hover);
-}
-
-.type-ghost.kind-primary:hover {
-  background-color: var(--color-purple-lighten-4);
-}
-
-.type-ghost.kind-mono:hover,
-.type-ghost.kind-mono-left:hover,
-.type-ghost.kind-red:hover,
-.type-ghost.kind-purple:hover,
-.type-ghost.kind-basic:hover,
-.type-ghost.kind-primary-light-2:hover {
-  background-color: var(--color-purple-lighten-4);
-}
-
 .btn>>>svg {
   fill: currentColor;
   transition: fill 0.2s ease;
@@ -178,24 +161,25 @@ export default {
   color: var(--color-text-disabled);
 }
 
-@media (max-width: 768px) {
+@media (min-width: 769px) {
 .btn {
-  pointer-events: none;
+cursor: pointer;
 }
-.type-default.kind-primary:hover {
-background-color: transparent;
-pointer-events: none;
+  .type-default.kind-primary:hover {
+  background-color: var(--color-btn-background-hover);
 }
 
-.type-ghost.kind-primary:hover,
+.type-ghost.kind-primary:hover {
+  background-color: var(--color-purple-lighten-4);
+}
+
 .type-ghost.kind-mono:hover,
 .type-ghost.kind-mono-left:hover,
 .type-ghost.kind-red:hover,
 .type-ghost.kind-purple:hover,
 .type-ghost.kind-basic:hover,
 .type-ghost.kind-primary-light-2:hover {
-  background-color: transparent;
-  pointer-events: none;
+  background-color: var(--color-purple-lighten-4);
 }
 }
 </style>

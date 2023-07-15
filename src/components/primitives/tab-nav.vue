@@ -54,7 +54,6 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
   transition: color 0.2s ease;
 }
 
-.link:hover a::after,
 .link.active a::after {
   content: "";
   position: absolute;
@@ -65,7 +64,6 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
   background-color: var(--color-tabs-hover);
 }
 
-.link a:hover,
 .link.active a {
   color: var(--color-tabs-hover);
   font-weight: var(--font-weight-semibold);
@@ -75,10 +73,6 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
   color: var(--color-text-primary-2);
   font-weight: var(--font-weight-normal);
 }
-.kind-secondary .inactive:hover a {
-  color: var(--color-tabs-hover);
-}
-
 .type-position-3 .links {
   padding: 0 var(--spacing-3);
 }
@@ -96,22 +90,25 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
     height: var(--line-hight-4);
 }
 
-@media (max-width: 768px) {
-  .link:not(.active):hover a::after {
-    content: none;
-    pointer-events: none;
-  }
+@media (min-width: 769px) {
+  .link:hover a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  border-radius: var(--border-radius-1);
+  background-color: var(--color-tabs-hover);
+}
 
-  .link:not(.active) a:hover {
-    color: initial;
-    font-weight: var(--font-weight-normal);
-    pointer-events: none;
-  }
+.link a:hover {
+  color: var(--color-tabs-hover);
+  font-weight: var(--font-weight-semibold);
+}
+.kind-secondary .inactive:hover a {
+  color: var(--color-tabs-hover);
+}
 
-  .kind-secondary .link:not(.active):hover a {
-    color: initial;
-    pointer-events: none;
-  }
 }
 
 </style>

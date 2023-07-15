@@ -25,6 +25,7 @@ const sessions = [
             {name: 'You', icon: 'person'},
         ],
         waiting: true,
+        countdown: '1 day to start',
     },
     {
         date: 'Mon, 21 Jul at 08:00',
@@ -102,7 +103,6 @@ const sessions = [
                         </TextInput>
                     </template>
                 </MobileHeader>
-                <TabNav type="mobile" :tabs="['Active & Scheduled', 'Expired']" :activeTab="0" />
                 <MobileList :data="sessions">
                     <template #left="{ item }">
                         <div class="details">
@@ -169,7 +169,6 @@ const sessions = [
                         </TextInput>
                     </template>
                 </MobileHeader>
-                <TabNav type="mobile" :tabs="['Active & Scheduled', 'Expired']" :activeTab="0" />
                 <MobileList :data="sessions">
                     <template #left="{ item }">
                         <div class="details">
@@ -236,8 +235,7 @@ const sessions = [
                         </TextInput>
                     </template>
                 </MobileHeader>
-                <TabNav type="mobile" :tabs="['Active & Scheduled', 'Expired']" :activeTab="0" />
-                <MobileList :data="sessions">
+                <TabletList :data="sessions">
                     <template #left="{ item }">
                         <div class="details">
                             <div class="date">{{ item.date }}</div>
@@ -266,22 +264,21 @@ const sessions = [
                             </div>
                         </div>
                     </template>
-                    <template #right>
+                    <template #right="{item}">
+                        <p v-if="item.countdown" class="countdown">
+                            {{ item.countdown }}
+                        </p>
+                        <IconButton v-if="item.waiting" type="none" disable :style="{ display: item.disabled || item.expired ? 'none' : 'flex', }">
+                            <PhoneIcon />
+                        </IconButton>
+                        <IconButton v-else :style="{ display: item.disabled || item.expired ? 'none' : 'flex', }">
+                            <PhoneIcon />
+                        </IconButton>
                         <IconButton class="more-options" type="ghost">
                             <DotsIcon />
                         </IconButton>
                     </template>
-                    <template #bottom="{ item }">
-                        <BaseButton v-if="item.waiting" type="none"  disable block>
-                            <PhoneIcon />
-                            1 day to start
-                        </BaseButton>
-                        <BaseButton v-else block>
-                            <PhoneIcon />
-                            Connect
-                        </BaseButton>
-                    </template>
-                </MobileList>
+                </TabletList>
             </div>
         </div>
     </div>
@@ -395,18 +392,6 @@ const sessions = [
     align-items: center;
 }
 
-.loading-attendees {
-    display: flex;
-    gap: var(--spacing-2);
-}
-
-.loading-attendee {
-    width: 94px;
-    height: 14px;
-    margin: 3px 0;
-    border-radius: 40px;
-    background-color: var(--color-skeleton-bg);
-}
 
 .person {
     display: flex;
@@ -435,6 +420,13 @@ const sessions = [
     background-color: #FBFBFE;
     border: 1px solid #CECFF0;
     border-radius: var(--border-radius-2);
+}
+
+.countdown {
+    color: var(--color-text-disabled);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 </style>

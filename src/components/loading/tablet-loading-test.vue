@@ -5,7 +5,7 @@
 <template >
     <div class="hover-test">
 
-        <MobileLoadingAll />
+        <TabletLoadingAll />
 
         <div class="box">
             <div class="top">
@@ -39,16 +39,13 @@
                     </div>
                 </div>
                 <div class="right">
+                    <IconButton class="more-options">
+                        <PhoneIcon />
+                    </IconButton>
                     <IconButton class="more-options" type="ghost">
                         <DotsIcon />
                     </IconButton>
                 </div>
-            </div>
-            <div class="bottom">
-                <BaseButton block>
-                    <PhoneIcon />
-                    Connect
-                </BaseButton>
             </div>
         </div>
 
@@ -70,6 +67,7 @@
 
 .top {
     display: flex;
+    align-items: center;
 }
 
 .item.disabled {
@@ -82,7 +80,9 @@
     display: flex;
 }
 
-
+.right {
+    gap: var(--spacing-2);
+}
 .left {
     flex-direction: column;
     flex: 1;

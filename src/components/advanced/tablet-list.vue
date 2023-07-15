@@ -3,7 +3,7 @@ defineProps(['data', 'kind'])
 </script>
 
 <template>
-    <div :class="['mobile-list', `kind-${kind}`]">
+    <div :class="['tablet-list', `kind-${kind}`]">
         <template v-for="item, i in data" :key="i">
             <div v-if="!item.loadingAll && !item.loadingTest" class="item"
                 :class="{ disabled: item.disabled, waiting: item.waiting }">
@@ -15,22 +15,19 @@ defineProps(['data', 'kind'])
                         <slot name="right" :item="item"></slot>
                     </div>
                 </div>
-                <div class="bottom" :style="{ display: item.disabled || item.expired ? 'none' : 'flex', }">
-                    <slot name="bottom" :item="item"></slot>
-                </div>
             </div>
             <div v-if="item.loadingAll">
-                <MobileLoadingAll />
+                <TabletLoadingAll />
             </div>
             <div v-if="item.loadingTest">
-                <MobileLoadingTest />
+                <TabletLoadingTest />
             </div>
         </template>
     </div>
 </template>
 
 <style scoped>
-.mobile-list {
+.tablet-list {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-4);
@@ -52,6 +49,7 @@ defineProps(['data', 'kind'])
 
 .top {
     display: flex;
+    align-items: center;
 }
 
 .item.disabled {
@@ -64,6 +62,10 @@ defineProps(['data', 'kind'])
     display: flex;
 }
 
+.right {
+    align-items: center;
+    gap: var(--spacing-2);
+}
 
 .left {
     flex-direction: column;
@@ -74,11 +76,5 @@ defineProps(['data', 'kind'])
     text-overflow: ellipsis;
 }
 
-.kind-secondary .top {
-    align-items: center;
-}
-.kind-secondary .right {
-    gap: var(--spacing-2);
-}
 
 </style>
