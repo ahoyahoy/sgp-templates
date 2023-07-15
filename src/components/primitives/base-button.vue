@@ -177,4 +177,25 @@ export default {
   pointer-events: none;
   color: var(--color-text-disabled);
 }
+
+@media (max-width: 768px) {
+.btn {
+  pointer-events: none;
+}
+.type-default.kind-primary:hover {
+background-color: transparent;
+pointer-events: none;
+}
+
+.type-ghost.kind-primary:hover,
+.type-ghost.kind-mono:hover,
+.type-ghost.kind-mono-left:hover,
+.type-ghost.kind-red:hover,
+.type-ghost.kind-purple:hover,
+.type-ghost.kind-basic:hover,
+.type-ghost.kind-primary-light-2:hover {
+  background-color: transparent;
+  pointer-events: none;
+}
+}
 </style>

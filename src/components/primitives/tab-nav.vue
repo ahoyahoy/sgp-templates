@@ -45,7 +45,7 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
   height: 100%;
   border-bottom: 2px solid transparent;
   border-radius: var(--border-radius-1);
-  color: #444;
+  color: var(--color-grey-base);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -82,6 +82,9 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
 .type-position-3 .links {
   padding: 0 var(--spacing-3);
 }
+.type-mobile .links {
+  padding: 0 var(--spacing-3);
+}
 
 .btn {
   position: absolute;
@@ -92,4 +95,23 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
     top: 0;
     height: var(--line-hight-4);
 }
+
+@media (max-width: 768px) {
+  .link:not(.active):hover a::after {
+    content: none;
+    pointer-events: none;
+  }
+
+  .link:not(.active) a:hover {
+    color: initial;
+    font-weight: var(--font-weight-normal);
+    pointer-events: none;
+  }
+
+  .kind-secondary .link:not(.active):hover a {
+    color: initial;
+    pointer-events: none;
+  }
+}
+
 </style>

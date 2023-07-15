@@ -23,6 +23,7 @@
             <router-link to="/upgrade-payment-methods">Upgrade - payment details</router-link>
             <router-link to="/new-guide">New guide</router-link>
             <router-link to="/new-guide-overlay">New guide - overlay</router-link>
+            <router-link to="/sessions-mobile">Mobile Sessions</router-link>
         </nav>
     </div>
 </template>
