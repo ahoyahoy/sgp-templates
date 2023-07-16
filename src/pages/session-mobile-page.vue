@@ -88,7 +88,9 @@ const sessions = [
             <div class="modal-detail">
                 <MobileHeader title="Session">
                     <template #left>
-                        <HamburgerIcon />
+                        <IconButton type="ghost">
+                            <HamburgerIcon />
+                        </IconButton>
                     </template>
                     <template #right>
                         <IconButton>
@@ -154,7 +156,9 @@ const sessions = [
             <div class="modal-detail">
                 <MobileHeader title="Session">
                     <template #left>
-                        <HamburgerIcon />
+                        <IconButton type="ghost">
+                            <HamburgerIcon />
+                        </IconButton>
                     </template>
                     <template #right>
                         <IconButton>
@@ -220,7 +224,9 @@ const sessions = [
             <div class="modal-detail">
                 <MobileHeader title="Session">
                     <template #left>
-                        <HamburgerIcon />
+                        <IconButton type="ghost">
+                            <HamburgerIcon />
+                        </IconButton>
                     </template>
                     <template #right>
                         <IconButton>
