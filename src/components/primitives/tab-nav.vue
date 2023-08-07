@@ -45,7 +45,7 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
   height: 100%;
   border-bottom: 2px solid transparent;
   border-radius: var(--border-radius-1);
-  color: #444;
+  color: var(--color-grey-base);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -54,7 +54,6 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
   transition: color 0.2s ease;
 }
 
-.link:hover a::after,
 .link.active a::after {
   content: "";
   position: absolute;
@@ -65,7 +64,6 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
   background-color: var(--color-tabs-hover);
 }
 
-.link a:hover,
 .link.active a {
   color: var(--color-tabs-hover);
   font-weight: var(--font-weight-semibold);
@@ -75,11 +73,10 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
   color: var(--color-text-primary-2);
   font-weight: var(--font-weight-normal);
 }
-.kind-secondary .inactive:hover a {
-  color: var(--color-tabs-hover);
-}
-
 .type-position-3 .links {
+  padding: 0 var(--spacing-3);
+}
+.type-mobile .links {
   padding: 0 var(--spacing-3);
 }
 
@@ -92,4 +89,26 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
     top: 0;
     height: var(--line-hight-4);
 }
+
+@media (min-width: 769px) {
+  .link:hover a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  border-radius: var(--border-radius-1);
+  background-color: var(--color-tabs-hover);
+}
+
+.link a:hover {
+  color: var(--color-tabs-hover);
+  font-weight: var(--font-weight-semibold);
+}
+.kind-secondary .inactive:hover a {
+  color: var(--color-tabs-hover);
+}
+
+}
+
 </style>
