@@ -10,6 +10,7 @@ import Index from './pages/index-page.vue'
 import Insights from './pages/insights-page.vue'
 import KnowledgeBase from './pages/knowledge-base-page.vue'
 import KnowledgeBaseSearch from './pages/knowledge-base-search-page.vue'
+import MobileForm from './pages/mobile-form-page.vue'
 import NewCustomerUpgrade from './pages/new-customer-upgrade-page.vue'
 import NewGuideOverlay from './pages/new-guide-overlay-page.vue'
 import NewGuide from './pages/new-guide-page.vue'
@@ -46,6 +47,7 @@ const routes = [
     {path: '/new-guide', component: NewGuide},
     {path: '/new-guide-overlay', component: NewGuideOverlay},
     {path: '/sessions-mobile', component: SessionMobile},
+    {path: '/mobile-form', component: MobileForm},
 ]
 
 const router = createRouter({
