@@ -134,25 +134,15 @@ const unresolved = [
                             Clients
                         </BaseText>
                         <div class="clients-table">
-                            <div class="clients-header">
-                                <BaseText kind="subtitle">
-                                    Client ({{ clients.length }})
-                                </BaseText>
-                                <BaseButton class="client-button" type="ghost" kind="mono">
-                                    <span>Number of calls</span>
-                                    <ArrowIcon class="arrow" />
-                                </BaseButton>
-                                <BaseText kind="subtitle">
-                                    Number of resolved
-                                </BaseText>
-                            </div>
-                            <div class="client" v-for="(item, i) in clients" :key="i" :class="{ 'last-item': i === clients.length - 1 }">
-                                <div class="name">
-                                    <InitialsIcon>{{ item.initials }}</InitialsIcon>
-                                    <div class="name-text">{{ item.name }}</div>
+                            <div class="client-mobile" v-for="(item, i) in clients" :key="i" :class="{ 'last-item': i === clients.length - 1 }">
+                                <InitialsIcon>{{ item.initials }}</InitialsIcon>
+                                <div class="client-info">
+                                    <div class="name">{{ item.name }}</div>
+                                    <div class="client-summary">
+                                        <div class="calls-mobile">Calls: {{ item.calls }}</div>
+                                        <div class="resolved-mobile">Resolved: {{ item.resolved }}</div>
+                                    </div>
                                 </div>
-                                <div class="calls">{{ item.calls }}</div>
-                                <div class="resolved">{{ item.resolved }}</div>
                             </div>
                         </div>
                     </div>
@@ -209,25 +199,15 @@ const unresolved = [
                             Clients
                         </BaseText>
                         <div class="clients-table">
-                            <div class="clients-header">
-                                <BaseText kind="subtitle">
-                                    Client ({{ clients.length }})
-                                </BaseText>
-                                <BaseButton class="client-button" type="ghost" kind="mono">
-                                    <span>Number of calls</span>
-                                    <ArrowIcon class="arrow" />
-                                </BaseButton>
-                                <BaseText kind="subtitle">
-                                    Number of resolved
-                                </BaseText>
-                            </div>
-                            <div class="client" v-for="(item, i) in clients" :key="i" :class="{ 'last-item': i === clients.length - 1 }">
-                                <div class="name">
-                                    <InitialsIcon>{{ item.initials }}</InitialsIcon>
-                                    <div class="name-text">{{ item.name }}</div>
+                            <div class="client-mobile" v-for="(item, i) in clients" :key="i" :class="{ 'last-item': i === clients.length - 1 }">
+                                <InitialsIcon>{{ item.initials }}</InitialsIcon>
+                                <div class="client-info">
+                                    <div class="name">{{ item.name }}</div>
+                                    <div class="client-summary">
+                                        <div class="calls-mobile">Calls: {{ item.calls }}</div>
+                                        <div class="resolved-mobile">Resolved: {{ item.resolved }}</div>
+                                    </div>
                                 </div>
-                                <div class="calls">{{ item.calls }}</div>
-                                <div class="resolved">{{ item.resolved }}</div>
                             </div>
                         </div>
                     </div>
@@ -283,27 +263,25 @@ const unresolved = [
                         <BaseText class="title" kind="h2">
                             Clients
                         </BaseText>
-                        <div class="clients-table">
-                            <div class="clients-header">
-                                <BaseText kind="subtitle">
-                                    Client ({{ clients.length }})
-                                </BaseText>
-                                <BaseButton class="client-button" type="ghost" kind="mono">
-                                    <span>Number of calls</span>
-                                    <ArrowIcon class="arrow" />
-                                </BaseButton>
-                                <BaseText kind="subtitle">
-                                    Number of resolved
-                                </BaseText>
+                        <div class="clients-header">
+                            <BaseText kind="subtitle">
+                                Client ({{ clients.length }})
+                            </BaseText>
+                            <BaseButton class="client-button" type="ghost" kind="mono">
+                                <span>Number of calls</span>
+                                <ArrowIcon class="arrow" />
+                            </BaseButton>
+                            <BaseText kind="subtitle">
+                                Number of resolved
+                            </BaseText>
+                        </div>
+                        <div class="client" v-for="(item, i) in clients" :key="i" :class="{ 'last-item': i === clients.length - 1 }">
+                            <div class="name">
+                                <InitialsIcon>{{ item.initials }}</InitialsIcon>
+                                <div class="name-text">{{ item.name }}</div>
                             </div>
-                            <div class="client" v-for="(item, i) in clients" :key="i" :class="{ 'last-item': i === clients.length - 1 }">
-                                <div class="name">
-                                    <InitialsIcon>{{ item.initials }}</InitialsIcon>
-                                    <div class="name-text">{{ item.name }}</div>
-                                </div>
-                                <div class="calls">{{ item.calls }}</div>
-                                <div class="resolved">{{ item.resolved }}</div>
-                            </div>
+                            <div class="calls">{{ item.calls }}</div>
+                            <div class="resolved">{{ item.resolved }}</div>
                         </div>
                     </div>
                     <div class="unresolved">
@@ -451,8 +429,8 @@ const unresolved = [
 }
 
 .clients-table {
-  width: 100%;
-  border-collapse: collapse;
+    display: flex;
+    flex-direction: column;
 }
 
 .clients-header,
@@ -589,5 +567,25 @@ const unresolved = [
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+}
+
+.client-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: var(--spacing-0);
+}
+.client-mobile {
+    display: flex;
+    flex: 0 0 var(--spacing-6);
+    align-items: center;
+    gap: var(--spacing-2);
+    border-bottom: 1px solid var(--color-border);
+    font-weight: var(--font-weight-semibold);
+}
+
+.client-summary {
+    display: flex;
+    gap: var(--spacing-2);
 }
 </style>
