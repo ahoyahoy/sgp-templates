@@ -20,6 +20,7 @@ import SubscriptionInvoices from './pages/subscription-invoices-page.vue'
 import SubscriptionOverviewMobile from './pages/subscription-overview-mobile-page.vue'
 import SubscriptionOverview from './pages/subscription-overview-page.vue'
 import SubscriptionPayment from './pages/subscription-payment-page.vue'
+import SubscriptionUsersMobile from './pages/subscription-users-mobile-page.vue'
 import SubscriptionUsers from './pages/subscription-users-page.vue'
 import Teams from './pages/teams-page.vue'
 import UpgradeBillingDetails from './pages/upgrade-billing-details-page.vue'
@@ -50,6 +51,7 @@ const routes = [
     {path: '/sessions-mobile', component: SessionMobile},
     {path: '/mobile-form', component: MobileForm},
     {path: '/subscription-overview-mobile', component: SubscriptionOverviewMobile},
+    {path: '/subscription-users-mobile', component: SubscriptionUsersMobile},
 ]
 
 const router = createRouter({
