@@ -25,6 +25,7 @@
             <router-link to="/new-guide-overlay">New guide - overlay</router-link>
             <router-link to="/sessions-mobile">Mobile Sessions</router-link>
             <router-link to="/mobile-form">Mobile form</router-link>
+            <router-link to="/subscription-overview-mobile">Mobile subscription overview</router-link>
         </nav>
     </div>
 </template>
