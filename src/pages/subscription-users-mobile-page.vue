@@ -71,19 +71,21 @@ const users = [
                                     <WaitingIcon v-if="item.waiting" />
                                     <InitialsIcon v-else kind="secondary">{{ item.initials }}</InitialsIcon>
                                     <div class="user-info">
-                                        <div class="title">{{ item.title }}</div>
-                                        <div class="subtitle">{{ item.subtitle }}</div>
+                                        <div>
+                                            <div class="title">{{ item.title }}</div>
+                                            <div class="subtitle">{{ item.subtitle }}</div>
+                                        </div>
+                                        <div class="badges">
+                                            <TextBadge v-if="item.badge">
+                                                {{ item.badge }}
+                                            </TextBadge>
+                                            <TextBadge v-if="item.level">
+                                                {{ item.level }}
+                                            </TextBadge>
+                                        </div>
+                                        <div class="resend" v-if="item.resend">{{ item.resend }}</div>
                                     </div>
                                 </div>
-                                <div class="badges">
-                                    <TextBadge v-if="item.badge">
-                                        {{ item.badge }}
-                                    </TextBadge>
-                                    <TextBadge v-if="item.level">
-                                        {{ item.level }}
-                                    </TextBadge>
-                                </div>
-                                <div class="resend" v-if="item.resend">{{ item.resend }}</div>
                             </div>
                             <div class="user-item-right">
                                 <IconButton class="more-info" type="ghost">
@@ -129,19 +131,21 @@ const users = [
                                     <WaitingIcon v-if="item.waiting" />
                                     <InitialsIcon v-else kind="secondary">{{ item.initials }}</InitialsIcon>
                                     <div class="user-info">
-                                        <div class="title">{{ item.title }}</div>
-                                        <div class="subtitle">{{ item.subtitle }}</div>
+                                        <div>
+                                            <div class="title">{{ item.title }}</div>
+                                            <div class="subtitle">{{ item.subtitle }}</div>
+                                        </div>
+                                        <div class="badges">
+                                            <TextBadge v-if="item.badge">
+                                                {{ item.badge }}
+                                            </TextBadge>
+                                            <TextBadge v-if="item.level">
+                                                {{ item.level }}
+                                            </TextBadge>
+                                        </div>
+                                        <div class="resend" v-if="item.resend">{{ item.resend }}</div>
                                     </div>
                                 </div>
-                                <div class="badges">
-                                    <TextBadge v-if="item.badge">
-                                        {{ item.badge }}
-                                    </TextBadge>
-                                    <TextBadge v-if="item.level">
-                                        {{ item.level }}
-                                    </TextBadge>
-                                </div>
-                                <div class="resend" v-if="item.resend">{{ item.resend }}</div>
                             </div>
                             <div class="user-item-right">
                                 <IconButton class="more-info" type="ghost">
@@ -321,6 +325,9 @@ const users = [
     display: flex;
     flex-direction: column;
     gap: var(--spacing-3);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .tablet .user {
@@ -334,6 +341,9 @@ const users = [
 }
 
 .user-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -341,6 +351,7 @@ const users = [
 .tablet .user-info {
     width: 230px;
     flex-shrink: 0;
+    gap: 0;
 }
 
 .user svg {
