@@ -7,6 +7,7 @@ import App from './App.vue'
 import CreateSession from './pages/create-session-page.vue'
 import CreateTopic from './pages/create-topic-page.vue'
 import Index from './pages/index-page.vue'
+import InsightsMobile from './pages/insights-mobile-page.vue'
 import Insights from './pages/insights-page.vue'
 import KnowledgeBase from './pages/knowledge-base-page.vue'
 import KnowledgeBaseSearch from './pages/knowledge-base-search-page.vue'
@@ -48,6 +49,7 @@ const routes = [
     {path: '/new-guide-overlay', component: NewGuideOverlay},
     {path: '/sessions-mobile', component: SessionMobile},
     {path: '/mobile-form', component: MobileForm},
+    {path: '/insights-mobile', component: InsightsMobile},
 ]
 
 const router = createRouter({
