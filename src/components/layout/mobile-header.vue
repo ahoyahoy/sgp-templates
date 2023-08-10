@@ -33,7 +33,6 @@ defineProps(['title'])
 
 .top .left {
     display: flex;
-    align-items: center;
     gap: var(--spacing-2);
     flex: 1;
 }
