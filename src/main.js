@@ -15,6 +15,7 @@ import MobileForm from './pages/mobile-form-page.vue'
 import NewCustomerUpgrade from './pages/new-customer-upgrade-page.vue'
 import NewGuideOverlay from './pages/new-guide-overlay-page.vue'
 import NewGuide from './pages/new-guide-page.vue'
+import NewSession from './pages/new-session-page.vue'
 import SessionMobile from './pages/session-mobile-page.vue'
 import Session from './pages/session-page.vue'
 import SubscriptionInvoices from './pages/subscription-invoices-page.vue'
@@ -34,6 +35,7 @@ const routes = [
     {path: '/', component: Index},
     {path: '/sessions', component: Session},
     {path: '/create-session', component: CreateSession},
+    {path: '/new-session', component: NewSession},
     {path: '/knowledge-base-search', component: KnowledgeBaseSearch},
     {path: '/knowledge-base', component: KnowledgeBase},
     {path: '/insights', component: Insights},
