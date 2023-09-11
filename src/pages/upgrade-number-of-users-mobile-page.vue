@@ -124,7 +124,7 @@ const payment = [
                     <div class="summary">
                         <div class="summary-title">Order summary of your        <span>Professional plan</span>
                         </div>
-                        <div>
+                        <div class="summary-content">
                             <div class="plan">
                                 <div class="current">
                                     <TextBadge kind="tertiary">
@@ -163,13 +163,13 @@ const payment = [
                                     <ArrowIcon />
                                 </div>
                             </div>
-                            <div class="info-box">
-                                <InfoIcon class="info-icon" />
-                                <p>
-                                    <b>The total price in the next periods will € 240</b>. Your payment will be charged <b>monthly</b>
-                                    starting on <b>March 30th, 2021</b>.
-                                </p>
-                            </div>
+                        </div>
+                        <div class="info-box">
+                            <InfoIcon class="info-icon" />
+                            <p>
+                                <b>The total price in the next periods will € 240</b>. Your payment will be charged <b>monthly</b>
+                                starting on <b>March 30th, 2021</b>.
+                            </p>
                         </div>
                     </div>
 
@@ -289,21 +289,25 @@ const payment = [
                     <div class="summary">
                         <div class="summary-title">Order summary of your        <span>Professional plan</span>
                         </div>
-                        <div>
+                        <div class="summary-content">
                             <div class="plan">
                                 <div class="current">
                                     <TextBadge kind="tertiary">
                                         current plan
                                     </TextBadge>
-                                    <div>5 x Users</div>
-                                    <div><span>€ 200.00</span>/monthly</div>
+                                    <div class="plan-price">
+                                        <div>5 x Users</div>
+                                        <div><span>€ 200.00</span>/monthly</div>
+                                    </div>
                                 </div>
                                 <div class="updated">
                                     <TextBadge>
-                                        current plan
+                                        updated plan
                                     </TextBadge>
-                                    <div>6 x Users</div>
-                                    <div><span>€ 240.00</span>/monthly</div>
+                                    <div class="plan-price">
+                                        <div>6 x Users</div>
+                                        <div><span>€ 240.00</span>/monthly</div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="divider"></div>
@@ -324,13 +328,13 @@ const payment = [
                                     <ArrowIcon />
                                 </div>
                             </div>
-                            <div class="info-box">
-                                <InfoIcon class="info-icon" />
-                                <p>
-                                    <b>The total price in the next periods will € 240</b>. Your payment will be charged <b>monthly</b>
-                                    starting on <b>March 30th, 2021</b>.
-                                </p>
-                            </div>
+                        </div>
+                        <div class="info-box">
+                            <InfoIcon class="info-icon" />
+                            <p>
+                                <b>The total price in the next periods will € 240</b>. Your payment will be charged <b>monthly</b>
+                                starting on <b>March 30th, 2021</b>.
+                            </p>
                         </div>
                     </div>
 
@@ -407,43 +411,45 @@ const payment = [
                             </BaseButton>
                         </div>
 
-                        <div class="users">
-                            <div class="users-title">Number of new users</div>
+                        <div class="body">
+                            <div class="users">
+                                <div class="users-title">Number of new users</div>
 
-                            <div class="options">
-                                <div class="ratio-container" v-for="item, i in members" :key="i">
-                                    <label class="users-item" :for="`${rndId}-${i}`">
-                                        <input :id="`${rndId}-${i}`" type="radio" :value="item.option" name="users">
-                                        <span class="users-option">{{ item.option }}</span>
-                                    </label>
-                                    <span class="user-price">{{ item.price }}</span>
+                                <div class="options">
+                                    <div class="ratio-container" v-for="item, i in members" :key="i">
+                                        <label class="users-item" :for="`${rndId}-${i}`">
+                                            <input :id="`${rndId}-${i}`" type="radio" :value="item.option" name="users">
+                                            <span class="users-option">{{ item.option }}</span>
+                                        </label>
+                                        <span class="user-price">{{ item.price }}</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="billing">
-                            <div class="billing-title">Billing details</div>
-                            <div class="contact-card">
-                                <div class="container">
-                                    <div class="contact">
-                                        <HomeIcon class="home-icon" />
-                                        <div class="contact-details">
-                                            <p class="title">Konica Minolta Business Solutions Czech</p>
-                                            <p>
-                                                <span>Address: </span>Žarošická 4395/13, 628 00 Brno, Czech Republic
-                                            </p>
-                                            <p>
-                                                <span>VAT ID: </span>CZ00176150
-                                            </p>
-                                            <p>
-                                                <span>Phone: </span>+603 244 386
-                                            </p>
-                                            <p>
-                                                <span>Contact person: </span>John Anderson
-                                            </p>
+                            <div class="billing">
+                                <div class="billing-title">Billing details</div>
+                                <div class="contact-card">
+                                    <div class="container">
+                                        <div class="contact">
+                                            <HomeIcon class="home-icon" />
+                                            <div class="contact-details">
+                                                <p class="title">Konica Minolta Business Solutions Czech</p>
+                                                <p>
+                                                    <span>Address: </span>Žarošická 4395/13, 628 00 Brno, Czech Republic
+                                                </p>
+                                                <p>
+                                                    <span>VAT ID: </span>CZ00176150
+                                                </p>
+                                                <p>
+                                                    <span>Phone: </span>+603 244 386
+                                                </p>
+                                                <p>
+                                                    <span>Contact person: </span>John Anderson
+                                                </p>
+                                            </div>
                                         </div>
+                                        <EditIcon class="edit-icon" />
                                     </div>
-                                    <EditIcon class="edit-icon" />
                                 </div>
                             </div>
                         </div>
@@ -660,7 +666,6 @@ const payment = [
     display: flex;
     flex-direction: column;
     gap: var(--spacing-3);
-    padding: var(--spacing-2) var(--spacing-3);
     overflow: auto;
 }
 .users,
@@ -678,6 +683,13 @@ const payment = [
     font-size: var(--size-h2);
     font-weight: var(--font-weight-semibold);
     line-height: var(--spacing-5);
+
+}
+.users-title,
+.billing-title,
+.summary-title,
+.payment-title {
+    padding: 0 var(--spacing-3);
 }
 
 .summary-title span {
@@ -687,7 +699,7 @@ const payment = [
 .options {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-0);
+    gap: var(--spacing-1);
 }
 
 .ratio-container {
@@ -696,7 +708,7 @@ const payment = [
     flex-shrink: 0;
     gap: var(--spacing-1);
     height: 56px;
-    padding: 0 var(--spacing-4) 0 var(--spacing-3);
+    padding: 0 var(--spacing-3);
     border-radius: var(--border-radius-4);
     background: var(--color-white-base);
     box-shadow: 0px 2px 6px 0px rgba(33, 33, 44, 0.05);
@@ -803,6 +815,12 @@ const payment = [
     flex-direction: column;
     gap: var(--spacing-4);
  }
+
+ .summary-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--spacing-3);
+ }
 .plan {
     display: flex;
     flex-direction: column;
@@ -818,10 +836,6 @@ const payment = [
     gap: var(--spacing-2);
 }
 
-.mobile-l .current,
-.mobile-l .updated  {
-    flex-direction: row;
-}
 .current span,
 .updated span,
 .summ-price {
@@ -852,11 +866,6 @@ const payment = [
   top: 50%;
 }
 
-.plan {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-4);
-}
 .price-info {
     display: flex;
     flex-direction: column;
@@ -905,12 +914,14 @@ const payment = [
 .info-box {
     display: flex;
     gap: var(--spacing-3);
-    padding: var(--spacing-2);
+    padding: var(--spacing-2) var(--spacing-3);
     background: var(--color-blue-lighten-2);
     border: 1px solid var(--color-blue-lighten-1);
     border-radius: var(--border-radius-4);
     line-height: var(--line-hight-2);
     color: var(--color-blue-darken-1);
+}
+.tablet .info-box {
     margin-top: var(--spacing-5);
 }
 
@@ -954,6 +965,7 @@ b {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-3);
+    padding: 0 var(--spacing-3);
 }
 
 .arrow-open {
@@ -965,6 +977,7 @@ b {
     flex-direction: column;
     gap: var(--spacing-4);
     align-items: center;
+    padding: 0 var(--spacing-3);
 }
 
 .paygate {
@@ -986,7 +999,7 @@ b {
     display: flex;
     flex-direction: column;
     max-width: 300px;
-    margin-right: 50px;
+    margin-right: 40px;
 }
 .right-container {
     display: flex;
@@ -1001,7 +1014,18 @@ b {
     flex-direction: column;
     gap: var(--spacing-5);
     max-width: 300px;
-    margin-left: 50px;
+    margin-left: 40px;
+}
+
+.tablet .summary-title,
+.tablet .payment-title,
+.tablet .payment-options,
+.tablet .pay-btn {
+    padding: 0;
+}
+
+.badge {
+    width: fit-content;
 }
  </style>
 

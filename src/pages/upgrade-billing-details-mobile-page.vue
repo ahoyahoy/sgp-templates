@@ -87,14 +87,14 @@ const summary = [
                                     <div class="text">Total price</div>
                                     <div class="price">€ 454.00</div>
                                 </div>
-                                <div class="info-box">
-                                    <InfoIcon class="info-icon" />
-                                    <p>
-                                        Your payment will be charged <b>yearly</b> starting on <b>October&nbsp;28,&nbsp;2020</b>
-                                    </p>
-                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="info-box">
+                        <InfoIcon class="info-icon" />
+                        <p>
+                            Your payment will be charged <b>yearly</b> starting on <b>October&nbsp;28,&nbsp;2020</b>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -167,14 +167,14 @@ const summary = [
                                     <div class="text">Total price</div>
                                     <div class="price">€ 454.00</div>
                                 </div>
-                                <div class="info-box">
-                                    <InfoIcon class="info-icon" />
-                                    <p>
-                                        Your payment will be charged <b>yearly</b> starting on <b>October&nbsp;28,&nbsp;2020</b>
-                                    </p>
-                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="info-box">
+                        <InfoIcon class="info-icon" />
+                        <p>
+                            Your payment will be charged <b>yearly</b> starting on <b>October&nbsp;28,&nbsp;2020</b>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -329,7 +329,7 @@ const summary = [
     display: flex;
     flex-direction: column;
     gap: var(--spacing-3);
-    padding: var(--spacing-2) var(--spacing-3);
+    padding: var(--spacing-2) 0;
     overflow: auto;
 }
 
@@ -346,7 +346,7 @@ const summary = [
     flex-direction: column;
     max-width: 300px;
     width: 100%;
-    margin-right: 50px;
+    margin-right: 40px;
 }
 .header {
     display: flex;
@@ -383,7 +383,7 @@ const summary = [
     display: flex;
     flex-direction: column;
     gap: var(--spacing-5);
-    margin-bottom: var(--spacing-5);
+    padding: 0 var(--spacing-3);
 }
 
 .billing-title,
@@ -414,7 +414,7 @@ const summary = [
     flex-direction: column;
     gap: var(--spacing-5);
     max-width: 300px;
-    margin-left: 50px;
+    margin-left: 40px;
 }
  .summary {
     display: flex;
@@ -494,6 +494,10 @@ b {
     height: 24px;
     min-width: 24px;
     min-height: 24px;
+}
+
+.tablet .billing {
+    padding: 0;
 }
  </style>
 

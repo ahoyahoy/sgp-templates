@@ -104,7 +104,7 @@ const summary = [
                     </div>
                     <div class="summary">
                         <div class="summary-title">Order summary</div>
-                        <div>
+                        <div class="summary-content">
                             <div class="price-info">
                                 <div class="summary-item" v-for="item, i in summary" :key="i">
                                     <div class="summ-text">{{ item.text }}</div>
@@ -116,12 +116,12 @@ const summary = [
                                 <div class="text">Total price</div>
                                 <div class="price">€ 454.00</div>
                             </div>
-                            <div class="info-box">
-                                <InfoIcon class="info-icon" />
-                                <p>
-                                    Your payment will be charged <b>yearly</b> starting on <b>October&nbsp;28,&nbsp;2020</b>
-                                </p>
-                            </div>
+                        </div>
+                        <div class="info-box">
+                            <InfoIcon class="info-icon" />
+                            <p>
+                                Your payment will be charged <b>yearly</b> starting on <b>October&nbsp;28,&nbsp;2020</b>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -194,7 +194,7 @@ const summary = [
                     </div>
                     <div class="summary">
                         <div class="summary-title">Order summary</div>
-                        <div>
+                        <div class="summary-content">
                             <div class="price-info">
                                 <div class="summary-item" v-for="item, i in summary" :key="i">
                                     <div class="summ-text">{{ item.text }}</div>
@@ -206,12 +206,12 @@ const summary = [
                                 <div class="text">Total price</div>
                                 <div class="price">€ 454.00</div>
                             </div>
-                            <div class="info-box">
-                                <InfoIcon class="info-icon" />
-                                <p>
-                                    Your payment will be charged <b>yearly</b> starting on <b>October&nbsp;28,&nbsp;2020</b>
-                                </p>
-                            </div>
+                        </div>
+                        <div class="info-box">
+                            <InfoIcon class="info-icon" />
+                            <p>
+                                Your payment will be charged <b>yearly</b> starting on <b>October&nbsp;28,&nbsp;2020</b>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -231,52 +231,54 @@ const summary = [
                         </BaseButton>
                     </div>
 
-                    <div class="payment">
-                        <div class="payment-title">Payment methods</div>
+                    <div class="body">
+                        <div class="payment">
+                            <div class="payment-title">Payment methods</div>
 
-                        <div class="payment-options">
-                            <div class="payment-ratio-container" v-for="item, i in payment" :key="i">
-                                <label class="payment-item" :for="`${rndId}-${i}`">
-                                    <input :id="`${rndId}-${i}`" type="radio" :value="item.option" name="payment">
-                                    <span class="title">{{ item.title }}</span>
-                                    <ArrowIcon v-if="item.icon" :class="{ 'arrow-open': item.open }" />
-                                </label>
-                                <div v-if="item.open" class="card-details">
-                                    <FormField label="Card number">
-                                        <TextInput type="multiple-icon" placeholder="12 digits">
-                                            <template #right-icon>
-                                                <VisaIcon />
-                                                <MastercardIcon />
-                                                <MaestroIcon />
-                                            </template>
-                                        </TextInput>
-                                    </FormField>
-                                    <BoxRow>
-                                        <FormField label="Expiration date">
-                                            <TextInput placeholder="MM/RR" />
+                            <div class="payment-options">
+                                <div class="payment-ratio-container" v-for="item, i in payment" :key="i">
+                                    <label class="payment-item" :for="`${rndId}-${i}`">
+                                        <input :id="`${rndId}-${i}`" type="radio" :value="item.option" name="payment">
+                                        <span class="title">{{ item.title }}</span>
+                                        <ArrowIcon v-if="item.icon" :class="{ 'arrow-open': item.open }" />
+                                    </label>
+                                    <div v-if="item.open" class="card-details">
+                                        <FormField label="Card number">
+                                            <TextInput type="multiple-icon" placeholder="12 digits">
+                                                <template #right-icon>
+                                                    <VisaIcon />
+                                                    <MastercardIcon />
+                                                    <MaestroIcon />
+                                                </template>
+                                            </TextInput>
                                         </FormField>
-                                        <FormField type="info" label="CVC">
+                                        <BoxRow>
+                                            <FormField label="Expiration date">
+                                                <TextInput placeholder="MM/RR" />
+                                            </FormField>
+                                            <FormField type="info" label="CVC">
+                                                <template #comment>
+                                                    <InfoIcon class="info" />
+                                                </template>
+                                                <TextInput placeholder="3 digits" />
+                                            </FormField>
+                                        </BoxRow>
+                                        <FormField label="Card holder">
                                             <template #comment>
-                                                <InfoIcon class="info" />
+                                                <BaseText kind="primary-light-2">
+                                                    Optional
+                                                </BaseText>
                                             </template>
-                                            <TextInput placeholder="3 digits" />
+                                            <TextInput placeholder="Type the member's name or email" />
                                         </FormField>
-                                    </BoxRow>
-                                    <FormField label="Card holder">
-                                        <template #comment>
-                                            <BaseText kind="primary-light-2">
-                                                Optional
-                                            </BaseText>
-                                        </template>
-                                        <TextInput placeholder="Type the member's name or email" />
-                                    </FormField>
-                                    <div class="pay-btn">
-                                        <BaseButton block>
-                                            Pay € 454.00
-                                        </BaseButton>
-                                        <div class="paygate">
-                                            <LockIcon />
-                                            Secure payments via PayGate
+                                        <div class="pay-btn">
+                                            <BaseButton block>
+                                                Pay € 454.00
+                                            </BaseButton>
+                                            <div class="paygate">
+                                                <LockIcon />
+                                                Secure payments via PayGate
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -378,7 +380,7 @@ const summary = [
     display: flex;
     flex-direction: column;
     gap: var(--spacing-3);
-    padding: var(--spacing-2) var(--spacing-3);
+    padding: var(--spacing-2) 0;
     overflow: auto;
 }
 
@@ -488,6 +490,7 @@ const summary = [
     font-size: var(--size-h2);
     font-weight: var(--font-weight-semibold);
     line-height: var(--spacing-5);
+    padding: 0 var(--spacing-3);
 }
 
 .pay-btn {
@@ -509,7 +512,7 @@ const summary = [
     display: flex;
     flex-direction: column;
     align-items: start;
-    margin-top: 143px;
+    margin-top: 150px;
     width: 50%;
 }
 
@@ -524,6 +527,12 @@ const summary = [
     display: flex;
     flex-direction: column;
     gap: var(--spacing-4);
+ }
+
+ .summary-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--spacing-3);
  }
 
 .summ-price {
@@ -579,12 +588,15 @@ const summary = [
 .info-box {
     display: flex;
     gap: var(--spacing-3);
-    padding: var(--spacing-2);
+    padding: var(--spacing-2) var(--spacing-3);
     background: var(--color-blue-lighten-2);
     border: 1px solid var(--color-blue-lighten-1);
     border-radius: var(--border-radius-4);
     line-height: var(--line-hight-2);
     color: var(--color-blue-darken-1);
+}
+
+.tablet .info-box {
     margin-top: var(--spacing-5);
 }
 

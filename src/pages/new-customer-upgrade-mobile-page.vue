@@ -445,7 +445,7 @@ const premium = [
     flex-direction: column;
     gap: var(--spacing-3);
     overflow: auto;
-    padding: var(--spacing-3) var(--spacing-2);
+    padding: var(--spacing-3) 0;
 }
 .tablet .body {
     justify-content: center;
@@ -502,13 +502,12 @@ const premium = [
     gap: var(--spacing-4);
     flex: 0 0 332px;
     box-shadow: 0px 2px 6px 0px rgba(33, 33, 44, 0.05);
-    border-radius: 30px;
+    border-radius: 20px;
     background-color: var(--color-white-base);
-    padding: var(--spacing-4);
+    padding: var(--spacing-3);
 }
 .tablet .offer {
     flex: 0 0 236px;
-    padding: var(--spacing-4) var(--spacing-3);
 }
 
 .offer.recommended {
