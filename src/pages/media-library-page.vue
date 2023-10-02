@@ -212,27 +212,25 @@ const media = [
                 :tabBadges="[24, 2, 2, 2, 2, 0, 0, 1]"
             />
             <div class="body">
-                <div class="container">
-                    <div class="media">
-                        <div class="media-item" v-for="item, i in media" :key="i">
-                            <div class="overview" :style="{ backgroundImage: 'url(' + item.img + ')' }">
-                                <PlayIcon class="folder-icon" v-if="item.play" />
-                                <ForumIcon class="folder-icon" v-if="item.forum" />
-                                <VolumeIcon class="folder-icon" v-if="item.volume" />
-                                <TranscriptIcon class="folder-icon" v-if="item.transcript" />
-                                <div class="overlay">
-                                    <StarIcon class="star" />
-                                    <OfferIcon class="offer" />
-                                    <DotsIcon class="more" />
-                                </div>
+                <div class="media">
+                    <div class="media-item" v-for="item, i in media" :key="i">
+                        <div class="overview" :style="{ backgroundImage: 'url(' + item.img + ')' }">
+                            <PlayIcon class="folder-icon" v-if="item.play" />
+                            <ForumIcon class="folder-icon" v-if="item.forum" />
+                            <VolumeIcon class="folder-icon" v-if="item.volume" />
+                            <TranscriptIcon class="folder-icon" v-if="item.transcript" />
+                            <div class="overlay">
+                                <StarIcon class="star" />
+                                <OfferIcon class="offer" />
+                                <DotsIcon class="more" />
                             </div>
-                            <div class="title">
-                                <div class="name">
-                                    {{ item.name }}
-                                </div>
-                                <div class="date">
-                                    {{ item.date }}
-                                </div>
+                        </div>
+                        <div class="title">
+                            <div class="name">
+                                {{ item.name }}
+                            </div>
+                            <div class="date">
+                                {{ item.date }}
                             </div>
                         </div>
                     </div>
@@ -244,6 +242,9 @@ const media = [
 </template>
 
 <style scoped>
+.test1 {
+  background-color: wheat;
+}
 * {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
@@ -304,17 +305,15 @@ const media = [
     overflow: auto;
     flex: 1;
 }
-.body .container {
-    display: flex;
-    flex-direction: column;
-    max-width: 1175px;
-    margin: 0 auto;
-}
-
 .media {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 182px);
+    grid-auto-rows: 182px;
+    grid-gap: var(--spacing-3);
+    justify-content: center;
+    /* display: flex;
     gap: var(--spacing-3);
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
 }
 .media-item {
     display: flex;
