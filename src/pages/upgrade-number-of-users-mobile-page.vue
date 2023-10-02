@@ -650,7 +650,6 @@ const payment = [
     line-height: var(--line-hight-2);
     user-select: none;
     cursor: auto;
-    margin-bottom: var(--spacing-4);
 }
 
 .back button {
@@ -694,6 +693,11 @@ const payment = [
 
 .summary-title span {
     color: var(--color-text-secondary);
+}
+
+.mobile-s .summary-title,
+.tablet .summary-title {
+    line-height: var(--spacing-3);
 }
 
 .options {
@@ -1005,7 +1009,7 @@ b {
     display: flex;
     flex-direction: column;
     align-items: start;
-    margin-top: 142px;
+    margin-top: 122px;
     width: 50%;
 }
 

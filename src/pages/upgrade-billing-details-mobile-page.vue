@@ -286,7 +286,6 @@ const summary = [
     background-color: #F5F5F5;
     gap: 45px;
     padding: 0 2em;
-
 }
 
 .helper-container {
@@ -329,7 +328,7 @@ const summary = [
     display: flex;
     flex-direction: column;
     gap: var(--spacing-3);
-    padding: var(--spacing-2) 0;
+    padding-bottom: var(--spacing-2);
     overflow: auto;
 }
 
@@ -368,7 +367,6 @@ const summary = [
     line-height: var(--line-hight-2);
     user-select: none;
     cursor: auto;
-    margin-bottom: var(--spacing-4);
 }
 
 .back button {
@@ -405,7 +403,7 @@ const summary = [
     display: flex;
     flex-direction: column;
     align-items: start;
-    margin-top: 143px;
+    margin-top: 115px;
     width: 50%;
 }
 

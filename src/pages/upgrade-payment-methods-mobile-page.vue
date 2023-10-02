@@ -380,7 +380,7 @@ const summary = [
     display: flex;
     flex-direction: column;
     gap: var(--spacing-3);
-    padding: var(--spacing-2) 0;
+    padding-bottom: var(--spacing-2);
     overflow: auto;
 }
 
@@ -396,7 +396,7 @@ const summary = [
     display: flex;
     flex-direction: column;
     max-width: 320px;
-    margin-right: 32px;
+    margin-right: 30px;
 }
 .header {
     display: flex;
@@ -418,7 +418,6 @@ const summary = [
     line-height: var(--line-hight-2);
     user-select: none;
     cursor: auto;
-    margin-bottom: var(--spacing-4);
 }
 .back button {
     color: var(--color-text-secondary);
@@ -512,7 +511,7 @@ const summary = [
     display: flex;
     flex-direction: column;
     align-items: start;
-    margin-top: 150px;
+    margin-top: 115px;
     width: 50%;
 }
 
@@ -521,7 +520,7 @@ const summary = [
     flex-direction: column;
     gap: var(--spacing-5);
     max-width: 300px;
-    margin-left: 50px;
+    margin-left: 30px;
 }
  .summary {
     display: flex;
