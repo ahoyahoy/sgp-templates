@@ -29,6 +29,7 @@
             <router-link to="/subscription-overview-mobile">Mobile subscription overview</router-link>
             <router-link to="/subscription-users-mobile">Mobile subscription users</router-link>
             <router-link to="/insights-mobile">Mobile insights</router-link>
+            <router-link to="/media-library">Media library</router-link>
         </nav>
     </div>
 </template>
