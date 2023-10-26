@@ -395,8 +395,8 @@ const summary = [
 .left-content {
     display: flex;
     flex-direction: column;
-    max-width: 320px;
-    margin-right: 30px;
+    max-width: 319px;
+    margin-right: 28px;
 }
 .header {
     display: flex;
@@ -492,6 +492,10 @@ const summary = [
     padding: 0 var(--spacing-3);
 }
 
+.tablet .summary-title {
+    padding: 0;
+}
+
 .pay-btn {
     display: flex;
     flex-direction: column;
@@ -519,8 +523,8 @@ const summary = [
     display: flex;
     flex-direction: column;
     gap: var(--spacing-5);
-    max-width: 300px;
-    margin-left: 30px;
+    max-width: 319px;
+    margin-left: 28px;
 }
  .summary {
     display: flex;

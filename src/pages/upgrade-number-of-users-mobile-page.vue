@@ -1002,8 +1002,8 @@ b {
 .left-content {
     display: flex;
     flex-direction: column;
-    max-width: 300px;
-    margin-right: 40px;
+    max-width: 319px;
+    margin-right: 28px;
 }
 .right-container {
     display: flex;
@@ -1017,8 +1017,8 @@ b {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-5);
-    max-width: 300px;
-    margin-left: 40px;
+    max-width: 319px;
+    margin-left: 28px;
 }
 
 .tablet .summary-title,
