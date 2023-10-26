@@ -11,6 +11,7 @@ import InsightsMobile from './pages/insights-mobile-page.vue'
 import Insights from './pages/insights-page.vue'
 import KnowledgeBase from './pages/knowledge-base-page.vue'
 import KnowledgeBaseSearch from './pages/knowledge-base-search-page.vue'
+import MediaLibrary from './pages/media-library-page.vue'
 import MobileForm from './pages/mobile-form-page.vue'
 import NewCustomerUpgradeMobile from './pages/new-customer-upgrade-mobile-page.vue'
 import NewCustomerUpgrade from './pages/new-customer-upgrade-page.vue'
@@ -64,6 +65,7 @@ const routes = [
     {path: '/upgrade-number-of-users-mobile', component: UpgradeNumberOfUsersMobile},
     {path: '/upgrade-billing-details-mobile', component: UpgradeBillingDetailsMobile},
     {path: '/upgrade-payment-methods-mobile', component: UpgradePaymentMethodsMobile},
+    {path: '/media-library', component: MediaLibrary},
 ]
 
 const router = createRouter({

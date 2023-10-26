@@ -1,5 +1,5 @@
 <script setup>
-defineProps(['tabs', 'activeTab', 'kind', 'type'])
+defineProps(['tabs', 'activeTab', 'kind', 'type', 'tabBadges'])
 </script>
 
 <template>
@@ -7,7 +7,10 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
     <ul class="links">
       <template v-for="tab, i in tabs" :key="i">
         <li :class="['link', { active: activeTab === i, inactive: activeTab !== i }]">
-          <a href="#">{{ tab }}</a>
+          <a href="#">
+            {{ tab }}
+            <span v-if="tabBadges?.[i] !== undefined" class="badge">{{ tabBadges[i] }}</span>
+          </a>
         </li>
       </template>
     </ul>
@@ -90,6 +93,30 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
     height: var(--line-hight-4);
 }
 
+.type-badge .link a {
+  gap: var(--spacing-0);
+}
+
+.type-badge .link.active .badge {
+  background-color: var(--color-tabs-hover);
+  color: var(--color-white-base);
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  padding: 2px var(--spacing-1);
+  border-radius: 100px;
+  background-color: var(--color-grey-lighten-4);
+  color: var(--color-grey-lighten-1);
+  transition: background-color 0.2s ease;
+  font-size: var(--size-text-small);
+  font-weight: var(--font-weight-semibold);
+}
+
+
 @media (min-width: 769px) {
   .link:hover a::after {
   content: "";
@@ -104,6 +131,10 @@ defineProps(['tabs', 'activeTab', 'kind', 'type'])
 .link a:hover {
   color: var(--color-tabs-hover);
   font-weight: var(--font-weight-semibold);
+}
+.type-badge .link a:hover .badge {
+  background-color: var(--color-tabs-hover);
+  color: var(--color-white-base);
 }
 .kind-secondary .inactive:hover a {
   color: var(--color-tabs-hover);

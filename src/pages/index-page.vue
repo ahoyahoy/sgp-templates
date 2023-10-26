@@ -33,6 +33,7 @@
             <router-link to="/upgrade-number-of-users-mobile">Mobile upgrade - number of users</router-link>
             <router-link to="/upgrade-billing-details-mobile">Mobile upgrade - billing details</router-link>
             <router-link to="/upgrade-payment-methods-mobile">Mobile upgrade - payment details</router-link>
+            <router-link to="/media-library">Media library</router-link>
         </nav>
     </div>
 </template>
